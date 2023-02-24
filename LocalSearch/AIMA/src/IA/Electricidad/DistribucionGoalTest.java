@@ -1,10 +1,10 @@
 /*
- * Práctica de IA (Búsqueda)
+ * Prï¿½ctica de IA (Bï¿½squeda)
  * FIB - UPC
  * Curso 2006-2007
- * Cuatrimestre de Otoño
+ * Cuatrimestre de Otoï¿½o
  *
- * Daniel García Pérez
+ * Daniel Garcï¿½a Pï¿½rez
  * Sergio Vico Marfil
  *
  *
@@ -15,7 +15,6 @@
 package IA.Electricidad;
 
 import aima.search.framework.GoalTest;
-import aima.search.*;
 
 public class DistribucionGoalTest implements GoalTest {
     

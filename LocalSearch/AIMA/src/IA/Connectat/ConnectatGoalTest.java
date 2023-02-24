@@ -13,9 +13,7 @@ package IA.Connectat;
 
 import aima.search.framework.GoalTest;
 
-import aima.search.*;
-
-public class ConnectatGoalTest implements GoalTest 
+public class ConnectatGoalTest implements GoalTest
 {
   public boolean isGoalState(Object state) 
   {
