@@ -1,3 +1,6 @@
+package Model;
+
+import java.util.ArrayList;
 
 /**
  * Esta clase representa una solucion al problema.
@@ -5,5 +8,5 @@
  */
 public class Solution
 {
-
+    ArrayList<Car> m_Cars;
 }
