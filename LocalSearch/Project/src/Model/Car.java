@@ -1,7 +1,6 @@
 package Model;
 
 import IA.Comparticion.Usuario;
-
 import java.util.ArrayList;
 
 public class Car
