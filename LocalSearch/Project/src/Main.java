@@ -9,8 +9,10 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Usuarios users = new Usuarios(100, 10, 124);
+        Usuarios users = new Usuarios(1200, 100, 124);
         State state = new SequentialState(users);
+
+        var successors = state.GenerateAllSuccessors();
 
         // Solucion 1
         Usuario owner = users.get(0);
@@ -22,9 +24,7 @@ public class Main
         car.AddPassenger(user1);
         car.AddPassenger(user2);
 
-        car.SwapRoutes(RouteType.PICKUP, user1, RouteType.DROPOFF, user2);
-
-        car.RemovePassenger(user1);
+        //car.SwapRoutes(RouteType.PICKUP, user1, RouteType.DROPOFF, user2);
 
         System.out.println("");
     }

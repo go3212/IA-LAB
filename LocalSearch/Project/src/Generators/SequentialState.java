@@ -20,20 +20,21 @@ public class SequentialState extends State
             car.AddPassenger(car.GetOwner());
         });
 
-        int i = 0;
-        int j = 0;
-        for (; i < m_Users.size(); ++i)
+        int userIndex = 0;
+        int usersPerCar = m_Users.size()/m_Cars.size();
+        for (int i = 0; i < m_Cars.size(); ++i)
         {
-            Usuario user = m_Users.get(i);
-
-            if (user.isConductor()) continue;
-            if (m_Cars.get(j).IsFull())
+            for (int j = usersPerCar; j >= 0 && userIndex < m_Users.size(); --j)
             {
-                ++j;
-                if (m_Cars.size() == j) break;
+                if (!m_Users.get(userIndex).isConductor())
+                    m_Cars.get(i).AddPassenger(m_Users.get(userIndex));
+                ++userIndex;
             }
-
-            m_Cars.get(j).AddPassenger(user);
+        }
+        while (userIndex < m_Users.size())
+        {
+            m_Cars.get(userIndex%m_Cars.size()).AddPassenger(m_Users.get(userIndex));
+            ++userIndex;
         }
     }
 }
