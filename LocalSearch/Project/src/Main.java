@@ -1,3 +1,4 @@
+import Generators.RandomState;
 import Generators.SequentialState;
 import IA.Comparticion.Usuario;
 import IA.Comparticion.Usuarios;
@@ -9,8 +10,8 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Usuarios users = new Usuarios(1200, 100, 124);
-        State state = new SequentialState(users);
+        Usuarios users = new Usuarios(9, 2, 124);
+        State state = new RandomState(users);
 
         var successors = state.GenerateAllSuccessors();
 
