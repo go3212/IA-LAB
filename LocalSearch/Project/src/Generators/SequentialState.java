@@ -20,10 +20,7 @@ public class SequentialState extends State
     private void GenerateSequential()
     {
         // Para cada coche, subimos al conductor.
-        m_Cars.forEach((car) ->
-        {
-            car.AddPassenger(car.GetOwner());
-        });
+        m_Cars.forEach((car) -> car.AddPassenger(car.GetOwner()));
 
         // Bastante ineficiente a la hora de meter a los usuarios, pero como no se hace frecuentemente NO
         // merece la pena optimizar.
@@ -34,7 +31,7 @@ public class SequentialState extends State
             if (!user.isConductor()) unassignedUsers.add(user);
         });
 
-        for (int i = 0; i < m_Cars.size(); ++i) // Este bucle se puede optimizar MUCHO pero no merece la pena.
+        for (int i = 0; i < m_Cars.size() && unassignedUsers.size() != 0; ++i) // Este bucle se puede optimizar MUCHO pero no merece la pena.
             m_Cars.get(i%m_Cars.size()).AddPassenger(unassignedUsers.remove());
     }
 }

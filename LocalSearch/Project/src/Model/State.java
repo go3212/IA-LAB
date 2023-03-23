@@ -54,7 +54,6 @@ public class State
             ArrayList users = car.GetUsers();
             for (int j = 0; j < users.size(); ++j)
             {
-                System.out.println(j);
                 Usuario user1 = m_Users.get(j);
                 for (int k = j + 1; k < users.size(); ++k)
                 {
