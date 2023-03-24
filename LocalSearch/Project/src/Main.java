@@ -17,9 +17,9 @@ public class Main
         //var successors = state.GenerateAllSuccessors();
 
         // Solucion 1
-        //Usuario owner = users.get(0);
-        //Usuario user1 = users.get(1);
-        //Usuario user2 = users.get(2);
+        // Usuario owner = users.get(0);
+        // Usuario user1 = users.get(1);
+        // Usuario user2 = users.get(2);
 
         //Car car = new Car(owner);
         //car.AddPassenger(owner);
