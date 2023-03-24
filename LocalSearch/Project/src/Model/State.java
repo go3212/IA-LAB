@@ -12,7 +12,7 @@ import java.util.HashSet;
  */
 public class State
 {
-    private static int ROUTE_MAX_DISTANCE_IN_METERS = 30000;
+    private static Double ROUTE_MAX_DISTANCE_IN_METERS = 30000.0;
     protected Usuarios m_Users;
     protected ArrayList<Car> m_Cars;
 
@@ -100,9 +100,41 @@ public class State
         return successors;
     }
 
+    public Double DistanceHeuristic()
+    {
+        Double distance = 0.0;
+        for (int i = 0; i < m_Cars.size(); ++i)
+            distance += m_Cars.get(i).RouteDistanceMeters();
+        return distance;
+    }
+
+    public Double AverageDistanceHeuristic()
+    {
+        return 0.0;
+    }
+
     public Boolean IsSolution()
     {
         Boolean isSolution = true;
+
+        // Distancia total < 30Km. Conductor llega a tiempo al trabajo.
+        for (int i = 0; i < m_Cars.size(); ++i)
+        {
+            if (!m_Cars.get(i).HasDriver()) continue;
+            Double routeLength = m_Cars.get(i).RouteDistanceMeters();
+            if (routeLength > ROUTE_MAX_DISTANCE_IN_METERS) return false;
+        }
+
         return true;
+    }
+
+    public ArrayList<Car> GetCars()
+    {
+        ArrayList<Car> cars = new ArrayList<>();
+        for (int i = 0; i < m_Cars.size(); ++i)
+        {
+            cars.add(new Car(m_Cars.get(i)));
+        }
+        return cars;
     }
 }
