@@ -38,8 +38,9 @@ public class State
     {
         ArrayList<State> successors = new ArrayList<>();
 
-        successors.addAll(GenerateSuccessorsWithSwapInCar());
+        //successors.addAll(GenerateSuccessorsWithSwapInCar());
         successors.addAll(GenerateSuccessorsWithMove());
+        //successors.addAll(GenerateSuccessorsWithShift());
 
         return successors;
     }
@@ -100,6 +101,33 @@ public class State
         return successors;
     }
 
+    public ArrayList<State> GenerateSuccessorsWithShift()
+    {
+        ArrayList<State> successors = new ArrayList<>(); // O(c*n^2)
+
+        for (int i = 0; i < m_Cars.size(); ++i)
+        {
+            Car car = m_Cars.get(i);
+            ArrayList<Usuario> carUsers = car.GetUsers();
+            for (int j = 0; j < carUsers.size(); ++j)
+            {
+                Usuario user = carUsers.get(j);
+                // Si lo podemos shiftear, generamos un estado sucesor...
+                for (int k = 1; k < 2*car.GetUsers().size(); ++k)
+                {
+                    State cpState = new State(this);
+                    State cpState2 = new State(this);
+                    if (cpState.m_Cars.get(i).ShiftRoute(RouteType.PICKUP, user, k))
+                        successors.add(cpState);
+                    if (cpState2.m_Cars.get(i).ShiftRoute(RouteType.DROPOFF, user, k))
+                        successors.add(cpState2);
+                }
+            }
+        }
+
+        return successors;
+    }
+
     public Double DistanceHeuristic()
     {
         Double distance = 0.0;
@@ -110,7 +138,8 @@ public class State
 
     public Double AverageDistanceHeuristic()
     {
-        return 0.0;
+        int cars = GetNonEmptyCars();
+        return DistanceHeuristic()*cars;
     }
 
     public Boolean IsSolution()
@@ -136,5 +165,13 @@ public class State
             cars.add(new Car(m_Cars.get(i)));
         }
         return cars;
+    }
+
+    private int GetNonEmptyCars()
+    {
+        int ncars = 0;
+        for (var car : m_Cars)
+            if (car.HasDriver()) ++ncars;
+        return ncars;
     }
 }

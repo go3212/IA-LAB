@@ -1,3 +1,4 @@
+import Aima.HillClimbing.HeuristicFunctionAverageCarDistance;
 import Aima.HillClimbing.HeuristicFunctionDistance;
 import Aima.HillClimbing.IsGoalState;
 import Aima.HillClimbing.SuccessorFunction;
@@ -9,6 +10,7 @@ import IA.Comparticion.Usuarios;
 import Model.Car;
 import Model.RouteType;
 import Model.State;
+import aima.search.framework.HeuristicFunction;
 import aima.search.framework.Problem;
 import aima.search.framework.Search;
 import aima.search.framework.SearchAgent;
@@ -17,8 +19,9 @@ import aima.search.informed.HillClimbingSearch;
 public class Main
 {
 
-    public static State HillClimbing(State initalState) throws Exception {
-            Problem problem = new Problem(initalState, new SuccessorFunction(), new IsGoalState(), new HeuristicFunctionDistance());
+    public static State HillClimbing(State initalState, HeuristicFunction heuristic) throws Exception
+    {
+            Problem problem = new Problem(initalState, new SuccessorFunction(), new IsGoalState(), heuristic);
             Search search = new HillClimbingSearch();
             SearchAgent agent = new SearchAgent(problem, search);
             return (State)search.getGoalState();
@@ -26,13 +29,13 @@ public class Main
 
     public static void main(String[] args) throws Exception {
         long startTimeNano = System.nanoTime();
-        Usuarios users = new Usuarios(130, 22, 124); // 1ms
-        State state = new SequentialState(users); // 3ms?
-        State finalState = Main.HillClimbing(state);
-
+        Usuarios users = new Usuarios(200, 100, 126); // 1ms
+        State state = new RandomState(users); // 3ms?
+        State finalState1 = Main.HillClimbing(state, new HeuristicFunctionDistance());
+        State finalState2 = Main.HillClimbing(state, new HeuristicFunctionAverageCarDistance());
         System.out.println("Initial state: " + state.DistanceHeuristic());
-        System.out.println("Final state: " + finalState.DistanceHeuristic());
-
+        System.out.println("Final state: " + finalState1.DistanceHeuristic());
+        System.out.println("Final state: " + finalState2.DistanceHeuristic());
 
         //var successors = state.GenerateAllSuccessors();
 

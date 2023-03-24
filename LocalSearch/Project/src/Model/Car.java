@@ -151,8 +151,31 @@ public class Car
         return false;
     }
 
+    public Boolean ShiftRoute(RouteType r1, Usuario user, int steps)
+    {
+        if (!HasPassenger(user)) return false;
+        if (user == m_Owner) return false;
+
+        int u1 = -1;
+        if (r1 == RouteType.PICKUP) u1 = m_PassengersRoute.indexOf(user);
+        else if (r1 == RouteType.DROPOFF) u1 = m_PassengersRoute.lastIndexOf(user);
+
+        var cpy = (ArrayList<Usuario>) m_PassengersRoute.clone();
+        int newIndex = (u1 + steps)%m_PassengersRoute.size();
+        m_PassengersRoute.remove(u1);
+        m_PassengersRoute.add(newIndex, user);
+
+        if (CheckRouteIntegrity()) return true;
+
+        m_PassengersRoute = cpy;
+        return false;
+    }
+
     private Boolean CheckRouteIntegrity()
     {
+        if (HasDriver() && (m_PassengersRoute.get(0) != m_Owner || m_PassengersRoute.get(m_PassengersRoute.size() - 1) != m_Owner))
+            return false;
+
         int space = MAX_PASSENGERS;
 
         HashSet<Usuario> found = new HashSet<Usuario>();
