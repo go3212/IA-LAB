@@ -1,10 +1,10 @@
-package Aima;
+package Aima.HillClimbing;
 
 import Model.State;
 
 import java.util.List;
 
-public class HillClimbingSuccessorFunction implements aima.search.framework.SuccessorFunction
+public class SuccessorFunction implements aima.search.framework.SuccessorFunction
 {
     public List getSuccessors(Object var1)
     {
