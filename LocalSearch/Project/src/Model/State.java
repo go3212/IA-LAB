@@ -38,7 +38,8 @@ public class State
     {
         ArrayList<State> successors = new ArrayList<>();
 
-        successors = GenerateSuccessorsWithSwapInCar();
+        successors.addAll(GenerateSuccessorsWithSwapInCar());
+        successors.addAll(GenerateSuccessorsWithMove());
 
         return successors;
     }
@@ -73,9 +74,30 @@ public class State
         return successors;
     }
 
-    public void SwapPassengersBetweenCars(int car1, Usuario user1, int car2, Usuario user2)
+    public ArrayList<State> GenerateSuccessorsWithMove()
     {
-
+        ArrayList<State> successors = new ArrayList<>();
+        // Basicamente para cada usuario (n) lo podemos mover a (c - 1) coches. El factor de ramificación es O(n*c)
+        for (int i = 0; i < m_Cars.size(); ++i)
+        {
+            Car car = m_Cars.get(i);
+            ArrayList<Usuario> carUsers = car.GetUsers();
+            for (int j = 0; j < carUsers.size(); ++j)
+            {
+                Usuario user = carUsers.get(j);
+                // Si lo podemos eliminar, generamos un estado sucesor...
+                State cpState = new State(this);
+                if(!cpState.m_Cars.get(i).RemovePassenger(user)) continue;
+                // Si lo hemos eliminado correctamente, lo añadimos a los otros coches...
+                for (int k = 0; k < m_Cars.size(); ++k)
+                {
+                    if (k == i) continue;
+                    State cpState2 =  new State(cpState);
+                    if (cpState2.m_Cars.get(k).AddPassenger(user)) successors.add(cpState2);
+                }
+            }
+        }
+        return successors;
     }
 
     public Boolean IsSolution()

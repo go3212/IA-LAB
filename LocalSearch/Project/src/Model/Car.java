@@ -107,10 +107,15 @@ public class Car
         return true;
     }
 
-    public Boolean RemovePassenger(Usuario user)
+    public Boolean CanRemovePassenger(Usuario user)
     {
         if (!HasPassenger(user)) return false;
         if (m_Owner.equals(user) && m_PassengersRoute.size() > 2) return false;
+        return true;
+    }
+    public Boolean RemovePassenger(Usuario user)
+    {
+        if (!this.CanRemovePassenger(user)) return false;
         m_PassengersRoute.remove(user);
         m_PassengersRoute.remove(user);
         return true;
