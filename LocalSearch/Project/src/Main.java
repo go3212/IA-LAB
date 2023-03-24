@@ -9,7 +9,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Usuarios users = new Usuarios(1200, 100, 124);
+        Usuarios users = new Usuarios(1200, 60, 124);
         State state = new SequentialState(users);
 
         var successors = state.GenerateAllSuccessors();

@@ -77,11 +77,9 @@ public class Car
 
             double u1x = found.contains(u1) ? u1.getCoordOrigenX() : u1.getCoordDestinoX();
             double u1y = found.contains(u1) ? u1.getCoordOrigenY() : u1.getCoordDestinoY();
+            found.add(u1);
             double u2x = found.contains(u2) ? u2.getCoordOrigenX() : u2.getCoordDestinoX();
             double u2y = found.contains(u2) ? u2.getCoordOrigenY() : u2.getCoordDestinoY();
-
-            found.add(u1);
-            found.add(u2);
 
             distance += Math.abs(u1x - u2x) + Math.abs(u1y - u2y);
         }
@@ -146,11 +144,6 @@ public class Car
         m_PassengersRoute.set(first, user1);
         m_PassengersRoute.set(second, user2);
         return false;
-    }
-
-    public void Replace(Usuario inUser, Usuario outUser)
-    {
-
     }
 
     private Boolean CheckRouteIntegrity()
