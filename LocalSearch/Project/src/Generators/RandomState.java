@@ -19,21 +19,24 @@ public class RandomState extends State
     private void GenerateRandom()
     {
 
+        // Para cada coche, subimos al conductor.
+        m_Cars.forEach((car) -> car.AddPassenger(car.GetOwner()));
+
         // Bastante ineficiente a la hora de meter a los usuarios, pero como no se hace frecuentemente NO
         // merece la pena optimizar.
 
         LinkedList<Usuario> unassignedUsers = new LinkedList<Usuario>();
         m_Users.forEach((user) ->
         {
-            unassignedUsers.add(user);
+            if (!user.isConductor()) unassignedUsers.add(user);
         });
 
         Random rand = new Random();
 
         while (unassignedUsers.size() != 0) // Este bucle se puede optimizar MUCHO pero no merece la pena.
         {
-            int carId = Math.abs(rand.nextInt())%m_Cars.size();
-            int userId = Math.abs(rand.nextInt())%unassignedUsers.size();
+            int carId = Math.abs(rand.nextInt(0, m_Cars.size()))%m_Cars.size();
+            int userId = Math.abs(rand.nextInt(0, unassignedUsers.size()))%unassignedUsers.size();
             Usuario user = unassignedUsers.get(userId);
             if (!m_Cars.get(carId).AddPassenger(user)) continue;
             unassignedUsers.remove(userId);

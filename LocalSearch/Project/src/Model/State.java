@@ -127,4 +127,14 @@ public class State
 
         return true;
     }
+
+    public ArrayList<Car> GetCars()
+    {
+        ArrayList<Car> cars = new ArrayList<>();
+        for (int i = 0; i < m_Cars.size(); ++i)
+        {
+            cars.add(new Car(m_Cars.get(i)));
+        }
+        return cars;
+    }
 }

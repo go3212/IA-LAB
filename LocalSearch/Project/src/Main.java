@@ -1,3 +1,7 @@
+import Aima.HillClimbing.HeuristicFunctionDistance;
+import Aima.HillClimbing.IsGoalState;
+import Aima.HillClimbing.SuccessorFunction;
+import Generators.RandomSolutionState;
 import Generators.RandomState;
 import Generators.SequentialState;
 import IA.Comparticion.Usuario;
@@ -5,14 +9,30 @@ import IA.Comparticion.Usuarios;
 import Model.Car;
 import Model.RouteType;
 import Model.State;
+import aima.search.framework.Problem;
+import aima.search.framework.Search;
+import aima.search.framework.SearchAgent;
+import aima.search.informed.HillClimbingSearch;
 
 public class Main
 {
-    public static void main(String[] args)
-    {
+
+    public static State HillClimbing(State initalState) throws Exception {
+            Problem problem = new Problem(initalState, new SuccessorFunction(), new IsGoalState(), new HeuristicFunctionDistance());
+            Search search = new HillClimbingSearch();
+            SearchAgent agent = new SearchAgent(problem, search);
+            return (State)search.getGoalState();
+    }
+
+    public static void main(String[] args) throws Exception {
         long startTimeNano = System.nanoTime();
-        Usuarios users = new Usuarios(100, 10, 124); // 1ms
+        Usuarios users = new Usuarios(130, 22, 124); // 1ms
         State state = new SequentialState(users); // 3ms?
+        State finalState = Main.HillClimbing(state);
+
+        System.out.println("Initial state: " + state.DistanceHeuristic());
+        System.out.println("Final state: " + finalState.DistanceHeuristic());
+
 
         //var successors = state.GenerateAllSuccessors();
 

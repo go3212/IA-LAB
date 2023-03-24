@@ -31,7 +31,8 @@ public class SequentialState extends State
             if (!user.isConductor()) unassignedUsers.add(user);
         });
 
-        for (int i = 0; i < m_Cars.size() && unassignedUsers.size() != 0; ++i) // Este bucle se puede optimizar MUCHO pero no merece la pena.
-            m_Cars.get(i%m_Cars.size()).AddPassenger(unassignedUsers.remove());
+        int i = 0;
+        while (unassignedUsers.size() != 0) // Este bucle se puede optimizar MUCHO pero no merece la pena.
+            m_Cars.get((i++)%m_Cars.size()).AddPassenger(unassignedUsers.remove());
     }
 }
