@@ -111,6 +111,11 @@ public class Car
     {
         if (!HasPassenger(user)) return false;
         if (m_Owner.equals(user) && m_PassengersRoute.size() > 2) return false;
+
+        int index1 = m_PassengersRoute.indexOf(user);
+        int index2 = m_PassengersRoute.lastIndexOf(user);
+        if (index1 + 1 != index2) return false;
+
         return true;
     }
     public Boolean RemovePassenger(Usuario user)

@@ -40,7 +40,7 @@ public class State
 
         //successors.addAll(GenerateSuccessorsWithSwapInCar());
         successors.addAll(GenerateSuccessorsWithMove());
-        //successors.addAll(GenerateSuccessorsWithShift());
+        successors.addAll(GenerateSuccessorsWithShift());
 
         return successors;
     }
@@ -167,7 +167,7 @@ public class State
         return cars;
     }
 
-    private int GetNonEmptyCars()
+    public int GetNonEmptyCars()
     {
         int ncars = 0;
         for (var car : m_Cars)
