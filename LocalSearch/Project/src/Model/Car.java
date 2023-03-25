@@ -3,6 +3,7 @@ package Model;
 import IA.Comparticion.Usuario;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
 
 public class Car
 {
@@ -87,7 +88,8 @@ public class Car
         return distance*BLOCK_DISTANCE_IN_METERS;
     }
 
-    public Boolean AddPassenger(Usuario user)
+
+    /*public Boolean AddPassenger(Usuario user)
     {
         //if (IsFull()) return false;
         if (!HasDriver() && !user.equals(m_Owner)) return false;
@@ -103,6 +105,45 @@ public class Car
             m_PassengersRoute.set(m_PassengersRoute.size() - 1, user);
             m_PassengersRoute.add(user);
             m_PassengersRoute.add(m_Owner);
+        }
+        return true;
+    }*/
+
+
+    //Añadiendo la faceta Random se reduce la distancia máxima en aprox 126.000 km y se reducen aprox 20 coches.
+    public Boolean AddPassenger(Usuario user)
+    {
+        //if (IsFull()) return false;
+        if (!HasDriver() && !user.equals(m_Owner)) return false;
+        if (HasPassenger(user)) return false;
+
+        if (user.equals(m_Owner))
+        {
+            m_PassengersRoute.add(user);
+            m_PassengersRoute.add(user);
+        }
+        else
+        {
+            if(m_PassengersRoute.size() > 2)
+            {
+                Random rand = new Random();
+                //Generamos número aleatorio entre los índices de m_PassengersRoute, excepto el primer y último índice
+                int randNum = rand.nextInt(m_PassengersRoute.size() - 2) + 1;
+                m_PassengersRoute.add(randNum, user);
+
+                randNum = rand.nextInt(m_PassengersRoute.size() - 2) + 1;
+                m_PassengersRoute.add(randNum, user);
+
+                if (CheckRouteIntegrity()) return true;
+
+                m_PassengersRoute.add(m_PassengersRoute.size() - 1, user);
+                m_PassengersRoute.add(m_PassengersRoute.size() - 1, user);
+            }
+            else
+            {
+                m_PassengersRoute.add(m_PassengersRoute.size() - 1, user);
+                m_PassengersRoute.add(m_PassengersRoute.size() - 1, user);
+            }
         }
         return true;
     }

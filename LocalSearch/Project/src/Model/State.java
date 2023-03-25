@@ -144,8 +144,6 @@ public class State
 
     public Boolean IsSolution()
     {
-        Boolean isSolution = true;
-
         // Distancia total < 30Km. Conductor llega a tiempo al trabajo.
         for (int i = 0; i < m_Cars.size(); ++i)
         {
