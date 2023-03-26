@@ -40,7 +40,7 @@ public class State
 
         //successors.addAll(GenerateSuccessorsWithSwapInCar());
         successors.addAll(GenerateSuccessorsWithMove());
-        //successors.addAll(GenerateSuccessorsWithShift());
+        successors.addAll(GenerateSuccessorsWithShift());
 
         return successors;
     }
@@ -144,8 +144,6 @@ public class State
 
     public Boolean IsSolution()
     {
-        Boolean isSolution = true;
-
         // Distancia total < 30Km. Conductor llega a tiempo al trabajo.
         for (int i = 0; i < m_Cars.size(); ++i)
         {
@@ -167,7 +165,7 @@ public class State
         return cars;
     }
 
-    private int GetNonEmptyCars()
+    public int GetNonEmptyCars()
     {
         int ncars = 0;
         for (var car : m_Cars)

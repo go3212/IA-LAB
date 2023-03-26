@@ -29,13 +29,13 @@ public class Main
 
     public static void main(String[] args) throws Exception {
         long startTimeNano = System.nanoTime();
-        Usuarios users = new Usuarios(200, 100, 126); // 1ms
-        State state = new RandomState(users); // 3ms?
+        Usuarios users = new Usuarios(200, 100, 1234); // 1ms
+        State state = new SequentialState(users); // 3ms?
         State finalState1 = Main.HillClimbing(state, new HeuristicFunctionDistance());
-        State finalState2 = Main.HillClimbing(state, new HeuristicFunctionAverageCarDistance());
+        //State finalState2 = Main.HillClimbing(state, new HeuristicFunctionAverageCarDistance());
         System.out.println("Initial state: " + state.DistanceHeuristic());
+        System.out.println("Cars: " + finalState1.GetNonEmptyCars());
         System.out.println("Final state: " + finalState1.DistanceHeuristic());
-        System.out.println("Final state: " + finalState2.DistanceHeuristic());
 
         //var successors = state.GenerateAllSuccessors();
 
