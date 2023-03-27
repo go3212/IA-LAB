@@ -29,10 +29,10 @@ public class Car
         this.m_Owner = car.m_Owner;
     }
 
-    public Car(Usuario owner, ArrayList<Usuario> m_Users)
+    public Car(Usuario owner, ArrayList<Usuario> route)
     {
         this.m_Owner = owner;
-        this.m_PassengersRoute = m_Users;
+        this.m_PassengersRoute = route;
     }
 
     public Usuario GetOwner()

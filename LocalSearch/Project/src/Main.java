@@ -1,6 +1,8 @@
 import Aima.HeuristicFunctionAverageCarDistance;
 import Aima.HeuristicFunctionDistance;
 import Aima.IsGoalState;
+import Generators.GreedySolutionState;
+import Generators.RandomSolutionState;
 import Generators.RandomState;
 import Generators.SequentialState;
 import IA.Comparticion.Usuarios;
@@ -26,7 +28,7 @@ public class Main
     public static State SimulatedAnnealing(State initialState, HeuristicFunction heuristic) throws Exception
     {
         Problem problem = new Problem(initialState, new Aima.SimulatedAnnealing.SuccessorFunction(), new IsGoalState(), heuristic);
-        Search search = new SimulatedAnnealingSearch(25000, 25, 125, 0.0001);
+        Search search = new SimulatedAnnealingSearch(250000, 25, 10, 0.01);
         SearchAgent agent = new SearchAgent(problem, search);
         return (State)search.getGoalState();
     }
@@ -62,8 +64,8 @@ public class Main
     public static void main(String[] args) throws Exception
     {
         long startTimeNano = System.nanoTime();
-        Usuarios users = new Usuarios(200, 100, 1234); // 1ms
-        State state = new SequentialState(users); // 3ms?
+        Usuarios users = new Usuarios(200, 100, 4321); // 1ms
+        State state = new RandomState(users); // 3ms?
 
         var finalState = Main.SimulatedAnnealing(state, new HeuristicFunctionDistance());
         System.out.println("Initial state: " + state.DistanceHeuristic());

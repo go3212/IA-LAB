@@ -21,18 +21,31 @@ public class CarGenerator extends Car
     public Boolean CanPickup(Usuario user)
     {
         if (!HasCapacity()) return false;
-
-        return true;
+        return !CanDropoff(user);
     }
 
     public Boolean CanDropoff(Usuario user)
     {
-
-        return true;
+        int occ = 0;
+        for (int i = 0; i < m_PassengersRoute.size(); ++i)
+        {
+            if (m_PassengersRoute.get(i) == user) ++occ;
+        }
+        return occ%2 != 0;
     }
 
-    private Boolean HasCapacity()
+    public Boolean HasCapacity()
     {
         return GetRouteSpace() > 0;
+    }
+
+    public Double DistanceTo(Usuario user)
+    {
+        if (user == null) return Double.POSITIVE_INFINITY;
+        Double actDist = RouteDistanceMeters();
+        m_PassengersRoute.add(user);
+        Double newDist = RouteDistanceMeters();
+        m_PassengersRoute.remove(m_PassengersRoute.size() - 1);
+        return newDist - actDist;
     }
 }
