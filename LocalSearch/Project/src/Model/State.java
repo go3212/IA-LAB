@@ -3,8 +3,10 @@ package Model;
 import IA.Comparticion.Usuario;
 import IA.Comparticion.Usuarios;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Random;
 
 /**
  * Esta clase representa una solucion al problema.
@@ -42,6 +44,17 @@ public class State
         successors.addAll(GenerateSuccessorsWithMove());
         successors.addAll(GenerateSuccessorsWithShift());
 
+        return successors;
+    }
+
+    public ArrayList<State> GenerateRandomSuccessors(int number)
+    {
+        Random rand = new Random();
+        int fh = rand.nextInt(0, number + 1);
+        int sh = number - fh;
+        ArrayList<State> successors =  new ArrayList<>();
+        successors.addAll(GenerateRandomSuccessorsWithMove(fh));
+        successors.addAll(GenerateRandomSucessorsWithShift(sh));
         return successors;
     }
 
@@ -125,6 +138,58 @@ public class State
             }
         }
 
+        return successors;
+    }
+
+    public ArrayList<State> GenerateRandomSucessorsWithShift(int number)
+    {
+        ArrayList<State> successors = new ArrayList<>(); // O(c*n^2)
+        Random rand = new Random();
+
+        int maxIters = 20;
+
+        while (successors.size() != number && --maxIters != 0)
+        {
+            int i = rand.nextInt(0, m_Cars.size());
+            Car car = m_Cars.get(i);
+            ArrayList<Usuario> carUsers = car.GetUsers();
+            if (car.GetUsers().size() == 0) continue;
+            int j = rand.nextInt(0, car.GetUsers().size());
+            Usuario user = carUsers.get(j);
+            // Si lo podemos shiftear, generamos un estado sucesor...
+            State cpState = new State(this);
+            if (car.GetUsers().size() <= 1) continue;
+            if (cpState.m_Cars.get(i).ShiftRoute(RouteType.PICKUP, user, rand.nextInt(1, car.GetUsers().size())))
+                successors.add(cpState);
+        }
+        return successors;
+    }
+
+    public ArrayList<State> GenerateRandomSuccessorsWithMove(int number)
+    {
+        ArrayList<State> successors = new ArrayList<>();
+
+        int maxIters = 20;
+
+        // Basicamente para cada usuario (n) lo podemos mover a (c - 1) coches. El factor de ramificación es O(n*c)
+        Random rand = new Random();
+        int i = rand.nextInt(0, m_Cars.size());
+        while (successors.size() != number && --maxIters != 0)
+        {
+            Car car = m_Cars.get(i);
+            ArrayList<Usuario> carUsers = car.GetUsers();
+            if (carUsers.size() == 0) continue;
+            int j = rand.nextInt(0, carUsers.size());
+
+            Usuario user = carUsers.get(j);
+            // Si lo podemos eliminar, generamos un estado sucesor...
+            State cpState = new State(this);
+            if (!cpState.m_Cars.get(i).RemovePassenger(user)) continue;
+            // Si lo hemos eliminado correctamente, lo añadimos a los otro coche...
+            State cpState2 = new State(cpState);
+            if (cpState2.m_Cars.get(rand.nextInt(0, m_Cars.size())).AddPassenger(user))
+                successors.add(cpState2);
+        }
         return successors;
     }
 

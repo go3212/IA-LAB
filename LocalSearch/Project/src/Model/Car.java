@@ -7,10 +7,10 @@ import java.util.Random;
 
 public class Car
 {
-    private static int MAX_PASSENGERS = 3;
-    private static int BLOCK_DISTANCE_IN_METERS = 100;
+    protected static int MAX_PASSENGERS = 3;
+    protected static int BLOCK_DISTANCE_IN_METERS = 100;
     private Usuario m_Owner;
-    private ArrayList<Usuario> m_PassengersRoute;
+    protected ArrayList<Usuario> m_PassengersRoute;
 
     public Car(Usuario owner)
     {
@@ -87,7 +87,6 @@ public class Car
 
         return distance*BLOCK_DISTANCE_IN_METERS;
     }
-
 
     /*public Boolean AddPassenger(Usuario user)
     {
@@ -233,5 +232,25 @@ public class Car
         }
 
         return true;
+    }
+
+    protected int GetRouteSpace()
+    {
+        int space = MAX_PASSENGERS;
+
+        HashSet<Usuario> found = new HashSet<Usuario>();
+
+        for (int i = 0; i < m_PassengersRoute.size(); ++i)
+        {
+            if (space < 0) return space;
+            if (!found.contains(m_PassengersRoute.get(i)))
+            {
+                --space;
+                found.add(m_PassengersRoute.get(i));
+            }
+            else ++space;
+        }
+
+        return space;
     }
 }

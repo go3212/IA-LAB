@@ -1,4 +1,4 @@
-package Aima.HillClimbing;
+package Aima;
 
 import Model.State;
 
