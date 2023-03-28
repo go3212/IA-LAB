@@ -209,6 +209,9 @@ public class State
 
     public Boolean IsSolution()
     {
+        // Miramos que todos los usuarios esten asignados...
+        if (UsersInCars() != m_Users.size()) return false;
+
         // Distancia total < 30Km. Conductor llega a tiempo al trabajo.
         for (int i = 0; i < m_Cars.size(); ++i)
         {
@@ -218,6 +221,16 @@ public class State
         }
 
         return true;
+    }
+
+    public int UsersInCars()
+    {
+        HashSet<Usuario> users = new HashSet<>();
+        int userCount = 0;
+        for (var car : m_Cars)
+            for (var user : car.GetUsers())
+                users.add(user);
+        return users.size();
     }
 
     public ArrayList<Car> GetCars()

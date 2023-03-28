@@ -28,7 +28,7 @@ public class Main
     public static State SimulatedAnnealing(State initialState, HeuristicFunction heuristic) throws Exception
     {
         Problem problem = new Problem(initialState, new Aima.SimulatedAnnealing.SuccessorFunction(), new IsGoalState(), heuristic);
-        Search search = new SimulatedAnnealingSearch(250000, 25, 10, 0.01);
+        Search search = new SimulatedAnnealingSearch(300000, 25, 10, 0.0001);
         SearchAgent agent = new SearchAgent(problem, search);
         return (State)search.getGoalState();
     }
@@ -65,12 +65,12 @@ public class Main
     public static void main(String[] args) throws Exception
     {
         long startTimeNano = System.nanoTime();
-        Usuarios users = new Usuarios(20, 10, 4321); // 1ms
+        Usuarios users = new Usuarios(200, 100, 1234); // 1ms
         State state = new RandomSolutionState(users); // 3ms?
 
-        var finalState = Main.HillClimbing(state, new HeuristicFunctionDistance());
         System.out.println("Initial state: " + state.DistanceHeuristic());
         System.out.println("Is initial state solution: " + (state.IsSolution() ? "true" : "false"));
+        var finalState = Main.HillClimbing(state, new HeuristicFunctionDistance());
         System.out.println("Cars: " + finalState.GetNonEmptyCars());
         System.out.println("Final state: " + finalState.DistanceHeuristic());
         System.out.println("Is solution: " + (finalState.IsSolution() ? "true" : "false"));

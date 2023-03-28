@@ -8,11 +8,7 @@ public class HeuristicFunctionDistance implements aima.search.framework.Heuristi
     {
         State state = (State)var1;
         var distance = state.DistanceHeuristic();
-        if (state.IsSolution())
-            return distance;
-        else
-        {
-            return distance*100;
-        }
+        if (state.IsSolution()) return distance;
+        else return distance*100000.0;
     }
 }
