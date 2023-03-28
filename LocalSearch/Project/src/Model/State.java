@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class State
 {
-    private static Double ROUTE_MAX_DISTANCE_IN_METERS = 30000.0;
+    public final static Double ROUTE_MAX_DISTANCE_IN_METERS = 30000.0;
     protected Usuarios m_Users;
     protected ArrayList<Car> m_Cars;
 

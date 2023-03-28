@@ -82,6 +82,18 @@ public class GreedySolutionState extends State
             if (carClosest != null && carClosestAction != null)
             {
                 carClosest.GetPassengersRoute().add(carClosestAction);
+
+                if (carClosest.RouteDistanceMeters() > State.ROUTE_MAX_DISTANCE_IN_METERS)
+                {
+                    carClosest.RemovePassenger(carClosestAction);
+                    pickups.remove(carClosestAction);
+                    dropoffs.remove(carClosestAction);
+                    pickups.add(carClosestAction);
+                    dropoffs.add(carClosestAction);
+                    carClosest.GetPassengersRoute().add(carClosest.GetOwner());
+                    continue;
+                }
+
                 if (carClosest.CanDropoff(carClosestAction)) {
                     pickups.remove(carClosestAction);
                 } else dropoffs.remove(carClosestAction);
@@ -91,7 +103,8 @@ public class GreedySolutionState extends State
 
         carGenerators.forEach((car) ->
         {
-            car.GetPassengersRoute().add(car.GetOwner());
+            if (car.HasCapacity())
+                car.GetPassengersRoute().add(car.GetOwner());
         });
         this.m_Cars = new ArrayList<Car>(carGenerators);
     }

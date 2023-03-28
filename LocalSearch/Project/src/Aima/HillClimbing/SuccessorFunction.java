@@ -13,9 +13,17 @@ public class SuccessorFunction implements aima.search.framework.SuccessorFunctio
         State state = (State) var1;
 
         var stateSuccessors = state.GenerateAllSuccessors();
+        ArrayList<State> successorsS = new ArrayList<>();
+        if (state.IsSolution())
+        {
+            for (var s : stateSuccessors)
+            {
+                if (s.IsSolution()) successorsS.add(s);
+            }
+        } else successorsS = stateSuccessors;
 
         ArrayList<Successor> successors = new ArrayList<>();
-        stateSuccessors.forEach((successor) -> successors.add(new Successor("", successor)));
+        successorsS.forEach((successor) -> successors.add(new Successor("", successor)));
         return successors;
     }
 }

@@ -42,6 +42,7 @@ public class Main
         System.out.println("Initial state: " + state.DistanceHeuristic());
         System.out.println("Cars: " + finalState1.GetNonEmptyCars());
         System.out.println("Final state: " + finalState1.DistanceHeuristic());
+        System.out.println("Is solution: " + (finalState1.IsSolution() ? "true" : "false"));
 
         //var successors = state.GenerateAllSuccessors();
 
@@ -64,13 +65,15 @@ public class Main
     public static void main(String[] args) throws Exception
     {
         long startTimeNano = System.nanoTime();
-        Usuarios users = new Usuarios(200, 100, 4321); // 1ms
-        State state = new RandomState(users); // 3ms?
+        Usuarios users = new Usuarios(20, 10, 4321); // 1ms
+        State state = new RandomSolutionState(users); // 3ms?
 
-        var finalState = Main.SimulatedAnnealing(state, new HeuristicFunctionDistance());
+        var finalState = Main.HillClimbing(state, new HeuristicFunctionDistance());
         System.out.println("Initial state: " + state.DistanceHeuristic());
+        System.out.println("Is initial state solution: " + (state.IsSolution() ? "true" : "false"));
         System.out.println("Cars: " + finalState.GetNonEmptyCars());
         System.out.println("Final state: " + finalState.DistanceHeuristic());
+        System.out.println("Is solution: " + (finalState.IsSolution() ? "true" : "false"));
 
         long endTimeNano = System.nanoTime();
         System.out.println((endTimeNano - startTimeNano) + "ns");

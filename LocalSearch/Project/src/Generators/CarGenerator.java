@@ -36,6 +36,10 @@ public class CarGenerator extends Car
 
     public Boolean HasCapacity()
     {
+        if (m_PassengersRoute.size() == 0) return true;
+        if (m_PassengersRoute.size() <= 1) return true;
+        if (m_PassengersRoute.get(m_PassengersRoute.size() - 1) == GetOwner())
+            return false;
         return GetRouteSpace() > 0;
     }
 

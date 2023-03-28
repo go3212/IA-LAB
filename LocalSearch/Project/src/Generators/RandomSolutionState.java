@@ -17,7 +17,9 @@ public class RandomSolutionState extends State
     {
         State state = new RandomState(this.m_Users);
         while (!state.IsSolution())
+        {
             state = new RandomState(this.m_Users);
+        }
         m_Cars = state.GetCars();
     }
 }
