@@ -12,7 +12,7 @@ public class SuccessorFunction implements aima.search.framework.SuccessorFunctio
     {
         State state = (State) var1;
 
-        var stateSuccessors = state.GenerateRandomSuccessors(1);
+        var stateSuccessors = state.GenerateRandomSuccessors(5);
 
         ArrayList<Successor> successors = new ArrayList<>();
         stateSuccessors.forEach((successor) -> successors.add(new Successor("", successor)));

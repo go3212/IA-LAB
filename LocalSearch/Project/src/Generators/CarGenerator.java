@@ -78,4 +78,16 @@ public class CarGenerator extends Car
         m_PassengersRoute.remove(m_PassengersRoute.size() - 1);
         return newDist - actDist;
     }
+
+    public Double DistanceTo(Usuario user, Usuario user2)
+    {
+        if (user == null) return Double.POSITIVE_INFINITY;
+        Double actDist = RouteDistanceMeters();
+        PushToRoute(user);
+        PushToRoute(user2);
+        Double newDist = RouteDistanceMeters();
+        PopFromRoute();
+        PopFromRoute();
+        return newDist - actDist;
+    }
 }

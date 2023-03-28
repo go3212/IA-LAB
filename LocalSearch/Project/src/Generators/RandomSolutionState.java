@@ -58,7 +58,7 @@ public class RandomSolutionState extends State
                     pickups.remove(closestAction);
                     dropoffs.remove(closestAction);
 
-                    if (car.RouteDistanceMeters() > State.ROUTE_MAX_DISTANCE_IN_METERS)
+                    if (car.RouteDistanceMeters() + car.DistanceTo(car.GetOwner()) >= State.ROUTE_MAX_DISTANCE_IN_METERS)
                     {
                         do
                         {
@@ -67,7 +67,7 @@ public class RandomSolutionState extends State
                             car.RemovePassenger(last);
                             pickups.add(last);
                             dropoffs.add(last);
-                        } while (car.RouteDistanceMeters() + (rand.nextDouble(0, 10))*car.DistanceTo(car.GetOwner()) >= State.ROUTE_MAX_DISTANCE_IN_METERS);
+                        } while (car.RouteDistanceMeters() + (rand.nextDouble(1, 5))*car.DistanceTo(car.GetOwner()) >= State.ROUTE_MAX_DISTANCE_IN_METERS);
                         break;
                     }
                 }
