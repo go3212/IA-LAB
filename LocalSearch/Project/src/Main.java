@@ -1,5 +1,5 @@
-import Aima.HeuristicFunctionAverageCarDistance;
 import Aima.HeuristicFunctionDistance;
+import Aima.HeuristicFunctionPonderatedCarDistance;
 import Aima.IsGoalState;
 import Generators.*;
 import IA.Comparticion.Usuarios;
@@ -63,27 +63,49 @@ public class Main
         System.out.println((endTimeNano - startTimeNano)/1000000 + "ms");
     }
 
+    public static void SimAnnealingStepsExperiment() throws Exception {
+        for (int i = 2500; i <= 100000; i += 2500)
+        {
+            long startTimeNano = System.nanoTime();
+            Random seed = new Random();
+
+            Usuarios users = new Usuarios(200, 100, seed.nextInt(0, 312984128)); // 1ms
+            State state = new RandomSolutionState(users); // 3ms?
+            //System.out.println("Initial state: " + state.DistanceHeuristic());
+            //System.out.println("Is initial state solution: " + (state.IsSolution() ? "true" : "false"));
+            var finalState = Main.SimulatedAnnealing(state, new HeuristicFunctionDistance(), i, 10, 5, 0.01);
+            //System.out.println("Cars: " + finalState.GetNonEmptyCars());
+            //System.out.println("Final state: " + finalState.DistanceHeuristic());
+            //System.out.println("Is solution: " + (finalState.IsSolution() ? "true" : "false"));
+            long endTimeNano = System.nanoTime();
+
+            Double distKm = (finalState.DistanceHeuristic()/1000);
+            System.out.println(distKm.intValue() + ";" + finalState.GetNonEmptyCars() + ";" + (endTimeNano - startTimeNano)/1000000 + ";" + i);
+
+            //System.out.println((endTimeNano - startTimeNano) + "ns");
+            //System.out.println((endTimeNano - startTimeNano)/1000000 + "ms");
+        }
+    }
+
     public static void main(String[] args) throws Exception
     {
-        ArrayList<Result> resultArray = new ArrayList<Result>();
-
-        for (int i = 100; i <= 800; i += 100)
+        for (int i = 1; i <= 10; i += 1)
         {
-                long startTimeNano = System.nanoTime();
-                Random seed = new Random();
+            long startTimeNano = System.nanoTime();
+            Random seed = new Random();
 
-                Usuarios users = new Usuarios(i, i/2, seed.nextInt(0, 312984128)); // 1ms
-                State state = new RandomSolutionState(users); // 3ms?
-                //System.out.println("Initial state: " + state.DistanceHeuristic());
-                //System.out.println("Is initial state solution: " + (state.IsSolution() ? "true" : "false"));
-                var finalState = Main.HillClimbing(state, new HeuristicFunctionDistance());
-                //System.out.println("Cars: " + finalState.GetNonEmptyCars());
-                //System.out.println("Final state: " + finalState.DistanceHeuristic());
-                //System.out.println("Is solution: " + (finalState.IsSolution() ? "true" : "false"));
-                long endTimeNano = System.nanoTime();
+            Usuarios users = new Usuarios(200, 100, seed.nextInt(0, 312984128)); // 1ms
+            State state = new RandomSolutionState(users); // 3ms?
+            //System.out.println("Initial state: " + state.DistanceHeuristic());
+            //System.out.println("Is initial state solution: " + (state.IsSolution() ? "true" : "false"));
+            var finalState = Main.SimulatedAnnealing(state, new HeuristicFunctionPonderatedCarDistance(), 20000, 10, 100, 0.01);
+            //System.out.println("Cars: " + finalState.GetNonEmptyCars());
+            //System.out.println("Final state: " + finalState.DistanceHeuristic());
+            //System.out.println("Is solution: " + (finalState.IsSolution() ? "true" : "false"));
+            long endTimeNano = System.nanoTime();
 
-                Double distKm = (finalState.DistanceHeuristic()/1000);
-                System.out.println(distKm.intValue() + ";" + finalState.GetNonEmptyCars() + ";" + (endTimeNano - startTimeNano)/1000000 + ";" + i + ";" + i/2);
+            Double distKm = (finalState.DistanceHeuristic()/1000);
+            System.out.println(distKm.intValue() + ";" + finalState.GetNonEmptyCars() + ";" + (endTimeNano - startTimeNano)/1000000);
 
             //System.out.println((endTimeNano - startTimeNano) + "ns");
             //System.out.println((endTimeNano - startTimeNano)/1000000 + "ms");

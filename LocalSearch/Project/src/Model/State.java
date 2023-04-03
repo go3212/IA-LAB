@@ -40,7 +40,7 @@ public class State
     {
         ArrayList<State> successors = new ArrayList<>();
 
-        //successors.addAll(GenerateSuccessorsWithSwapInCar());
+        successors.addAll(GenerateSuccessorsWithSwapInCar());
         successors.addAll(GenerateSuccessorsWithMove());
         successors.addAll(GenerateSuccessorsWithShift());
 
