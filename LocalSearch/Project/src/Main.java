@@ -149,5 +149,8 @@ public class Main
             car.PrintRoute();
         }
 
+        System.out.println();
+
+        System.out.println("Total distance: " + solutionState.DistanceHeuristic() + "; Final cars: " + solutionState.GetNonEmptyCars());
     }
 }
