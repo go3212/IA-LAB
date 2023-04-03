@@ -3,6 +3,7 @@ import Aima.HeuristicFunctionPonderatedCarDistance;
 import Aima.IsGoalState;
 import Generators.*;
 import IA.Comparticion.Usuarios;
+import Model.Car;
 import Model.Result;
 import Model.State;
 import aima.search.framework.HeuristicFunction;
@@ -12,8 +13,10 @@ import aima.search.framework.SearchAgent;
 import aima.search.informed.HillClimbingSearch;
 import aima.search.informed.SimulatedAnnealingSearch;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Main
 {
@@ -89,26 +92,62 @@ public class Main
 
     public static void main(String[] args) throws Exception
     {
-        for (int i = 1; i <= 10; i += 1)
+
+        int users;
+        int drivers;
+        int algorithmChoice;
+        int heuristic;
+        int seed;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number of users: ");
+        users = scanner.nextInt();
+
+        System.out.print("Enter number of drivers: ");
+        drivers = scanner.nextInt();
+
+        System.out.print("Enter a seed: ");
+        seed = scanner.nextInt();
+
+        System.out.println("Please select an algorithm:");
+        System.out.println("1. Hill Climbing");
+        System.out.println("2. Simulated Annealing");
+        algorithmChoice = scanner.nextInt();
+
+        System.out.println("Please select an heuristic:");
+        System.out.println("1. Distance");
+        System.out.println("2. Distance ponderated with number of drivers");
+        heuristic = scanner.nextInt();
+
+        HeuristicFunction h;
+        if (heuristic == 1) h = new HeuristicFunctionDistance();
+        else h = new HeuristicFunctionPonderatedCarDistance();
+
+        Usuarios u = new Usuarios(200, 100, seed); // 1ms
+        State initialState = new RandomSolutionState(u);
+        State solutionState;
+
+        if (algorithmChoice == 1)
         {
-            long startTimeNano = System.nanoTime();
-            Random seed = new Random();
-
-            Usuarios users = new Usuarios(200, 100, seed.nextInt(0, 312984128)); // 1ms
-            State state = new RandomSolutionState(users); // 3ms?
-            //System.out.println("Initial state: " + state.DistanceHeuristic());
-            //System.out.println("Is initial state solution: " + (state.IsSolution() ? "true" : "false"));
-            var finalState = Main.SimulatedAnnealing(state, new HeuristicFunctionPonderatedCarDistance(), 20000, 10, 100, 0.01);
-            //System.out.println("Cars: " + finalState.GetNonEmptyCars());
-            //System.out.println("Final state: " + finalState.DistanceHeuristic());
-            //System.out.println("Is solution: " + (finalState.IsSolution() ? "true" : "false"));
-            long endTimeNano = System.nanoTime();
-
-            Double distKm = (finalState.DistanceHeuristic()/1000);
-            System.out.println(distKm.intValue() + ";" + finalState.GetNonEmptyCars() + ";" + (endTimeNano - startTimeNano)/1000000);
-
-            //System.out.println((endTimeNano - startTimeNano) + "ns");
-            //System.out.println((endTimeNano - startTimeNano)/1000000 + "ms");
+            // Run Simulated Annealing algorithm
+            System.out.println("Running Hill Climbing algorithm...");
+            solutionState = Main.HillClimbing(initialState, h);
         }
+        else if (algorithmChoice == 2)
+        {
+            // Run Hill Climbing algorithm
+            System.out.println("Running Simulated Annealing algorithm...");
+            solutionState = Main.SimulatedAnnealing(initialState, h, 20000, 10, 100, 0.01);
+
+        } else {
+            throw new Exception("ERROR, algorithm not found");
+        }
+
+        var cars = solutionState.GetCars();
+        for (var car : cars)
+        {
+            car.PrintRoute();
+        }
+
     }
 }

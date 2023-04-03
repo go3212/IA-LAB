@@ -253,4 +253,12 @@ public class Car
 
         return space;
     }
+
+    public void PrintRoute()
+    {
+        System.out.println("CarOwner: " + GetOwner() + "; Distance: " + this.RouteDistanceMeters()/1000 + "Km; Route: ");
+        for (var u : m_PassengersRoute)
+            System.out.println(u);
+        System.out.println();
+    }
 }
