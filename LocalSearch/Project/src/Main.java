@@ -90,9 +90,8 @@ public class Main
         }
     }
 
-    public static void main(String[] args) throws Exception
-    {
 
+    public static void X() throws Exception {
         int users;
         int drivers;
         int algorithmChoice;
@@ -152,5 +151,9 @@ public class Main
         System.out.println();
 
         System.out.println("Total distance: " + solutionState.DistanceHeuristic() + "; Final cars: " + solutionState.GetNonEmptyCars());
+    }
+    public static void main(String[] args) throws Exception
+    {
+        Main.Extra();
     }
 }
