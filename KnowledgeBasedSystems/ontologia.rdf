@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/"
+     xml:base="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica">
+        <rdfs:comment>ontologia de la practica</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#dislikes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#dislikes">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#IMC -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#IMC">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Kcal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Kcal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#age">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#carbs -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#carbs">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#fat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#fat">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#height -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#height">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#name">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#physicalActivity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#physicalActivity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#protein -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#protein">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#requiredKcal -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#requiredKcal">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#sex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#sex">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#weight -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#weight">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
+    
+
+
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
