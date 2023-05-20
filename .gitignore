@@ -1,4 +1,13 @@
+# macOS
 **/.DS_Store
-**/out
+
+# Visual Studio Code
+**/.vscode
+*.code-workspace
+
+# IntelliJ IDEA / JetBrains
 ./.idea
 ./LocalSearch/Project/.idea/misc.xml
+
+# Output directory
+**/out
