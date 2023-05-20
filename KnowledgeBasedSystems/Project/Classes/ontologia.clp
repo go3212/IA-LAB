@@ -2,14 +2,29 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 20/05/2023 18:02:46
+;;; :Date 20/05/2023 18:47:13
 
 (defclass Disease
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
-    (slot name
+    (slot Name
+        (type SYMBOL)
+        (create-accessor read-write))
+)
+
+(defclass Ingredient
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (slot topObjectProperty
+        (type SYMBOL)
+        (create-accessor read-write))
+    (multislot Allergens
         (type STRING)
+        (create-accessor read-write))
+    (slot Name
+        (type SYMBOL)
         (create-accessor read-write))
 )
 
@@ -20,16 +35,55 @@
     (slot Kcal
         (type INTEGER)
         (create-accessor read-write))
-    (slot carbs
+    (slot Name
+        (type SYMBOL)
+        (create-accessor read-write))
+)
+
+(defclass Minerals
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (slot Calcium
         (type FLOAT)
         (create-accessor read-write))
-    (slot fat
+    (slot Iron
         (type FLOAT)
         (create-accessor read-write))
-    (slot name
-        (type STRING)
+    (slot Magnesium
+        (type FLOAT)
         (create-accessor read-write))
-    (slot protein
+    (slot Potasium
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot Zinc
+        (type FLOAT)
+        (create-accessor read-write))
+)
+
+(defclass NutritionalValue
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (slot Calories
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot Carbohydrates
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot Fat
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot Fiber
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot Protein
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot Sodium
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot Sugar
         (type FLOAT)
         (create-accessor read-write))
 )
@@ -57,6 +111,33 @@
         (type STRING)
         (create-accessor read-write))
     (slot weight
+        (type FLOAT)
+        (create-accessor read-write))
+)
+
+(defclass Vitamins
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (slot A
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B2
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot C
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot D
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot E
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot K
         (type FLOAT)
         (create-accessor read-write))
 )

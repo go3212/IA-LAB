@@ -10,8 +10,118 @@
                                                                                       rdfs:comment "ontologia de la practica" .
 
 #################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#has
+:has rdf:type owl:ObjectProperty ;
+     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+###  http://www.w3.org/2002/07/owl#topObjectProperty
+owl:topObjectProperty rdf:type owl:FunctionalProperty ;
+                      rdfs:domain :Ingredient ;
+                      rdfs:range :NutritionalValue .
+
+
+#################################################################
 #    Data properties
 #################################################################
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#A
+:A rdf:type owl:DatatypeProperty ;
+   rdfs:subPropertyOf owl:topDataProperty ;
+   rdf:type owl:FunctionalProperty ;
+   rdfs:domain :Vitamins ;
+   rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Allergens
+:Allergens rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Ingredient ;
+           rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#B
+:B rdf:type owl:DatatypeProperty ;
+   rdfs:subPropertyOf owl:topDataProperty ;
+   rdf:type owl:FunctionalProperty ;
+   rdfs:domain :Vitamins ;
+   rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#B2
+:B2 rdf:type owl:DatatypeProperty ;
+    rdfs:subPropertyOf owl:topDataProperty ;
+    rdf:type owl:FunctionalProperty ;
+    rdfs:domain :Vitamins ;
+    rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#C
+:C rdf:type owl:DatatypeProperty ;
+   rdfs:subPropertyOf owl:topDataProperty ;
+   rdf:type owl:FunctionalProperty ;
+   rdfs:domain :Vitamins ;
+   rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Calcium
+:Calcium rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :Minerals ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Calories
+:Calories rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :NutritionalValue ;
+          rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Carbohydrates
+:Carbohydrates rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
+               rdfs:domain :NutritionalValue ;
+               rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#D
+:D rdf:type owl:DatatypeProperty ;
+   rdfs:subPropertyOf owl:topDataProperty ;
+   rdf:type owl:FunctionalProperty ;
+   rdfs:domain :Vitamins ;
+   rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#E
+:E rdf:type owl:DatatypeProperty ;
+   rdfs:subPropertyOf owl:topDataProperty ;
+   rdf:type owl:FunctionalProperty ;
+   rdfs:domain :Vitamins ;
+   rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Fat
+:Fat rdf:type owl:DatatypeProperty ;
+     rdfs:subPropertyOf owl:topDataProperty ;
+     rdf:type owl:FunctionalProperty ;
+     rdfs:domain :NutritionalValue ;
+     rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Fiber
+:Fiber rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :NutritionalValue ;
+       rdfs:range xsd:float .
+
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#IMC
 :IMC rdf:type owl:DatatypeProperty ;
@@ -19,6 +129,22 @@
      rdf:type owl:FunctionalProperty ;
      rdfs:domain :Persona ;
      rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Iron
+:Iron rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Minerals ;
+      rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#K
+:K rdf:type owl:DatatypeProperty ;
+   rdfs:subPropertyOf owl:topDataProperty ;
+   rdf:type owl:FunctionalProperty ;
+   rdfs:domain :Vitamins ;
+   rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Kcal
@@ -29,28 +155,69 @@
       rdfs:range xsd:integer .
 
 
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Magnesium
+:Magnesium rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain :Minerals ;
+           rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Name
+:Name rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Disease ,
+                  :Ingredient ,
+                  :Meal .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Potasium
+:Potasium rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain :Minerals ;
+          rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Protein
+:Protein rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain :NutritionalValue ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Sodium
+:Sodium rdf:type owl:DatatypeProperty ;
+        rdfs:subPropertyOf owl:topDataProperty ;
+        rdf:type owl:FunctionalProperty ;
+        rdfs:domain :NutritionalValue ;
+        rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Sugar
+:Sugar rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain :NutritionalValue ;
+       rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Zinc
+:Zinc rdf:type owl:DatatypeProperty ;
+      rdfs:subPropertyOf owl:topDataProperty ;
+      rdf:type owl:FunctionalProperty ;
+      rdfs:domain :Minerals ;
+      rdfs:range xsd:float .
+
+
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#age
 :age rdf:type owl:DatatypeProperty ;
      rdfs:subPropertyOf owl:topDataProperty ;
      rdf:type owl:FunctionalProperty ;
      rdfs:domain :Persona ;
      rdfs:range xsd:integer .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#carbs
-:carbs rdf:type owl:DatatypeProperty ;
-       rdfs:subPropertyOf owl:topDataProperty ;
-       rdf:type owl:FunctionalProperty ;
-       rdfs:domain :Meal ;
-       rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#fat
-:fat rdf:type owl:DatatypeProperty ;
-     rdfs:subPropertyOf owl:topDataProperty ;
-     rdf:type owl:FunctionalProperty ;
-     rdfs:domain :Meal ;
-     rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#height
@@ -61,29 +228,12 @@
         rdfs:range xsd:integer .
 
 
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#name
-:name rdf:type owl:DatatypeProperty ;
-      rdfs:subPropertyOf owl:topDataProperty ;
-      rdf:type owl:FunctionalProperty ;
-      rdfs:domain :Disease ,
-                  :Meal ;
-      rdfs:range xsd:string .
-
-
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#physicalActivity
 :physicalActivity rdf:type owl:DatatypeProperty ;
                   rdfs:subPropertyOf owl:topDataProperty ;
                   rdf:type owl:FunctionalProperty ;
                   rdfs:domain :Persona ;
                   rdfs:range xsd:integer .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#protein
-:protein rdf:type owl:DatatypeProperty ;
-         rdfs:subPropertyOf owl:topDataProperty ;
-         rdf:type owl:FunctionalProperty ;
-         rdfs:domain :Meal ;
-         rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#requiredKcal
@@ -118,12 +268,28 @@
 :Disease rdf:type owl:Class .
 
 
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Ingredient
+:Ingredient rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Meal
 :Meal rdf:type owl:Class .
 
 
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Minerals
+:Minerals rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#NutritionalValue
+:NutritionalValue rdf:type owl:Class .
+
+
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona
 :Persona rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Vitamins
+:Vitamins rdf:type owl:Class .
 
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
