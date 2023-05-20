@@ -13,9 +13,25 @@
 #    Object Properties
 #################################################################
 
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#has
-:has rdf:type owl:ObjectProperty ;
-     rdfs:subPropertyOf owl:topObjectProperty .
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#HasMinerals
+:HasMinerals rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :NutritionalValue ;
+             rdfs:range :Minerals .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#HasNutritionalValue
+:HasNutritionalValue rdf:type owl:ObjectProperty ;
+                     rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdfs:domain :Ingredient ;
+                     rdfs:range :NutritionalValue .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#HasVitamins
+:HasVitamins rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain :NutritionalValue ;
+             rdfs:range :Vitamins .
 
 
 ###  http://www.w3.org/2002/07/owl#topObjectProperty

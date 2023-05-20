@@ -2,7 +2,7 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 20/05/2023 18:47:13
+;;; :Date 20/05/2023 19:38:27
 
 (defclass Disease
     (is-a USER)
@@ -17,6 +17,9 @@
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
+    (multislot HasNutritionalValue
+        (type INSTANCE)
+        (create-accessor read-write))
     (slot topObjectProperty
         (type SYMBOL)
         (create-accessor read-write))
@@ -65,6 +68,12 @@
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
+    (multislot HasMinerals
+        (type INSTANCE)
+        (create-accessor read-write))
+    (multislot HasVitamins
+        (type INSTANCE)
+        (create-accessor read-write))
     (slot Calories
         (type FLOAT)
         (create-accessor read-write))
@@ -140,4 +149,7 @@
     (slot K
         (type FLOAT)
         (create-accessor read-write))
+)
+
+(definstances instances
 )
