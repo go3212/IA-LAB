@@ -6,6 +6,6 @@
   (Fiber 0.6) 
   (Sodium 1) 
   (Sugar 0.1) 
-  (Vitamins Vitamins-Rice)
-  (Minerals Minerals-Rice)
+  (HasVitamins Vitamins-Rice)
+  (HasMinerals Minerals-Rice)
 )
