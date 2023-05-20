@@ -28,7 +28,7 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#dislikes">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Meal"/>
     </owl:ObjectProperty>
     
 
@@ -60,7 +60,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Kcal">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Meal"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
     </owl:DatatypeProperty>
     
@@ -82,7 +82,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#carbs">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Meal"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
@@ -93,7 +93,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#fat">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Meal"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
@@ -115,7 +115,8 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#name">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Meal"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#disease"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
@@ -137,7 +138,7 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#protein">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Meal"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
     </owl:DatatypeProperty>
     
@@ -187,15 +188,21 @@
     
 
 
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Meal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Meal"/>
+    
+
+
     <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Persona"/>
     
 
 
-    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato -->
+    <!-- http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#disease -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Plato"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#disease"/>
 </rdf:RDF>
 
 
