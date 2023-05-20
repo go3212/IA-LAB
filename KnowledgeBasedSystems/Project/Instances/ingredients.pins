@@ -1,4 +1,105 @@
 ([Rice] of Ingredient
   (Name  "Rice")
   (HasNutritionalValue NutritionalValue-Rice)
+  (Allergens "none")
+)
+([Chicken] of Ingredient
+  (Name  "Chicken")
+  (HasNutritionalValue NutritionalValue-Chicken)
+  (Allergens "none")
+)
+([Beef] of Ingredient
+  (Name  "Beef")
+  (HasNutritionalValue NutritionalValue-Beef)
+  (Allergens "none")
+)
+([Potato] of Ingredient
+  (Name  "Potato")
+  (HasNutritionalValue NutritionalValue-Potato)
+  (Allergens "none")
+)
+([Broccoli] of Ingredient
+  (Name  "Broccoli")
+  (HasNutritionalValue NutritionalValue-Broccoli)
+  (Allergens "none")
+)
+([Carrots] of Ingredient
+  (Name  "Carrots")
+  (HasNutritionalValue NutritionalValue-Carrots)
+  (Allergens "none")
+)
+([Tomatoes] of Ingredient
+  (Name  "Tomatoes")
+  (HasNutritionalValue NutritionalValue-Tomatoes)
+  (Allergens "none")
+)
+([Lettuce] of Ingredient
+  (Name  "Lettuce")
+  (HasNutritionalValue NutritionalValue-Lettuce)
+  (Allergens "none")
+)
+([Apple] of Ingredient
+  (Name  "Apple")
+  (HasNutritionalValue NutritionalValue-Apple)
+  (Allergens "none")
+)
+([Banana] of Ingredient
+  (Name  "Banana")
+  (HasNutritionalValue NutritionalValue-Banana)
+  (Allergens "none")
+)
+([Orange] of Ingredient
+  (Name  "Orange")
+  (HasNutritionalValue NutritionalValue-Orange)
+  (Allergens "none")
+)
+([Blueberries] of Ingredient
+  (Name  "Blueberries")
+  (HasNutritionalValue NutritionalValue-Blueberries)
+  (Allergens "none")
+)
+([Strawberries] of Ingredient
+  (Name  "Strawberries")
+  (HasNutritionalValue NutritionalValue-Strawberries)
+  (Allergens "none")
+)
+([Spinach] of Ingredient
+  (Name  "Spinach")
+  (HasNutritionalValue NutritionalValue-Spinach)
+  (Allergens "none")
+)
+([Almonds] of Ingredient
+  (Name  "Almonds")
+  (HasNutritionalValue NutritionalValue-Almonds)
+  (Allergens "tree nuts")
+)
+([WheatBread] of Ingredient
+  (Name  "WheatBread")
+  (HasNutritionalValue NutritionalValue-WheatBread)
+  (Allergens "gluten")
+)
+([Sausages] of Ingredient
+  (Name  "Sausages")
+  (HasNutritionalValue NutritionalValue-Sausages)
+  (Allergens "none")
+)
+([Pepper] of Ingredient
+  (Name  "Pepper")
+  (HasNutritionalValue NutritionalValue-Pepper)
+  (Allergens "none")
+)
+([Lentils] of Ingredient
+  (Name  "Lentils")
+  (HasNutritionalValue NutritionalValue-Lentils)
+  (Allergens "none")
+)
+([Eggs] of Ingredient
+  (Name  "Eggs")
+  (HasNutritionalValue NutritionalValue-Eggs)
+  (Allergens "eggs")
+)
+([Butter] of Ingredient
+  (Name  "Butter")
+  (HasNutritionalValue NutritionalValue-Butter)
+  (Allergens "dairy")
 )
