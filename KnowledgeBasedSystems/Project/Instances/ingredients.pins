@@ -1,4 +1,4 @@
 ([Rice] of Ingredient
   (Name  "Rice")
-  (NutritionalValue NutritionalValue-Rice)
+  (HasNutritionalValue NutritionalValue-Rice)
 )
