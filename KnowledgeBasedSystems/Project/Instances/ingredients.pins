@@ -3,16 +3,6 @@
      (NutritionalValue (make-instance of NutritionalValue (Calories 130) (Protein 2.7) (Carbohydrates 28) (Fat 0.3) (Fiber 0.6) (Sodium 1) (Sugar 0.1) (Vitamins (make-instance of Vitamins (A 0) (B 0.1) (B2 0) (C 0) (D 0) (E 0.1) (K 0))) (Minerals (make-instance of Minerals (Calcium 10) (Iron 0.2) (Magnesium 19) (Potassium 35) (Zinc 0.6)))))
 )
 
-([Wheat] of Ingredient
-     (Name  "Wheat")
-     (NutritionalValue (make-instance of NutritionalValue (Calories 339) (Protein 13.2) (Carbohydrates 72) (Fat 1.5) (Fiber 10.7) (Sodium 2) (Sugar 0.4) (Vitamins (make-instance of Vitamins (A 0) (B 0.3) (B2 0.1) (C 0) (D 0) (E 0.8) (K 1.9))) (Minerals (make-instance of Minerals (Calcium 34) (Iron 3.9) (Magnesium 138) (Potassium 431) (Zinc 2.9))))
-)
-
-([Eggs] of Ingredient
-     (Name  "Eggs")
-     (Allergens "Eggs")
-     (NutritionalValue (make-instance of NutritionalValue (Calories 68) (Protein 5.5) (Carbohydrates 0.6) (Fat 4.8) (Fiber 0) (Sodium 70) (Sugar 0.6) (Vitamins (make-instance of Vitamins (A 244) (B 0.1) (B2 0.3) (C 0) (D 41) (E 1) (K 0))) (Minerals (make-instance of Minerals (Calcium 25) (Iron 0.9) (Magnesium 6) (Potassium 63) (Zinc 0.6))))
-)
 ([Apple] of Ingredient
      (Name "Apple")
      (Allergens "none")
@@ -38,6 +28,7 @@
                                    (Magnesium 5)
                                    (Potasium 107)
                                    (Zinc 0.04))))
+                                   
 ([Banana] of Ingredient
      (Name "Banana")
      (Allergens "none")
