@@ -188,12 +188,11 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
                   :Meal .
 
 
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Potasium
-:Potasium rdf:type owl:DatatypeProperty ;
-          rdfs:subPropertyOf owl:topDataProperty ;
-          rdf:type owl:FunctionalProperty ;
-          rdfs:domain :Minerals ;
-          rdfs:range xsd:float .
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Potassium
+:Potassium rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdfs:domain :Minerals ;
+           rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Protein

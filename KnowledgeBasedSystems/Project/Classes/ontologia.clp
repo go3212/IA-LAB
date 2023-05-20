@@ -2,7 +2,7 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 20/05/2023 19:38:27
+;;; :Date 20/05/2023 19:44:27
 
 (defclass Disease
     (is-a USER)
@@ -56,7 +56,7 @@
     (slot Magnesium
         (type FLOAT)
         (create-accessor read-write))
-    (slot Potasium
+    (multislot Potassium
         (type FLOAT)
         (create-accessor read-write))
     (slot Zinc
@@ -152,8 +152,4 @@
 )
 
 (definstances instances
-    ([Rice] of Ingredient
-         (Name  "Rice")
-         (HasNutritionalValue (make-instance of NutritionalValue (Calories 130) (Protein 2.7) (Carbohydrates 28) (Fat 0.3) (Fiber 0.6) (Sodium 1) (Sugar 0.1) (HasVitamins (make-instance of Vitamins (A 0) (B 0.1) (B2 0) (C 0) (D 0) (E 0.1) (K 0))) (HasMinerals (make-instance of Minerals (Calcium 10) (Iron 0.2) (Magnesium 19) (Potassium 35) (Zinc 0.6)))))
-    )
 )
