@@ -1,0 +1,20 @@
+([Hypertension] of Disease
+    (Name "Hypertension"))
+
+([Ischemic_Heart_Disease] of Disease
+    (Name "Ischemic Heart Disease"))
+
+([Diabetes] of Disease
+    (Name "Diabetes"))
+
+([Osteoporosis] of Disease
+    (Name "Osteoporosis"))
+
+([Dysphagia] of Disease
+    (Name "Dysphagia"))
+
+([Hyperlipidemia] of Disease
+    (Name "Hyperlipidemia"))
+
+([Hypertriglyceridemia] of Disease
+    (Name "Hypertriglyceridemia"))
