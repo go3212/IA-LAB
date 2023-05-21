@@ -1,7 +1,7 @@
 ([Hypertension] of Disease
     (Name "Hypertension"))
 
-([Ischemic_Heart_Disease] of Disease
+([Ischemic-Heart-Disease] of Disease
     (Name "Ischemic Heart Disease"))
 
 ([Diabetes] of Disease
@@ -18,3 +18,9 @@
 
 ([Hypertriglyceridemia] of Disease
     (Name "Hypertriglyceridemia"))
+
+([Inflammatory-Joint-Diseases] of Disease
+  (Name "Inflammatory Joint Diseases"))
+
+([Hyperuricemia] of Disease
+  (Name "Hyperuricemia"))
