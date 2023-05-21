@@ -2,7 +2,7 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 20/05/2023 19:44:27
+;;; :Date 21/05/2023 15:57:43
 
 (defclass Disease
     (is-a USER)
@@ -23,7 +23,7 @@
     (slot topObjectProperty
         (type SYMBOL)
         (create-accessor read-write))
-    (multislot Allergens
+    (slot Allergens
         (type STRING)
         (create-accessor read-write))
     (slot Name
@@ -128,6 +128,27 @@
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
+    (slot B1
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B12
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B3
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B5
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B6
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B7
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B9
+        (type FLOAT)
+        (create-accessor read-write))
     (slot A
         (type FLOAT)
         (create-accessor read-write))
@@ -149,4 +170,7 @@
     (slot K
         (type FLOAT)
         (create-accessor read-write))
+)
+
+(definstances instances
 )
