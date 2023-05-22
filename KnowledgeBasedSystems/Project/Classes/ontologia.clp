@@ -2,7 +2,19 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 21/05/2023 15:57:43
+;;; :Date 23/05/2023 00:12:02
+
+(defclass Course
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (slot Kcal
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot Name
+        (type SYMBOL)
+        (create-accessor read-write))
+)
 
 (defclass Disease
     (is-a USER)
@@ -25,18 +37,6 @@
         (create-accessor read-write))
     (slot Allergens
         (type STRING)
-        (create-accessor read-write))
-    (slot Name
-        (type SYMBOL)
-        (create-accessor read-write))
-)
-
-(defclass Meal
-    (is-a USER)
-    (role concrete)
-    (pattern-match reactive)
-    (slot Kcal
-        (type INTEGER)
         (create-accessor read-write))
     (slot Name
         (type SYMBOL)
@@ -97,41 +97,23 @@
         (create-accessor read-write))
 )
 
-(defclass Persona
-    (is-a USER)
-    (role concrete)
-    (pattern-match reactive)
-    (slot IMC
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot age
-        (type INTEGER)
-        (create-accessor read-write))
-    (slot height
-        (type INTEGER)
-        (create-accessor read-write))
-    (slot physicalActivity
-        (type INTEGER)
-        (create-accessor read-write))
-    (slot requiredKcal
-        (type INTEGER)
-        (create-accessor read-write))
-    (slot sex
-        (type STRING)
-        (create-accessor read-write))
-    (slot weight
-        (type FLOAT)
-        (create-accessor read-write))
-)
-
 (defclass Vitamins
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
+    (slot A
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B
+        (type FLOAT)
+        (create-accessor read-write))
     (slot B1
         (type FLOAT)
         (create-accessor read-write))
     (slot B12
+        (type FLOAT)
+        (create-accessor read-write))
+    (slot B2
         (type FLOAT)
         (create-accessor read-write))
     (slot B3
@@ -147,15 +129,6 @@
         (type FLOAT)
         (create-accessor read-write))
     (slot B9
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot A
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B2
         (type FLOAT)
         (create-accessor read-write))
     (slot C
