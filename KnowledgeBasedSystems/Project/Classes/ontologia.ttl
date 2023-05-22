@@ -44,6 +44,20 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#CookingMethod
+:CookingMethod rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain :Course ;
+               rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Seasonality
+:Seasonality rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain :Ingredient ;
+             rdfs:range xsd:string .
+
+
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/A
 :A rdf:type owl:DatatypeProperty ;
    rdfs:subPropertyOf owl:topDataProperty ;
@@ -240,6 +254,7 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Potassium
 :Potassium rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
            rdfs:domain :Minerals ;
            rdfs:range xsd:float .
 
@@ -279,6 +294,26 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
 #################################################################
 #    Classes
 #################################################################
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Breakfast
+:Breakfast rdf:type owl:Class ;
+           rdfs:subClassOf :Course .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Dessert
+:Dessert rdf:type owl:Class ;
+         rdfs:subClassOf :Course .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Dinner
+:Dinner rdf:type owl:Class ;
+        rdfs:subClassOf :Course .
+
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Lunch
+:Lunch rdf:type owl:Class ;
+       rdfs:subClassOf :Course .
+
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Course
 :Course rdf:type owl:Class .

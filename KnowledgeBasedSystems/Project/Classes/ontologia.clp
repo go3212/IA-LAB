@@ -2,18 +2,45 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 23/05/2023 00:12:02
+;;; :Date 23/05/2023 00:27:21
 
 (defclass Course
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
+    (multislot CookingMethod
+        (type STRING)
+        (create-accessor read-write))
     (slot Kcal
         (type INTEGER)
         (create-accessor read-write))
     (slot Name
         (type SYMBOL)
         (create-accessor read-write))
+)
+
+(defclass Breakfast
+    (is-a Course)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Dessert
+    (is-a Course)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Dinner
+    (is-a Course)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Lunch
+    (is-a Course)
+    (role concrete)
+    (pattern-match reactive)
 )
 
 (defclass Disease
@@ -34,6 +61,9 @@
         (create-accessor read-write))
     (slot topObjectProperty
         (type SYMBOL)
+        (create-accessor read-write))
+    (multislot Seasonality
+        (type STRING)
         (create-accessor read-write))
     (slot Allergens
         (type STRING)
@@ -56,7 +86,7 @@
     (slot Magnesium
         (type FLOAT)
         (create-accessor read-write))
-    (multislot Potassium
+    (slot Potassium
         (type FLOAT)
         (create-accessor read-write))
     (slot Zinc
