@@ -2,7 +2,7 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 23/05/2023 00:37:54
+;;; :Date 23/05/2023 01:12:32
 
 (defclass Course
     (is-a USER)
@@ -65,7 +65,7 @@
     (slot Seasonality
         (type STRING)
         (create-accessor read-write))
-    (slot Allergens
+    (multislot Allergens
         (type STRING)
         (create-accessor read-write))
     (slot Name
@@ -101,8 +101,8 @@
     (slot HasMinerals
         (type INSTANCE)
         (create-accessor read-write))
-    (slot HasVitamins
-        (type INSTANCE)
+    (multislot Vitamins
+        (type STRING)
         (create-accessor read-write))
     (slot Calories
         (type FLOAT)
@@ -123,54 +123,6 @@
         (type FLOAT)
         (create-accessor read-write))
     (slot Sugar
-        (type FLOAT)
-        (create-accessor read-write))
-)
-
-(defclass Vitamins
-    (is-a USER)
-    (role concrete)
-    (pattern-match reactive)
-    (slot A
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B1
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B12
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B2
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B3
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B5
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B6
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B7
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B9
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot C
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot D
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot E
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot K
         (type FLOAT)
         (create-accessor read-write))
 )

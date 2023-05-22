@@ -29,14 +29,6 @@
                      rdfs:range :NutritionalValue .
 
 
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/HasVitamins
-:HasVitamins rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf owl:topObjectProperty ;
-             rdf:type owl:FunctionalProperty ;
-             rdfs:domain :NutritionalValue ;
-             rdfs:range :Vitamins .
-
-
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
 owl:topObjectProperty rdf:type owl:FunctionalProperty ;
                       rdfs:domain :Ingredient ;
@@ -63,100 +55,18 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
              rdfs:range xsd:string .
 
 
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/A
-:A rdf:type owl:DatatypeProperty ;
-   rdfs:subPropertyOf owl:topDataProperty ;
-   rdf:type owl:FunctionalProperty ;
-   rdfs:domain :Vitamins ;
-   rdfs:range xsd:float .
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Vitamins
+:Vitamins rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdfs:domain :NutritionalValue ;
+          rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Allergens
 :Allergens rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf owl:topDataProperty ;
-           rdf:type owl:FunctionalProperty ;
            rdfs:domain :Ingredient ;
            rdfs:range xsd:string .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/B
-:B rdf:type owl:DatatypeProperty ;
-   rdfs:subPropertyOf owl:topDataProperty ;
-   rdf:type owl:FunctionalProperty ;
-   rdfs:domain :Vitamins ;
-   rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/B1
-:B1 rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdf:type owl:FunctionalProperty ;
-    rdfs:domain :Vitamins ;
-    rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/B12
-:B12 rdf:type owl:DatatypeProperty ;
-     rdfs:subPropertyOf owl:topDataProperty ;
-     rdf:type owl:FunctionalProperty ;
-     rdfs:domain :Vitamins ;
-     rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/B2
-:B2 rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdf:type owl:FunctionalProperty ;
-    rdfs:domain :Vitamins ;
-    rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/B3
-:B3 rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdf:type owl:FunctionalProperty ;
-    rdfs:domain :Vitamins ;
-    rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/B5
-:B5 rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdf:type owl:FunctionalProperty ;
-    rdfs:domain :Vitamins ;
-    rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/B6
-:B6 rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdf:type owl:FunctionalProperty ;
-    rdfs:domain :Vitamins ;
-    rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/B7
-:B7 rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdf:type owl:FunctionalProperty ;
-    rdfs:domain :Vitamins ;
-    rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/B9
-:B9 rdf:type owl:DatatypeProperty ;
-    rdfs:subPropertyOf owl:topDataProperty ;
-    rdf:type owl:FunctionalProperty ;
-    rdfs:domain :Vitamins ;
-    rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/C
-:C rdf:type owl:DatatypeProperty ;
-   rdfs:subPropertyOf owl:topDataProperty ;
-   rdf:type owl:FunctionalProperty ;
-   rdfs:domain :Vitamins ;
-   rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Calcium
@@ -183,22 +93,6 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
                rdfs:range xsd:float .
 
 
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/D
-:D rdf:type owl:DatatypeProperty ;
-   rdfs:subPropertyOf owl:topDataProperty ;
-   rdf:type owl:FunctionalProperty ;
-   rdfs:domain :Vitamins ;
-   rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/E
-:E rdf:type owl:DatatypeProperty ;
-   rdfs:subPropertyOf owl:topDataProperty ;
-   rdf:type owl:FunctionalProperty ;
-   rdfs:domain :Vitamins ;
-   rdfs:range xsd:float .
-
-
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Fat
 :Fat rdf:type owl:DatatypeProperty ;
      rdfs:subPropertyOf owl:topDataProperty ;
@@ -221,14 +115,6 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
       rdf:type owl:FunctionalProperty ;
       rdfs:domain :Minerals ;
       rdfs:range xsd:float .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/K
-:K rdf:type owl:DatatypeProperty ;
-   rdfs:subPropertyOf owl:topDataProperty ;
-   rdf:type owl:FunctionalProperty ;
-   rdfs:domain :Vitamins ;
-   rdfs:range xsd:float .
 
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Kcal
@@ -338,10 +224,6 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/NutritionalValue
 :NutritionalValue rdf:type owl:Class .
-
-
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Vitamins
-:Vitamins rdf:type owl:Class .
 
 
 ###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
