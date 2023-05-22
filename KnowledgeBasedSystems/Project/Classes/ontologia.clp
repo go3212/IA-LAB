@@ -2,13 +2,13 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 23/05/2023 00:27:21
+;;; :Date 23/05/2023 00:37:54
 
 (defclass Course
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
-    (multislot CookingMethod
+    (slot CookingMethod
         (type STRING)
         (create-accessor read-write))
     (slot Kcal
@@ -56,13 +56,13 @@
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
-    (multislot HasNutritionalValue
+    (slot HasNutritionalValue
         (type INSTANCE)
         (create-accessor read-write))
     (slot topObjectProperty
         (type SYMBOL)
         (create-accessor read-write))
-    (multislot Seasonality
+    (slot Seasonality
         (type STRING)
         (create-accessor read-write))
     (slot Allergens
@@ -98,10 +98,10 @@
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
-    (multislot HasMinerals
+    (slot HasMinerals
         (type INSTANCE)
         (create-accessor read-write))
-    (multislot HasVitamins
+    (slot HasVitamins
         (type INSTANCE)
         (create-accessor read-write))
     (slot Calories
