@@ -16,6 +16,7 @@
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/HasMinerals
 :HasMinerals rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ;
              rdfs:domain :NutritionalValue ;
              rdfs:range :Minerals .
 
@@ -23,6 +24,7 @@
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/HasNutritionalValue
 :HasNutritionalValue rdf:type owl:ObjectProperty ;
                      rdfs:subPropertyOf owl:topObjectProperty ;
+                     rdf:type owl:FunctionalProperty ;
                      rdfs:domain :Ingredient ;
                      rdfs:range :NutritionalValue .
 
@@ -30,6 +32,7 @@
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/HasVitamins
 :HasVitamins rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
+             rdf:type owl:FunctionalProperty ;
              rdfs:domain :NutritionalValue ;
              rdfs:range :Vitamins .
 
@@ -47,6 +50,7 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#CookingMethod
 :CookingMethod rdf:type owl:DatatypeProperty ;
                rdfs:subPropertyOf owl:topDataProperty ;
+               rdf:type owl:FunctionalProperty ;
                rdfs:domain :Course ;
                rdfs:range xsd:string .
 
@@ -54,6 +58,7 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#Seasonality
 :Seasonality rdf:type owl:DatatypeProperty ;
              rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
              rdfs:domain :Ingredient ;
              rdfs:range xsd:string .
 
