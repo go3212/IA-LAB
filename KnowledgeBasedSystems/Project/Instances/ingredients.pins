@@ -406,3 +406,34 @@
                        (Vitamins "C" "A"))
   (Allergens "none")
 )
+([Watermelon] of Ingredient
+  (Name "Watermelon")
+  (HasNutritionalValue [NutritionalValue-Watermelon] of NutritionalValue
+                       (Vitamins "C" "A"))
+  (Allergens "none")
+)
+([Pasta] of Ingredient
+  (Name "Pasta")
+  (HasNutritionalValue [NutritionalValue-Pasta] of NutritionalValue
+                       (Vitamins "B1" "B3"))
+  (Allergens "Gluten")
+)
+([Milk] of Ingredient
+  (Name "Milk")
+  (HasNutritionalValue [NutritionalValue-Milk] of NutritionalValue
+                       (Vitamins "D" "B2"))
+  (Allergens "Lactose")
+)
+([Cookie] of Ingredient
+  (Name "Cookie")
+  (HasNutritionalValue [NutritionalValue-Cookie] of NutritionalValue
+                       (Vitamins "none"))
+  (Allergens "Gluten" "Eggs" "Dairy")
+)
+([OrangeJuice] of Ingredient
+  (Name "OrangeJuice")
+  (HasNutritionalValue [NutritionalValue-OrangeJuice] of NutritionalValue
+                       (Vitamins "C"))
+  (Allergens "none")
+)
+
