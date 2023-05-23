@@ -27,3 +27,6 @@
 
 ([Anemia] of Disease
   (Name "Anemia"))
+
+([Arthritis] of Disease
+  (Name "Arthritis"))

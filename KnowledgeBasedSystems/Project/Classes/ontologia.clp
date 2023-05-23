@@ -2,7 +2,46 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 21/05/2023 15:57:43
+;;; :Date 23/05/2023 01:12:32
+
+(defclass Course
+    (is-a USER)
+    (role concrete)
+    (pattern-match reactive)
+    (slot CookingMethod
+        (type STRING)
+        (create-accessor read-write))
+    (slot Kcal
+        (type INTEGER)
+        (create-accessor read-write))
+    (slot Name
+        (type SYMBOL)
+        (create-accessor read-write))
+)
+
+(defclass Breakfast
+    (is-a Course)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Dessert
+    (is-a Course)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Dinner
+    (is-a Course)
+    (role concrete)
+    (pattern-match reactive)
+)
+
+(defclass Lunch
+    (is-a Course)
+    (role concrete)
+    (pattern-match reactive)
+)
 
 (defclass Disease
     (is-a USER)
@@ -17,26 +56,17 @@
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
-    (multislot HasNutritionalValue
+    (slot HasNutritionalValue
         (type INSTANCE)
         (create-accessor read-write))
     (slot topObjectProperty
         (type SYMBOL)
         (create-accessor read-write))
-    (slot Allergens
+    (slot Seasonality
         (type STRING)
         (create-accessor read-write))
-    (slot Name
-        (type SYMBOL)
-        (create-accessor read-write))
-)
-
-(defclass Meal
-    (is-a USER)
-    (role concrete)
-    (pattern-match reactive)
-    (slot Kcal
-        (type INTEGER)
+    (multislot Allergens
+        (type STRING)
         (create-accessor read-write))
     (slot Name
         (type SYMBOL)
@@ -56,7 +86,7 @@
     (slot Magnesium
         (type FLOAT)
         (create-accessor read-write))
-    (multislot Potassium
+    (slot Potassium
         (type FLOAT)
         (create-accessor read-write))
     (slot Zinc
@@ -68,11 +98,11 @@
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
-    (multislot HasMinerals
+    (slot HasMinerals
         (type INSTANCE)
         (create-accessor read-write))
-    (multislot HasVitamins
-        (type INSTANCE)
+    (multislot Vitamins
+        (type STRING)
         (create-accessor read-write))
     (slot Calories
         (type FLOAT)
@@ -93,81 +123,6 @@
         (type FLOAT)
         (create-accessor read-write))
     (slot Sugar
-        (type FLOAT)
-        (create-accessor read-write))
-)
-
-(defclass Persona
-    (is-a USER)
-    (role concrete)
-    (pattern-match reactive)
-    (slot IMC
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot age
-        (type INTEGER)
-        (create-accessor read-write))
-    (slot height
-        (type INTEGER)
-        (create-accessor read-write))
-    (slot physicalActivity
-        (type INTEGER)
-        (create-accessor read-write))
-    (slot requiredKcal
-        (type INTEGER)
-        (create-accessor read-write))
-    (slot sex
-        (type STRING)
-        (create-accessor read-write))
-    (slot weight
-        (type FLOAT)
-        (create-accessor read-write))
-)
-
-(defclass Vitamins
-    (is-a USER)
-    (role concrete)
-    (pattern-match reactive)
-    (slot B1
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B12
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B3
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B5
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B6
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B7
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B9
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot A
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot B2
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot C
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot D
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot E
-        (type FLOAT)
-        (create-accessor read-write))
-    (slot K
         (type FLOAT)
         (create-accessor read-write))
 )
