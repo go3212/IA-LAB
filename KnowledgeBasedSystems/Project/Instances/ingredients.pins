@@ -1,137 +1,303 @@
 ([Rice] of Ingredient
   (Name  "Rice")
-  (HasNutritionalValue NutritionalValue-Rice)
+  (HasNutritionalValue [NutritionalValue-Rice] of NutritionalValue
+                       (Vitamins "B" "B3"))
   (Allergens "none")
 )
 ([Chicken] of Ingredient
   (Name  "Chicken")
-  (HasNutritionalValue NutritionalValue-Chicken)
+  (HasNutritionalValue [NutritionalValue-Chicken] of NutritionalValue
+                       (Vitamins "B" "B3" "B6"))
   (Allergens "none")
 )
 ([Beef] of Ingredient
   (Name  "Beef")
-  (HasNutritionalValue NutritionalValue-Beef)
+  (HasNutritionalValue [NutritionalValue-Beef] of NutritionalValue
+                       (Vitamins "B" "B12"))
   (Allergens "none")
 )
 ([Potato] of Ingredient
   (Name  "Potato")
-  (HasNutritionalValue NutritionalValue-Potato)
+  (HasNutritionalValue [NutritionalValue-Potato] of NutritionalValue
+                       (Vitamins "C" "B6"))
   (Allergens "none")
 )
 ([Broccoli] of Ingredient
   (Name  "Broccoli")
-  (HasNutritionalValue NutritionalValue-Broccoli)
+  (HasNutritionalValue [NutritionalValue-Broccoli] of NutritionalValue
+                       (Vitamins "C" "K" "A"))
   (Allergens "none")
 )
 ([Carrots] of Ingredient
   (Name  "Carrots")
-  (HasNutritionalValue NutritionalValue-Carrots)
+  (HasNutritionalValue [NutritionalValue-Carrots] of NutritionalValue
+                       (Vitamins "A" "K1" "B6"))
   (Allergens "none")
 )
 ([Tomatoes] of Ingredient
   (Name  "Tomatoes")
-  (HasNutritionalValue NutritionalValue-Tomatoes)
+  (HasNutritionalValue [NutritionalValue-Tomatoes] of NutritionalValue
+                       (Vitamins "C" "K1" "B9"))
   (Allergens "none")
 )
 ([Lettuce] of Ingredient
   (Name  "Lettuce")
-  (HasNutritionalValue NutritionalValue-Lettuce)
+  (HasNutritionalValue [NutritionalValue-Lettuce] of NutritionalValue
+                       (Vitamins "A" "K" "C"))
   (Allergens "none")
 )
 ([Apple] of Ingredient
   (Name  "Apple")
-  (HasNutritionalValue NutritionalValue-Apple)
+  (HasNutritionalValue [NutritionalValue-Apple] of NutritionalValue
+                       (Vitamins "C" "B6"))
   (Allergens "none")
 )
 ([Banana] of Ingredient
   (Name  "Banana")
-  (HasNutritionalValue NutritionalValue-Banana)
+  (HasNutritionalValue [NutritionalValue-Banana] of NutritionalValue
+                       (Vitamins "B6" "C"))
   (Allergens "none")
 )
 ([Orange] of Ingredient
   (Name  "Orange")
-  (HasNutritionalValue NutritionalValue-Orange)
+  (HasNutritionalValue [NutritionalValue-Orange] of NutritionalValue
+                       (Vitamins "C" "B1"))
   (Allergens "none")
 )
 ([Blueberries] of Ingredient
   (Name  "Blueberries")
-  (HasNutritionalValue NutritionalValue-Blueberries)
+  (HasNutritionalValue [NutritionalValue-Blueberries] of NutritionalValue
+                       (Vitamins "C" "K"))
   (Allergens "none")
 )
 ([Strawberries] of Ingredient
   (Name  "Strawberries")
-  (HasNutritionalValue NutritionalValue-Strawberries)
+  (HasNutritionalValue [NutritionalValue-Strawberries] of NutritionalValue
+                       (Vitamins "C" "B9"))
   (Allergens "none")
 )
 ([Spinach] of Ingredient
   (Name  "Spinach")
-  (HasNutritionalValue NutritionalValue-Spinach)
+  (HasNutritionalValue [NutritionalValue-Spinach] of NutritionalValue
+                       (Vitamins "A" "C" "K1"))
   (Allergens "none")
 )
 ([Almonds] of Ingredient
   (Name  "Almonds")
-  (HasNutritionalValue NutritionalValue-Almonds)
+  (HasNutritionalValue [NutritionalValue-Almonds] of NutritionalValue
+                       (Vitamins "E" "B2"))
   (Allergens "tree nuts")
 )
 ([WheatBread] of Ingredient
   (Name  "WheatBread")
-  (HasNutritionalValue NutritionalValue-WheatBread)
+  (HasNutritionalValue [NutritionalValue-WheatBread] of NutritionalValue
+                       (Vitamins "B1" "B3"))
   (Allergens "gluten")
 )
 ([Sausages] of Ingredient
   (Name  "Sausages")
-  (HasNutritionalValue NutritionalValue-Sausages)
+  (HasNutritionalValue [NutritionalValue-Sausages] of NutritionalValue
+                       (Vitamins "B1" "B12"))
   (Allergens "none")
 )
 ([Pepper] of Ingredient
   (Name  "Pepper")
-  (HasNutritionalValue NutritionalValue-Pepper)
+  (HasNutritionalValue [NutritionalValue-Pepper] of NutritionalValue
+                       (Vitamins "C" "A"))
   (Allergens "none")
 )
 ([Lentils] of Ingredient
   (Name  "Lentils")
-  (HasNutritionalValue NutritionalValue-Lentils)
+  (HasNutritionalValue [NutritionalValue-Lentils] of NutritionalValue
+                       (Vitamins "B1" "B6"))
   (Allergens "none")
 )
 ([Eggs] of Ingredient
   (Name  "Eggs")
-  (HasNutritionalValue NutritionalValue-Eggs)
+  (HasNutritionalValue [NutritionalValue-Eggs] of NutritionalValue
+                       (Vitamins "B2" "B12"))
   (Allergens "eggs")
 )
 ([Butter] of Ingredient
   (Name  "Butter")
-  (HasNutritionalValue NutritionalValue-Butter)
+  (HasNutritionalValue [NutritionalValue-Butter] of NutritionalValue
+                       (Vitamins "A" "D"))
   (Allergens "dairy")
 )
-([OliveOil] of Ingredient (Name  "OliveOil") (HasNutritionalValue NutritionalValue-OliveOil) (Allergens "None"))
-([FetaCheese] of Ingredient (Name  "FetaCheese") (HasNutritionalValue NutritionalValue-FetaCheese) (Allergens "Milk"))
-([GreekYogurt] of Ingredient (Name  "GreekYogurt") (HasNutritionalValue NutritionalValue-GreekYogurt) (Allergens "Milk"))
-([Artichokes] of Ingredient (Name  "Artichokes") (HasNutritionalValue NutritionalValue-Artichokes) (Allergens "None"))
-([Capers] of Ingredient (Name  "Capers") (HasNutritionalValue NutritionalValue-Capers) (Allergens "None"))
-([Anchovies] of Ingredient (Name  "Anchovies") (HasNutritionalValue NutritionalValue-Anchovies) (Allergens "Fish"))
-([Olives] of Ingredient (Name  "Olives") (HasNutritionalValue NutritionalValue-Olives) (Allergens "None"))
-([ParmesanCheese] of Ingredient (Name  "ParmesanCheese") (HasNutritionalValue NutritionalValue-ParmesanCheese) (Allergens "Milk"))
-([MozzarellaCheese] of Ingredient (Name  "MozzarellaCheese") (HasNutritionalValue NutritionalValue-MozzarellaCheese) (Allergens "Milk"))
-([Basil] of Ingredient (Name "Basil") (HasNutritionalValue NutritionalValue-Basil) (Allergens ""))
-([Oregano] of Ingredient (Name "Oregano") (HasNutritionalValue NutritionalValue-Oregano) (Allergens ""))
-([Rosemary] of Ingredient (Name "Rosemary") (HasNutritionalValue NutritionalValue-Rosemary) (Allergens ""))
-([Thyme] of Ingredient (Name "Thyme") (HasNutritionalValue NutritionalValue-Thyme) (Allergens ""))
-([Sage] of Ingredient (Name "Sage") (HasNutritionalValue NutritionalValue-Sage) (Allergens ""))
-([Parsley] of Ingredient (Name "Parsley") (HasNutritionalValue NutritionalValue-Parsley) (Allergens ""))
-([Dill] of Ingredient (Name "Dill") (HasNutritionalValue NutritionalValue-Dill) (Allergens ""))
-([Mint] of Ingredient (Name "Mint") (HasNutritionalValue NutritionalValue-Mint) (Allergens ""))
-([Garlic] of Ingredient (Name "Garlic") (HasNutritionalValue NutritionalValue-Garlic) (Allergens ""))
-([RedOnions] of Ingredient (Name "RedOnions") (HasNutritionalValue NutritionalValue-RedOnions) (Allergens ""))
-([SunDriedTomatoes] of Ingredient (Name "SunDriedTomatoes") (HasNutritionalValue NutritionalValue-SunDriedTomatoes) (Allergens ""))
-([BalsamicVinegar] of Ingredient (Name "BalsamicVinegar") (HasNutritionalValue NutritionalValue-BalsamicVinegar) (Allergens ""))
-([RedWineVinegar] of Ingredient (Name "RedWineVinegar") (HasNutritionalValue NutritionalValue-RedWineVinegar) (Allergens ""))
-([WhiteWineVinegar] of Ingredient (Name "WhiteWineVinegar") (HasNutritionalValue NutritionalValue-WhiteWineVinegar) (Allergens ""))
-([LemonJuice] of Ingredient (Name "LemonJuice") (HasNutritionalValue NutritionalValue-LemonJuice) (Allergens ""))
-([WhiteFish] of Ingredient (Name "WhiteFish") (HasNutritionalValue NutritionalValue-WhiteFish) (Allergens "Fish"))
-([Salmon] of Ingredient (Name "Salmon") (HasNutritionalValue NutritionalValue-Salmon) (Allergens "Fish"))
-([Tuna] of Ingredient (Name "Tuna") (HasNutritionalValue NutritionalValue-Tuna) (Allergens "Fish"))
-([Sardines] of Ingredient (Name "Sardines") (HasNutritionalValue NutritionalValue-Sardines) (Allergens "Fish"))
-([Calamari] of Ingredient (Name "Calamari") (HasNutritionalValue NutritionalValue-Calamari) (Allergens "Molluscs"))
+([OliveOil] of Ingredient
+  (Name  "OliveOil")
+  (HasNutritionalValue [NutritionalValue-OliveOil] of NutritionalValue
+                       (Vitamins "A" "D" "E" "K"))
+  (Allergens "None")
+)
+([FetaCheese] of Ingredient
+  (Name  "FetaCheese")
+  (HasNutritionalValue [NutritionalValue-FetaCheese] of NutritionalValue
+                       (Vitamins "A" "B2" "B12"))
+  (Allergens "Milk")
+)
+([GreekYogurt] of Ingredient
+  (Name  "GreekYogurt")
+  (HasNutritionalValue [NutritionalValue-GreekYogurt] of NutritionalValue
+                       (Vitamins "B2" "B12"))
+  (Allergens "Milk")
+)
+([Artichokes] of Ingredient
+  (Name  "Artichokes")
+  (HasNutritionalValue [NutritionalValue-Artichokes] of NutritionalValue
+                       (Vitamins "C" "K"))
+  (Allergens "None")
+)
+([Capers] of Ingredient
+  (Name  "Capers")
+  (HasNutritionalValue [NutritionalValue-Capers] of NutritionalValue
+                       (Vitamins "A" "K"))
+  (Allergens "None")
+)
+([Anchovies] of Ingredient
+  (Name  "Anchovies")
+  (HasNutritionalValue [NutritionalValue-Anchovies] of NutritionalValue
+                       (Vitamins "A" "D"))
+  (Allergens "Fish")
+)
+([Olives] of Ingredient
+  (Name  "Olives")
+  (HasNutritionalValue [NutritionalValue-Olives] of NutritionalValue
+                       (Vitamins "E"))
+  (Allergens "None")
+)
+([ParmesanCheese] of Ingredient
+  (Name  "ParmesanCheese")
+  (HasNutritionalValue [NutritionalValue-ParmesanCheese] of NutritionalValue
+                       (Vitamins "A" "B2" "B12"))
+  (Allergens "Milk")
+)
+([MozzarellaCheese] of Ingredient
+  (Name  "MozzarellaCheese")
+  (HasNutritionalValue [NutritionalValue-MozzarellaCheese] of NutritionalValue
+                       (Vitamins "A" "B2"))
+  (Allergens "Milk")
+)
+([Basil] of Ingredient
+  (Name  "Basil")
+  (HasNutritionalValue [NutritionalValue-Basil] of NutritionalValue
+                       (Vitamins "K" "A" "C"))
+  (Allergens "")
+)
+([Oregano] of Ingredient
+  (Name  "Oregano")
+  (HasNutritionalValue [NutritionalValue-Oregano] of NutritionalValue
+                       (Vitamins "K" "E" "C"))
+  (Allergens "")
+)
+([Rosemary] of Ingredient
+  (Name  "Rosemary")
+  (HasNutritionalValue [NutritionalValue-Rosemary] of NutritionalValue
+                       (Vitamins "C" "A" "B6"))
+  (Allergens "")
+)
+([Thyme] of Ingredient
+  (Name  "Thyme")
+  (HasNutritionalValue [NutritionalValue-Thyme] of NutritionalValue
+                       (Vitamins "C" "A" "B6"))
+  (Allergens "")
+)
+([Sage] of Ingredient
+  (Name  "Sage")
+  (HasNutritionalValue [NutritionalValue-Sage] of NutritionalValue
+                       (Vitamins "K" "A" "C"))
+  (Allergens "")
+)
+([Parsley] of Ingredient
+  (Name  "Parsley")
+  (HasNutritionalValue [NutritionalValue-Parsley] of NutritionalValue
+                       (Vitamins "K" "C" "A"))
+  (Allergens "")
+)
+([Dill] of Ingredient
+  (Name  "Dill")
+  (HasNutritionalValue [NutritionalValue-Dill] of NutritionalValue
+                       (Vitamins "C" "A" "B6"))
+  (Allergens "")
+)
+([Mint] of Ingredient
+  (Name  "Mint")
+  (HasNutritionalValue [NutritionalValue-Mint] of NutritionalValue
+                       (Vitamins "A" "C" "B2"))
+  (Allergens "")
+)
+([Garlic] of Ingredient
+  (Name  "Garlic")
+  (HasNutritionalValue [NutritionalValue-Garlic] of NutritionalValue
+                       (Vitamins "C" "B6" "B1"))
+  (Allergens "")
+)
+([RedOnions] of Ingredient
+  (Name "RedOnions")
+  (HasNutritionalValue [NutritionalValue-RedOnions] of NutritionalValue
+                       (Vitamins "C" "B6"))
+  (Allergens "")
+)
+([SunDriedTomatoes] of Ingredient
+  (Name "SunDriedTomatoes")
+  (HasNutritionalValue [NutritionalValue-SunDriedTomatoes] of NutritionalValue
+                       (Vitamins "C" "A"))
+  (Allergens "")
+)
+([BalsamicVinegar] of Ingredient
+  (Name "BalsamicVinegar")
+  (HasNutritionalValue [NutritionalValue-BalsamicVinegar] of NutritionalValue
+                       (Vitamins ""))
+  (Allergens "")
+)
+([RedWineVinegar] of Ingredient
+  (Name "RedWineVinegar")
+  (HasNutritionalValue [NutritionalValue-RedWineVinegar] of NutritionalValue
+                       (Vitamins ""))
+  (Allergens "")
+)
+([WhiteWineVinegar] of Ingredient
+  (Name "WhiteWineVinegar")
+  (HasNutritionalValue [NutritionalValue-WhiteWineVinegar] of NutritionalValue
+                       (Vitamins ""))
+  (Allergens "")
+)
+([LemonJuice] of Ingredient
+  (Name "LemonJuice")
+  (HasNutritionalValue [NutritionalValue-LemonJuice] of NutritionalValue
+                       (Vitamins "C"))
+  (Allergens "")
+)
+([WhiteFish] of Ingredient
+  (Name "WhiteFish")
+  (HasNutritionalValue [NutritionalValue-WhiteFish] of NutritionalValue
+                       (Vitamins "D" "B2"))
+  (Allergens "Fish")
+)
+([Salmon] of Ingredient
+  (Name "Salmon")
+  (HasNutritionalValue [NutritionalValue-Salmon] of NutritionalValue
+                       (Vitamins "D" "B12"))
+  (Allergens "Fish")
+)
+([Tuna] of Ingredient
+  (Name "Tuna")
+  (HasNutritionalValue [NutritionalValue-Tuna] of NutritionalValue
+                       (Vitamins "D" "B3"))
+  (Allergens "Fish")
+)
+([Sardines] of Ingredient
+  (Name "Sardines")
+  (HasNutritionalValue [NutritionalValue-Sardines] of NutritionalValue
+                       (Vitamins "D" "B12"))
+  (Allergens "Fish")
+)
+([Calamari] of Ingredient
+  (Name "Calamari")
+  (HasNutritionalValue [NutritionalValue-Calamari] of NutritionalValue
+                       (Vitamins "B2" "B12"))
+  (Allergens "Molluscs")
+)
 ([Prawns] of Ingredient (Name "Prawns") (HasNutritionalValue NutritionalValue-Prawns) (Allergens "Crustaceans"))
 ([Octopus] of Ingredient (Name "Octopus") (HasNutritionalValue NutritionalValue-Octopus) (Allergens "Molluscs"))
 ([Lamb] of Ingredient (Name "Lamb") (HasNutritionalValue NutritionalValue-Lamb))
