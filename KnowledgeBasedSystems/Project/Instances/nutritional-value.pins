@@ -66,3 +66,8 @@
 ([NutritionalValue-BellPeppers] of NutritionalValue (Calories 24) (Protein 1) (Carbohydrates 6) (Fat 0.2) (Fiber 2.5) (Sodium 2) (Sugar 4) (HasMinerals Minerals-BellPeppers))
 ([NutritionalValue-TomatoSauce] of NutritionalValue (Calories 82) (Protein 2.8) (Carbohydrates 13.8) (Fat 3.2) (Fiber 2.6) (Sodium 639) (Sugar 7.5) (HasMinerals Minerals-TomatoSauce))
 ([NutritionalValue-Ratatouille] of NutritionalValue (Calories 150) (Protein 3) (Carbohydrates 14) (Fat 10) (Fiber 4) (Sodium 590) (Sugar 9) (HasMinerals Minerals-Ratatouille))
+([NutritionalValue-Watermelon] of NutritionalValue (Calories 30) (Protein 0.6) (Carbohydrates 7.6) (Fat 0.2) (Fiber 0.4) (Sodium 1) (Sugar 6.2) (HasMinerals Minerals-Watermelon))
+([NutritionalValue-Pasta] of NutritionalValue (Calories 131) (Protein 5) (Carbohydrates 25) (Fat 1.1) (Fiber 1.3) (Sodium 1) (Sugar 0.8) (HasMinerals Minerals-Pasta))
+([NutritionalValue-Milk] of NutritionalValue (Calories 103) (Protein 6.8) (Carbohydrates 12.5) (Fat 2.4) (Fiber 0) (Sodium 98) (Sugar 12.8) (HasMinerals Minerals-Milk))
+([NutritionalValue-Cookie] of NutritionalValue (Calories 78) (Protein 0.9) (Carbohydrates 9.3) (Fat 3.9) (Fiber 0.4) (Sodium 61) (Sugar 4.7) (HasMinerals Minerals-Cookie))
+([NutritionalValue-OrangeJuice] of NutritionalValue (Calories 112) (Protein 1.7) (Carbohydrates 26) (Fat 0.5) (Fiber 0.5) (Sodium 2) (Sugar 20.8) (HasMinerals Minerals-OrangeJuice))
