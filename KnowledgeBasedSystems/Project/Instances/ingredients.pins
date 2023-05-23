@@ -298,21 +298,111 @@
                        (Vitamins "B2" "B12"))
   (Allergens "Molluscs")
 )
-([Prawns] of Ingredient (Name "Prawns") (HasNutritionalValue NutritionalValue-Prawns) (Allergens "Crustaceans"))
-([Octopus] of Ingredient (Name "Octopus") (HasNutritionalValue NutritionalValue-Octopus) (Allergens "Molluscs"))
-([Lamb] of Ingredient (Name "Lamb") (HasNutritionalValue NutritionalValue-Lamb))
-([Prosciutto] of Ingredient (Name "Prosciutto") (HasNutritionalValue NutritionalValue-Prosciutto))
-([Salami] of Ingredient (Name "Salami") (HasNutritionalValue NutritionalValue-Salami))
-([Bread] of Ingredient (Name "Bread") (HasNutritionalValue NutritionalValue-Bread) (Allergens "Gluten"))
-([PitaBread] of Ingredient (Name "PitaBread") (HasNutritionalValue NutritionalValue-PitaBread) (Allergens "Gluten"))
-([Couscous] of Ingredient (Name "Couscous") (HasNutritionalValue NutritionalValue-Couscous))
-([BulgurWheat] of Ingredient (Name "BulgurWheat") (HasNutritionalValue NutritionalValue-BulgurWheat) (Allergens "Gluten"))
-([Polenta] of Ingredient (Name "Polenta") (HasNutritionalValue NutritionalValue-Polenta))
-([ArborioRice] of Ingredient (Name "ArborioRice") (HasNutritionalValue NutritionalValue-ArborioRice))
-([PaellaRice] of Ingredient (Name "PaellaRice") (HasNutritionalValue NutritionalValue-PaellaRice))
-([Quinoa] of Ingredient (Name "Quinoa") (HasNutritionalValue NutritionalValue-Quinoa))
-([Eggplant] of Ingredient (Name "Eggplant") (HasNutritionalValue NutritionalValue-Eggplant))
-([Zucchini] of Ingredient (Name "Zucchini") (HasNutritionalValue NutritionalValue-Zucchini))
-([BellPeppers] of Ingredient (Name "BellPeppers") (HasNutritionalValue NutritionalValue-BellPeppers))
-([TomatoSauce] of Ingredient (Name "TomatoSauce") (HasNutritionalValue NutritionalValue-TomatoSauce))
-([Ratatouille] of Ingredient (Name "Ratatouille") (HasNutritionalValue NutritionalValue-Ratatouille))
+([Prawns] of Ingredient
+  (Name  "Prawns")
+  (HasNutritionalValue [NutritionalValue-Prawns] of NutritionalValue
+                       (Vitamins "B12" "E"))
+  (Allergens "Crustaceans")
+)
+([Octopus] of Ingredient
+  (Name  "Octopus")
+  (HasNutritionalValue [NutritionalValue-Octopus] of NutritionalValue
+                       (Vitamins "B3" "B12"))
+  (Allergens "Molluscs")
+)
+([Lamb] of Ingredient
+  (Name  "Lamb")
+  (HasNutritionalValue [NutritionalValue-Lamb] of NutritionalValue
+                       (Vitamins "B3" "B12"))
+  (Allergens "none")
+)
+([Prosciutto] of Ingredient
+  (Name  "Prosciutto")
+  (HasNutritionalValue [NutritionalValue-Prosciutto] of NutritionalValue
+                       (Vitamins "B1" "B6"))
+  (Allergens "none")
+)
+([Salami] of Ingredient
+  (Name  "Salami")
+  (HasNutritionalValue [NutritionalValue-Salami] of NutritionalValue
+                       (Vitamins "B1" "B6"))
+  (Allergens "none")
+)
+([Bread] of Ingredient
+  (Name  "Bread")
+  (HasNutritionalValue [NutritionalValue-Bread] of NutritionalValue
+                       (Vitamins "B1" "B2" "B3"))
+  (Allergens "Gluten")
+)
+([PitaBread] of Ingredient
+  (Name  "PitaBread")
+  (HasNutritionalValue [NutritionalValue-PitaBread] of NutritionalValue
+                       (Vitamins "B1" "B2" "B3"))
+  (Allergens "Gluten")
+)
+([Couscous] of Ingredient
+  (Name  "Couscous")
+  (HasNutritionalValue [NutritionalValue-Couscous] of NutritionalValue
+                       (Vitamins "B1" "B2" "B3"))
+  (Allergens "Gluten")
+)
+([BulgurWheat] of Ingredient
+  (Name  "BulgurWheat")
+  (HasNutritionalValue [NutritionalValue-BulgurWheat] of NutritionalValue
+                       (Vitamins "B1" "B2" "B3"))
+  (Allergens "Gluten")
+)
+([Polenta] of Ingredient
+  (Name  "Polenta")
+  (HasNutritionalValue [NutritionalValue-Polenta] of NutritionalValue
+                       (Vitamins "A" "C"))
+  (Allergens "none")
+)
+([ArborioRice] of Ingredient
+  (Name  "ArborioRice")
+  (HasNutritionalValue [NutritionalValue-ArborioRice] of NutritionalValue
+                       (Vitamins "B1" "B3"))
+  (Allergens "none")
+)
+([PaellaRice] of Ingredient
+  (Name  "PaellaRice")
+  (HasNutritionalValue [NutritionalValue-PaellaRice] of NutritionalValue
+                       (Vitamins "B1" "B3"))
+  (Allergens "none")
+)
+([Quinoa] of Ingredient
+  (Name "Quinoa")
+  (HasNutritionalValue [NutritionalValue-Quinoa] of NutritionalValue
+                       (Vitamins "B" "E"))
+  (Allergens "none")
+)
+([Eggplant] of Ingredient
+  (Name "Eggplant")
+  (HasNutritionalValue [NutritionalValue-Eggplant] of NutritionalValue
+                       (Vitamins "B1" "B6"))
+  (Allergens "none")
+)
+([Zucchini] of Ingredient
+  (Name "Zucchini")
+  (HasNutritionalValue [NutritionalValue-Zucchini] of NutritionalValue
+                       (Vitamins "C" "B6"))
+  (Allergens "none")
+)
+([BellPeppers] of Ingredient
+  (Name "BellPeppers")
+  (HasNutritionalValue [NutritionalValue-BellPeppers] of NutritionalValue
+                       (Vitamins "C" "A"))
+  (Allergens "none")
+)
+([TomatoSauce] of Ingredient
+  (Name "TomatoSauce")
+  (HasNutritionalValue [NutritionalValue-TomatoSauce] of NutritionalValue
+                       (Vitamins "C" "K"))
+  (Allergens "none")
+)
+([Ratatouille] of Ingredient
+  (Name "Ratatouille")
+  (HasNutritionalValue [NutritionalValue-Ratatouille] of NutritionalValue
+                       (Vitamins "C" "A"))
+  (Allergens "none")
+)
