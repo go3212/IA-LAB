@@ -56,7 +56,6 @@ Prosciutto
 Salami
 Bread
 PitaBread
-
 Couscous
 Bulgur wheat
 Polenta
@@ -68,3 +67,34 @@ Zucchini
 Bell peppers
 Tomato sauce
 Ratatouille
+
+// Faltan
+Tabbouleh
+Hummus
+Tzatziki
+Pesto
+Pumpkin
+Chestnuts
+Hazelnuts
+Walnuts
+Provolone cheese
+Ricotta cheese
+Gorgonzola cheese
+Brie cheese
+Camembert cheese
+Croissants
+Baguettes
+Puff pastry
+Quiche
+Creme fraiche
+Raspberries
+Blackberries
+Grapes
+Oranges
+Pears
+Peaches
+Plums
+Strudel
+Tiramisu
+Gelato
+Cannoli
