@@ -1,4 +1,4 @@
-([NutritionalValue-Rice] of NutritionalValue (Calories 130) (Protein 2.7) (Carbohydrates 28) (Fat 0.3) (Fiber 0.4) (Sodium 1) (Sugar 0.1) (HasMinerals Minerals-Rice) (Vitamins "B" "B3")))
+([NutritionalValue-Rice] of NutritionalValue (Calories 130) (Protein 2.7) (Carbohydrates 28) (Fat 0.3) (Fiber 0.4) (Sodium 1) (Sugar 0.1) (HasMinerals Minerals-Rice) (Vitamins "B" "B3"))
 ([NutritionalValue-Chicken] of NutritionalValue (Calories 335) (Protein 25) (Carbohydrates 0) (Fat 3.6) (Fiber 0) (Sodium 74) (Sugar 0) (HasMinerals Minerals-Chicken) (Vitamins "B" "B3" "B6"))
 ([NutritionalValue-Beef] of NutritionalValue (Calories 250) (Protein 17) (Carbohydrates 0) (Fat 17) (Fiber 0) (Sodium 50) (Sugar 0) (HasMinerals Minerals-Beef) (Vitamins "B" "B12"))
 ([NutritionalValue-Potato] of NutritionalValue (Calories 130) (Protein 2) (Carbohydrates 30) (Fat 0) (Fiber 3) (Sodium 0) (Sugar 1) (HasMinerals Minerals-Potato) (Vitamins "C" "B6"))

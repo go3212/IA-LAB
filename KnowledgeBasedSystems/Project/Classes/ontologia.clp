@@ -2,7 +2,7 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 24/05/2023 02:47:50
+;;; :Date 24/05/2023 03:04:25
 
 (defclass Course
     (is-a USER)
@@ -128,10 +128,4 @@
 )
 
 (definstances instances
-    ([Rice] of Ingredient
-         (Allergens  "Gluten" "MasGluten")
-         (Name  "Rice")
-         (Seasonality  "Primavera")
-    )
-
 )
