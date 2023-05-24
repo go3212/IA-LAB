@@ -2,7 +2,7 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 24/05/2023 02:02:34
+;;; :Date 24/05/2023 02:47:50
 
 (defclass Course
     (is-a USER)
@@ -62,14 +62,14 @@
     (slot topObjectProperty
         (type SYMBOL)
         (create-accessor read-write))
-    (slot Seasonality
-        (type STRING)
-        (create-accessor read-write))
     (multislot Allergens
         (type STRING)
         (create-accessor read-write))
     (slot Name
         (type SYMBOL)
+        (create-accessor read-write))
+    (slot Seasonality
+        (type STRING)
         (create-accessor read-write))
 )
 
@@ -101,9 +101,6 @@
     (slot HasMinerals
         (type INSTANCE)
         (create-accessor read-write))
-    (multislot Vitamins
-        (type STRING)
-        (create-accessor read-write))
     (slot Calories
         (type FLOAT)
         (create-accessor read-write))
@@ -125,7 +122,16 @@
     (slot Sugar
         (type FLOAT)
         (create-accessor read-write))
+    (multislot Vitamins
+        (type STRING)
+        (create-accessor read-write))
 )
 
 (definstances instances
+    ([Rice] of Ingredient
+         (Allergens  "Gluten" "MasGluten")
+         (Name  "Rice")
+         (Seasonality  "Primavera")
+    )
+
 )
