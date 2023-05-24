@@ -2,7 +2,7 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 23/05/2023 01:12:32
+;;; :Date 24/05/2023 02:02:34
 
 (defclass Course
     (is-a USER)
