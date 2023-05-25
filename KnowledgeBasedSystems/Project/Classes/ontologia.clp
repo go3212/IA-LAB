@@ -2,7 +2,7 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 24/05/2023 03:04:25
+;;; :Date 26/05/2023 00:11:59
 
 (defclass Course
     (is-a USER)
@@ -10,9 +10,6 @@
     (pattern-match reactive)
     (slot CookingMethod
         (type STRING)
-        (create-accessor read-write))
-    (slot Kcal
-        (type INTEGER)
         (create-accessor read-write))
     (slot Name
         (type SYMBOL)

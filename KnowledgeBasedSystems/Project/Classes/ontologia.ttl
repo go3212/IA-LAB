@@ -102,14 +102,6 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
       rdfs:range xsd:float .
 
 
-###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Kcal
-:Kcal rdf:type owl:DatatypeProperty ;
-      rdfs:subPropertyOf owl:topDataProperty ;
-      rdf:type owl:FunctionalProperty ;
-      rdfs:domain :Course ;
-      rdfs:range xsd:integer .
-
-
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Magnesium
 :Magnesium rdf:type owl:DatatypeProperty ;
            rdfs:subPropertyOf owl:topDataProperty ;
