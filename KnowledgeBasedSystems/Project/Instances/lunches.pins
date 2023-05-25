@@ -1,0 +1,13 @@
+([Paella] of Lunch
+         (HasIngredient  [Chicken] [Rice] [Tomatoes] [Pepper] [OliveOil] [Saffron])
+         (IngredientQuantity  16.6 16.6 16.6 16.6 16.6 16.6)
+         (CookingMethod  "Frying")
+         (Name  "Paella")
+    )
+    
+([PastaPomodoro] of Lunch
+         (HasIngredient  [Pasta] [TomatoSauce] [OliveOil] [Basil] [Garlic])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Boiling")
+         (Name  "PastaPomodoro")
+    )

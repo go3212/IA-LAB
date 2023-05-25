@@ -1,0 +1,13 @@
+([GreekSalad] of Dinner
+         (HasIngredient  [Tomatoes] [Cucumbers] [RedOnions] [FetaCheese] [Olives] [OliveOil])
+         (IngredientQuantity  16.6 16.6 16.6 16.6 16.6 16.6)
+         (CookingMethod  "No-Cook")
+         (Name  "GreekSalad")
+    )
+
+([GrilledChickenWithBroccoli] of Dinner
+         (HasIngredient  [Chicken] [Broccoli] [OliveOil] [Garlic])
+         (IngredientQuantity  40.0 40.0 15.0 5.0)
+         (CookingMethod  "Grilling")
+         (Name  "GrilledChickenWithBroccoli")
+    )
