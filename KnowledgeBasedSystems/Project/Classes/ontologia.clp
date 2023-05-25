@@ -2,12 +2,18 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 26/05/2023 00:11:59
+;;; :Date 26/05/2023 00:49:49
 
 (defclass Course
     (is-a USER)
     (role concrete)
     (pattern-match reactive)
+    (multislot HasIngredient
+        (type INSTANCE)
+        (create-accessor read-write))
+    (multislot IngredientQuantity
+        (type FLOAT)
+        (create-accessor read-write))
     (slot CookingMethod
         (type STRING)
         (create-accessor read-write))

@@ -13,6 +13,13 @@
 #    Object Properties
 #################################################################
 
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#HasIngredient
+:HasIngredient rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Course ;
+               rdfs:range :Ingredient .
+
+
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/HasMinerals
 :HasMinerals rdf:type owl:ObjectProperty ;
              rdfs:subPropertyOf owl:topObjectProperty ;
@@ -38,6 +45,13 @@ owl:topObjectProperty rdf:type owl:FunctionalProperty ;
 #################################################################
 #    Data properties
 #################################################################
+
+###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica#IngredientQuantity
+:IngredientQuantity rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain :Course ;
+                    rdfs:range xsd:float .
+
 
 ###  http://www.semanticweb.org/fernandoguiraonunez/ontologies/2023/4/ontologiaPractica/Allergens
 :Allergens rdf:type owl:DatatypeProperty ;
