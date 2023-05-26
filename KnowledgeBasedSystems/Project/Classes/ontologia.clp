@@ -130,5 +130,23 @@
         (create-accessor read-write))
 )
 
-(definstances instances
+(deftemplate dailyMenu
+    (slot breakfast (type Breakfast))
+    (slot lunch1 (type Lunch))
+    (slot lunch2 (type Lunch))
+    (slot dessertLunch (type Dessert))
+    (slot dinner1 (type Dinner))
+    (slot dinner2 (type Dinner))
+    (slot dessertDinner (type Dessert))
 )
+
+(deftemplate weekMenu
+    (slot monday (type dailyMenu))
+    (slot tueday (type dailyMenu))
+    (slot wedneday (type dailyMenu))
+    (slot thursday (type dailyMenu))
+    (slot friday (type dailyMenu))
+    (slot saturday (type dailyMenu))
+    (slot sunday (type dailyMenu))
+)
+
