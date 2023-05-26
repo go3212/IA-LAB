@@ -150,3 +150,15 @@
     (slot sunday (type dailyMenu))
 )
 
+
+//NO CREO
+(defrule assignMondayMenu
+   (not (weekMenu (monday ?menu&:(not (eq ?menu, nil)))))
+   (not (dailyMenu (breakfast ?b&:(not (eq ?b, nil))) (lunch1 ?l1&:(not (eq ?l1, nil))) (lunch2 ?l2&:(not (eq ?l2, nil)))
+                   (dessertLunch ?dL&:(not (eq ?dL, nil))) (dinner1 ?d1&:(not (eq ?d1, nil))) (dinner2 ?d2&:(not (eq ?d2, nil)))
+                   (dessertDinner ?dD&:(not (eq ?dD, nil))))))
+   =>
+   (bind ?newMenu (create$ (dailyMenu (breakfast ?b) (lunch1 ?l1) (lunch2 ?l2) (dessertLunch ?dL)
+                            (dinner1 ?d1) (dinner2 ?d2) (dessertDinner ?dD))))
+   (modify-instance (weekMenu) (monday ?newMenu))
+)
