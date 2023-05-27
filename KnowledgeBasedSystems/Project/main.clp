@@ -33,26 +33,26 @@
 )
 
 (deftemplate MAIN::meal
-    (multislot courses (type INSTANCE) (default (create$ (make-instance of Course) (make-instance of Course))))
-    (slot dessert (type INSTANCE) (default (make-instance of Dessert)))
+  (multislot courses (type INSTANCE))
+  (slot dessert (type INSTANCE))
 )
 
 (deftemplate MAIN::breakfast
-    (slot course (type INSTANCE) (default (make-instance of Breakfast)))
+  (slot course (type INSTANCE))
 )
 
 (deftemplate MAIN::dinner
-    (multislot courses (type INSTANCE) (default (create$ (make-instance of Dinner) (make-instance of Dinner))))
-    (slot dessert (type INSTANCE) (default (make-instance of Dessert)))
+  (multislot courses (type INSTANCE))
+  (slot dessert (type INSTANCE))
 )
 
 (deftemplate MAIN::daily-menu
-    (slot breakfast (type INSTANCE) (default (make-instance of breakfast)))
-    (slot meal (type INSTANCE) (default (make-instance of meal)))
-    (slot dinner (type INSTANCE) (default (make-instance of dinner)))
+    (slot breakfast (type INSTANCE-NAME))
+    (slot meal (type INSTANCE-NAME))
+    (slot dinner (type INSTANCE-NAME))
 )
 
 (deftemplate MAIN::weekly-menu
-    (multislot daily-menus (type INSTANCE) (default (create$ (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu))))
+    (multislot daily-menus (type INSTANCE-NAME))
 )
 
