@@ -30,7 +30,7 @@
     (slot required-sodium (type FLOAT) (default 2300.0))
     (slot required-sugar (type FLOAT) (default 25.0))
     (slot required-fiber (type FLOAT) (default 28.0))
-    (multislot required-vitamins)
+    (multislot required-vitamins (type STRING))
 )
 
 (deftemplate MAIN::meal
