@@ -5,10 +5,9 @@
 ;------------------------------------------------------------
 
 (defmodule MAIN)
-(defmodule DATOS-USUARIO)
-(defmodule INFERENCIA-DATOS)
-(defmodule GENERACION-MENUS)
-(defmodule IMPRESION-SOLUCION)
+(defmodule DATA-INFERENCE)
+(defmodule MENU-GENERATION)
+(defmodule MENU-PRINT)
 
 (deftemplate MAIN::user
     (slot name)
