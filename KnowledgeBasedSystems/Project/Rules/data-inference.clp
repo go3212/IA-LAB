@@ -35,111 +35,104 @@
     (modify ?user (required-fat ?required-fat) (required-protein ?required-protein) (required-carbohydrates ?required-carbohydrates))
 )
 
-(defrule DATA-INFERENCE::set-baseline-nutrition-needs
-    ?user <- (user (required-carbohydrates -1.0) (required-fat -1.0) (required-protein -1.0) (required-calcium -1.0) (required-zinc -1.0) (required-potassium -1.0) (required-magnesium -1.0) (required-sodium -1.0) (required-sugar -1.0) (required-fiber -1.0))
-    =>
-    (modify ?user 
-        (required-carbohydrates 130.0)
-        (required-fat 70.0)
-        (required-protein 50.0)
-        (required-calcium 1000.0)
-        (required-zinc 8.0)
-        (required-potassium 4700.0)
-        (required-magnesium 320.0)
-        (required-sodium 2300.0)
-        (required-sugar 25.0)
-        (required-fiber 28.0)
-    )
-)
-
 ;;;;;;;;;;;;;;;;;;
 ;;; ENFERMEDADES
 
 (defrule DATA-INFERENCE::adjust-for-diabetes
-    ?user <- (user (diseases $?diseases) (required-carbohydrates ?required-carbohydrates) (required-calories ?required-calories))
-    (test (member$ "Diabetes" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Diabetes] $?diseases)) (required-carbohydrates ?required-carbohydrates) (required-calories ?required-calories))
+    (test (<= ?required-carbohydrates (* 0.35 ?required-calories)))
     =>
-    (bind ?new-carbs (* 0.35 ?required-calories)) 
+    (bind ?new-carbs (* 0.35 ?required-calories))
+    (bind ?new-carbs (min 130 (max 200 ?new-carbs))) 
     (modify ?user (required-carbohydrates ?new-carbs))
 )
 
 (defrule DATA-INFERENCE::adjust-for-hypertension
-    ?user <- (user (diseases $?diseases) (required-sodium ?required-sodium))
-    (test (member$ "Hypertension" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Hypertension] $?diseases)) (required-sodium ?required-sodium))
+    (test (<= ?required-sodium (* 0.5 ?required-sodium)))
     =>
     (bind ?new-sodium (* 0.5 ?required-sodium)) 
+    (bind ?new-sodium (min 1500 (max 2300 ?new-sodium))) 
     (modify ?user (required-sodium ?new-sodium))
 )
 
 (defrule DATA-INFERENCE::adjust-for-ischemic-heart-disease
-    ?user <- (user (diseases $?diseases) (required-fat ?required-fat))
-    (test (member$ "Ischemic Heart Disease" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Ischemic-Heart-Disease] $?diseases)) (required-fat ?required-fat))
+    (test (<= ?required-fat (* 0.7 ?required-fat)))
     =>
     (bind ?new-fat (* 0.7 ?required-fat)) 
+    (bind ?new-fat (min 35 (max 100 ?new-fat))) 
     (modify ?user (required-fat ?new-fat))
 )
 
 (defrule DATA-INFERENCE::adjust-for-osteoporosis
-    ?user <- (user (diseases $?diseases) (required-calcium ?required-calcium))
-    (test (member$ "Osteoporosis" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Osteoporosis] $?diseases)) (required-calcium ?required-calcium))
+    (test (>= ?required-calcium (* 1.5 ?required-calcium)))
     =>
     (bind ?new-calcium (* 1.5 ?required-calcium)) 
+    (bind ?new-calcium (min 1000 (max 2000 ?new-calcium))) 
     (modify ?user (required-calcium ?new-calcium))
 )
-
 (defrule DATA-INFERENCE::adjust-for-dysphagia
-    ?user <- (user (diseases $?diseases) (required-fiber ?required-fiber))
-    (test (member$ "Dysphagia" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Dysphagia] $?diseases)) (required-fiber ?required-fiber))
+    (test (>= ?required-fiber (* 1.2 ?required-fiber)))
     =>
     (bind ?new-fiber (* 1.2 ?required-fiber)) 
+    (bind ?new-fiber (min 28 (max 40 ?new-fiber))) 
     (modify ?user (required-fiber ?new-fiber))
 )
 
 (defrule DATA-INFERENCE::adjust-for-hyperlipidemia
-    ?user <- (user (diseases $?diseases) (required-fat ?required-fat))
-    (test (member$ "Hyperlipidemia" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Hyperlipidemia] $?diseases)) (required-fat ?required-fat))
+    (test (<= ?required-fat (* 0.6 ?required-fat)))
     =>
     (bind ?new-fat (* 0.6 ?required-fat)) 
+    (bind ?new-fat (min 35 (max 100 ?new-fat))) 
     (modify ?user (required-fat ?new-fat))
 )
 
 (defrule DATA-INFERENCE::adjust-for-hypertriglyceridemia
-    ?user <- (user (diseases $?diseases) (required-carbohydrates ?required-carbohydrates))
-    (test (member$ "Hypertriglyceridemia" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Hypertriglyceridemia] $?diseases)) (required-carbohydrates ?required-carbohydrates))
+    (test (<= ?required-carbohydrates (* 0.45 ?required-carbohydrates)))
     =>
     (bind ?new-carbs (* 0.45 ?required-carbohydrates)) 
+    (bind ?new-carbs (min 130 (max 200 ?new-carbs))) 
     (modify ?user (required-carbohydrates ?new-carbs))
 )
 
 (defrule DATA-INFERENCE::adjust-for-inflammatory-joint-diseases
-    ?user <- (user (diseases $?diseases) (required-protein ?required-protein))
-    (test (member$ "Inflammatory Joint Diseases" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Inflammatory-Joint-Diseases] $?diseases)) (required-protein ?required-protein))
+    (test (>= ?required-protein (* 1.2 ?required-protein)))
     =>
     (bind ?new-protein (* 1.2 ?required-protein)) 
+    (bind ?new-protein (min 50 (max 200 ?new-protein))) 
     (modify ?user (required-protein ?new-protein))
 )
 
 (defrule DATA-INFERENCE::adjust-for-hyperuricemia
-    ?user <- (user (diseases $?diseases) (required-protein ?required-protein))
-    (test (member$ "Hyperuricemia" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Hyperuricemia] $?diseases)) (required-protein ?required-protein))
+    (test (<= ?required-protein (* 0.8 ?required-protein)))
     =>
     (bind ?new-protein (* 0.8 ?required-protein)) 
+    (bind ?new-protein (min 50 (max 200 ?new-protein))) 
     (modify ?user (required-protein ?new-protein))
 )
 
 (defrule DATA-INFERENCE::adjust-for-anemia
-    ?user <- (user (diseases $?diseases) (required-iron ?required-iron))
-    (test (member$ "Anemia" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Anemia] $?diseases)) (required-iron ?required-iron))
+    (test (>= ?required-iron (* 1.5 ?required-iron)))
     =>
     (bind ?new-iron (* 1.5 ?required-iron)) 
+    (bind ?new-iron (min 8 (max 45 ?new-iron))) 
     (modify ?user (required-iron ?new-iron))
 )
 
 (defrule DATA-INFERENCE::adjust-for-arthritis
-    ?user <- (user (diseases $?diseases) (required-calcium ?required-calcium))
-    (test (member$ "Arthritis" $?diseases))
+    ?user <- (user (diseases $?diseases&:(member$ [Arthritis] $?diseases)) (required-calcium ?required-calcium))
+    (test (>= ?required-calcium (* 1.2 ?required-calcium)))
     =>
     (bind ?new-calcium (* 1.2 ?required-calcium)) 
+    (bind ?new-calcium (min 1000 (max 2000 ?new-calcium))) 
     (modify ?user (required-calcium ?new-calcium))
 )
 

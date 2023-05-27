@@ -87,18 +87,67 @@
 
 (deffunction promptForDiseases()
     (listDiseases)
-    (printout t "Please enter any of the diseases you have (separated by comma): " crlf)
+    (printout t "Please enter any of the diseases you have (separated by space): " crlf)
     (return (explode$ (readline)))
 )
 
 (deffunction promptForPositivePreferences()
     (listIngredients)
-    (printout t "Please enter the ingredients you like (separated by comma): " crlf)
+    (printout t "Please enter the ingredients you like (separated by space): " crlf)
     (return (explode$ (readline)))
 )
 
 (deffunction promptForNegativePreferences()
     (listIngredients)
-    (printout t "Please enter the ingredients you dislike (separated by comma): " crlf)
+    (printout t "Please enter the ingredients you dislike (separated by space): " crlf)
     (return (explode$ (readline)))
+)
+
+(deffunction is-num (?num)
+  (or (eq (type ?num) INTEGER) (eq (type ?num) FLOAT))
+)
+
+(deffunction num-between (?num ?min ?max)
+  (and (is-num ?num) (>= ?num ?min) (<= ?num ?max))
+)
+
+(deffunction names-list (?instances)
+  (bind ?out (create$))
+  (foreach ?i ?instances
+    (bind ?out (create$ ?out (send ?i get-Name)))
+  )
+)
+
+(deffunction ask-question-multi-opt-instances (?question ?class ?exclude)
+  (bind ?instances (find-all-instances ((?c ?class)) (not (member$ ?c ?exclude))))
+  (bind ?names (names-list ?instances))
+  (bind ?count (length$ ?instances))
+
+  (if (= ?count 0) then (return (create$)))
+
+  (while TRUE do ;return function will exit this loop
+    (printout t crlf)
+    (loop-for-count (?i ?count) do
+      (printout t crlf ?i ") " (nth$ ?i ?names))
+    )
+    (printout t crlf)
+    (printout t ?question)
+    (printout t crlf)
+    (bind ?line (readline))
+    (bind $?answer (explode$ ?line))
+    (bind ?out (create$))
+    (foreach ?i ?answer
+      (if (not (num-between ?i 1 ?count)) then
+        (break)
+      )
+      (bind ?v (nth$ ?i ?instances))
+      (if (not (member$ ?v ?out)) then
+        (bind ?out (create$ ?out ?v))
+      )
+    )
+    (if (eq (length$ ?out) (length$ ?answer)) then
+      (return ?out)
+	  else (printout t "| ## Invalid input ##" crlf)
+    )
+  )
 )
