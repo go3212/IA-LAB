@@ -2,7 +2,7 @@
 ;;; ontologia.clp
 ;;; Translated by owl2clips
 ;;; Translated to CLIPS from ontology ontologia.ttl
-;;; :Date 26/05/2023 01:34:27
+;;; :Date 27/05/2023 18:55:41
 
 (defclass Course
     (is-a USER)
@@ -11,11 +11,14 @@
     (multislot HasIngredient
         (type INSTANCE)
         (create-accessor read-write))
-    (multislot IngredientQuantity
-        (type FLOAT)
+    (multislot IsVegan
+        (type SYMBOL)
         (create-accessor read-write))
     (slot CookingMethod
         (type STRING)
+        (create-accessor read-write))
+    (multislot IngredientQuantity
+        (type FLOAT)
         (create-accessor read-write))
     (slot Name
         (type SYMBOL)
@@ -128,4 +131,7 @@
     (multislot Vitamins
         (type STRING)
         (create-accessor read-write))
+)
+
+(definstances instances
 )
