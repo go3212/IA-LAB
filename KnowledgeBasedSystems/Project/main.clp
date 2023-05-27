@@ -1,3 +1,15 @@
+; ------------------------------------------------------------
+; * MAIN
+;   En este fichero se definen los módulos del programa
+;   y los deftamplates del módulo MAIN
+;------------------------------------------------------------
+
+(defmodule MAIN)
+(defmodule DATOS-USUARIO)
+(defmodule INFERENCIA-DATOS)
+(defmodule GENERACION-MENUS)
+(defmodule IMPRESION-SOLUCION)
+
 (deftemplate MAIN::user
     (slot name)
     (slot age (type INTEGER))
