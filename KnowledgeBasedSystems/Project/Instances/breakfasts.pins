@@ -1,0 +1,13 @@
+([SpanishOmelette] of Breakfast
+         (HasIngredient  [Eggs] [Potato] [OliveOil] [Onion])
+         (IngredientQuantity  25.0 40.0 25.0 10.0)
+         (CookingMethod  "Frying")
+         (Name  "SpanishOmelette")
+    )
+    
+([YogurtWithFruits] of Breakfast
+         (HasIngredient  [GreekYogurt] [Strawberries] [Blueberries] [Banana])
+         (IngredientQuantity  70.0 10.0 10.0 10.0)
+         (CookingMethod  "No-Cook")
+         (Name  "YogurtWithFruits")
+    )

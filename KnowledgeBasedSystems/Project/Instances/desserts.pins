@@ -1,0 +1,13 @@
+([FruitSalad] of Dessert
+         (HasIngredient  [Apple] [Orange] [Banana] [Strawberries])
+         (IngredientQuantity  25.0 25.0 25.0 25.0)
+         (CookingMethod  "No-Cook")
+         (Name  "FruitSalad")
+    )
+    
+([AlmondCookies] of Dessert
+         (HasIngredient  [Almonds] [Butter] [Eggs] [Sugar])
+         (IngredientQuantity  30.0 30.0 25.0 15.0)
+         (CookingMethod  "Baking")
+         (Name  "AlmondCookies")
+    )
