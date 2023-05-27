@@ -1,8 +1,8 @@
-([GreekSalad] of Dinner
+([GreekSaladDinner] of Dinner
          (HasIngredient  [Tomatoes] [Cucumbers] [RedOnions] [FetaCheese] [Olives] [OliveOil])
          (IngredientQuantity  16.6 16.6 16.6 16.6 16.6 16.6)
          (CookingMethod  "No-Cook")
-         (Name  "GreekSalad")
+         (Name  "GreekSaladDinner")
     )
 
 ([GrilledChickenWithBroccoli] of Dinner
@@ -11,3 +11,136 @@
          (CookingMethod  "Grilling")
          (Name  "GrilledChickenWithBroccoli")
     )
+
+([SpanishRatatouille] of Dinner
+(HasIngredient [Ratatouille] [OliveOil] [Garlic] [Bread])
+(IngredientQuantity 60.0 20.0 10.0 10.0)
+(CookingMethod "Sauteeing")
+(Name "SpanishRatatouille")
+)
+
+([ChickenPita] of Dinner
+(HasIngredient [Chicken] [PitaBread] [Lettuce] [Tomatoes] [GreekYogurt])
+(IngredientQuantity 30.0 40.0 10.0 10.0 10.0)
+(CookingMethod "Grilling")
+(Name "ChickenPita")
+)
+
+([TomatoBasilPasta] of Dinner
+(HasIngredient [Pasta] [TomatoSauce] [Basil] [OliveOil] [ParmesanCheese])
+(IngredientQuantity 40.0 40.0 5.0 10.0 5.0)
+(CookingMethod "Boiling")
+(Name "TomatoBasilPasta")
+)
+
+([BeefAndVegetableStirFry] of Dinner
+(HasIngredient [Beef] [Broccoli] [Carrots] [RedOnions] [Garlic] [OliveOil])
+(IngredientQuantity 25.0 20.0 20.0 20.0 10.0 5.0)
+(CookingMethod "StirFrying")
+(Name "BeefAndVegetableStirFry")
+)
+
+([GrilledFishAndVegetables] of Dinner
+(HasIngredient [WhiteFish] [Zucchini] [BellPeppers] [OliveOil] [LemonJuice])
+(IngredientQuantity 40.0 20.0 20.0 15.0 5.0)
+(CookingMethod "Grilling")
+(Name "GrilledFishAndVegetables")
+)
+
+([TunaSaladDinner] of Dinner
+(HasIngredient [Tuna] [Lettuce] [Tomatoes] [Cucumbers] [OliveOil] [LemonJuice])
+(IngredientQuantity 30.0 20.0 20.0 20.0 7.5 2.5)
+(CookingMethod "NoCook")
+(Name "TunaSaladDinner")
+)
+
+([LambWithRosemaryAndGarlic] of Dinner
+(HasIngredient [Lamb] [Rosemary] [Garlic] [OliveOil])
+(IngredientQuantity 70.0 15.0 10.0 5.0)
+(CookingMethod "Roasting")
+(Name "LambWithRosemaryAndGarlic")
+)
+
+([MediterraneanStuffedBellPeppers] of Dinner
+(HasIngredient [BellPeppers] [Rice] [Tomatoes] [Onions] [OliveOil] [Garlic])
+(IngredientQuantity 30.0 30.0 20.0 10.0 5.0 5.0)
+(CookingMethod "Baking")
+(Name "MediterraneanStuffedBellPeppers")
+)
+
+([ChickenAndVegetableCouscous] of Dinner
+(HasIngredient [Chicken] [Couscous] [Carrots] [Zucchini] [Garlic] [OliveOil])
+(IngredientQuantity 30.0 30.0 15.0 15.0 5.0 5.0)
+(CookingMethod "Boiling")
+(Name "ChickenAndVegetableCouscous")
+)
+
+([MediterraneanLentilSoup] of Dinner
+(HasIngredient [Lentils] [Tomatoes] [Carrots] [Onions] [Garlic] [OliveOil] [LemonJuice] [Cumin] [Parsley])
+(IngredientQuantity 30.0 20.0 15.0 10.0 5.0 5.0 2.5 2.5 2.5)
+(CookingMethod "Simmering")
+(Name "MediterraneanLentilSoup")
+)
+
+([GrilledSalmonWithAsparagus] of Dinner
+(HasIngredient [Salmon] [Asparagus] [LemonJuice] [OliveOil] [Dill])
+(IngredientQuantity 40.0 30.0 5.0 10.0 2.5)
+(CookingMethod "Grilling")
+(Name "GrilledSalmonWithAsparagus")
+)
+
+([StuffedEggplantWithQuinoa] of Dinner
+(HasIngredient [Eggplant] [Quinoa] [Tomatoes] [Onions] [Garlic] [OliveOil] [Basil] [ParmesanCheese])
+(IngredientQuantity 40.0 30.0 20.0 10.0 5.0 5.0 2.5 2.5)
+(CookingMethod "Baking")
+(Name "StuffedEggplantWithQuinoa")
+)
+
+([MozzarellaStuffedChickenBreast] of Dinner
+(HasIngredient [Chicken] [MozzarellaCheese] [Tomatoes] [Basil] [OliveOil] [Garlic])
+(IngredientQuantity 40.0 20.0 20.0 5.0 10.0 5.0)
+(CookingMethod "Baking")
+(Name "MozzarellaStuffedChickenBreast")
+)
+
+([MediterraneanStyleGrilledVegetables] of Dinner
+(HasIngredient [Zucchini] [BellPeppers] [Eggplant] [Onions] [OliveOil] [Basil] [Oregano] [Garlic])
+(IngredientQuantity 30.0 30.0 20.0 10.0 5.0 2.5 2.5 5.0)
+(CookingMethod "Grilling")
+(Name "MediterraneanStyleGrilledVegetables")
+)
+
+([SpanishStyleOmelette] of Dinner
+(HasIngredient [Eggs] [Potato] [Onions] [OliveOil] [Salt] [Pepper])
+(IngredientQuantity 40.0 30.0 20.0 10.0 2.5 2.5)
+(CookingMethod "PanFrying")
+(Name "SpanishStyleOmelette")
+)
+
+([MediterraneanShrimpWithTomatoes] of Dinner
+(HasIngredient [Prawns] [Tomatoes] [Garlic] [OliveOil] [Oregano] [LemonJuice])
+(IngredientQuantity 40.0 30.0 5.0 10.0 2.5 2.5)
+(CookingMethod "Sauteeing")
+(Name "MediterraneanShrimpWithTomatoes")
+)
+
+([BeefKebabsWithTzatzikiSauce] of Dinner
+(HasIngredient [Beef] [GreekYogurt] [Cucumber] [Garlic] [LemonJuice] [OliveOil] [Oregano])
+(IngredientQuantity 40.0 20.0 10.0 2.5 2.5 5.0 2.5)
+(CookingMethod "Grilling")
+(Name "BeefKebabsWithTzatzikiSauce")
+)
+
+([MediterraneanBakedFish] of Dinner
+(HasIngredient [WhiteFish] [Tomatoes] [Onions] [Garlic] [OliveOil] [LemonJuice] [Oregano])
+(IngredientQuantity 40.0 20.0 10.0 5.0 5.0 2.5 2.5)
+(CookingMethod "Baking")
+(Name "MediterraneanBakedFish")
+)
+
+([GreekSaladWithGrilledChicken] of Dinner
+(HasIngredient [Chicken] [Lettuce] [Tomatoes] [Cucumber] [RedOnions] [KalamataOlives] [FetaCheese] [Oregano] [OliveOil] [RedWineVinegar])
+(IngredientQuantity 40.0 30.0 20.0 10.0 5.0 5.0 20.0 2.5 5.0 2.5)
+(CookingMethod "Grilling")
+(Name "GreekSaladWithGrilledChicken")
+)
