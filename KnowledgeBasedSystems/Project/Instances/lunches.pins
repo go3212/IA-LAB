@@ -1,13 +1,138 @@
-([Paella] of Lunch
-         (HasIngredient  [Chicken] [Rice] [Tomatoes] [Pepper] [OliveOil] [Saffron])
-         (IngredientQuantity  16.6 16.6 16.6 16.6 16.6 16.6)
-         (CookingMethod  "Frying")
-         (Name  "Paella")
-    )
-    
 ([PastaPomodoro] of Lunch
          (HasIngredient  [Pasta] [TomatoSauce] [OliveOil] [Basil] [Garlic])
          (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
          (CookingMethod  "Boiling")
          (Name  "PastaPomodoro")
+    )
+
+([ChickenSalad] of Lunch
+         (HasIngredient  [Chicken] [Lettuce] [Tomatoes] [OliveOil] [Garlic])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Grilling")
+         (Name  "ChickenSalad")
+    )
+
+([BeefStew] of Lunch
+         (HasIngredient  [Beef] [Potato] [Carrots] [OliveOil] [Garlic])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Boiling")
+         (Name  "BeefStew")
+    )
+
+([TunaSalad] of Lunch
+         (HasIngredient  [Tuna] [Lettuce] [Tomatoes] [OliveOil] [LemonJuice])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Mixing")
+         (Name  "TunaSalad")
+    )
+
+([GreekSalad] of Lunch
+         (HasIngredient  [Lettuce] [Tomatoes] [FetaCheese] [Olives] [OliveOil])
+         (IngredientQuantity  30.0 30.0 20.0 10.0 10.0)
+         (CookingMethod  "Mixing")
+         (Name  "GreekSalad")
+    )
+
+([ChickenRatatouille] of Lunch
+         (HasIngredient  [Chicken] [Ratatouille] [OliveOil] [Garlic] [Thyme])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Baking")
+         (Name  "ChickenRatatouille")
+    )
+
+([TomatoSoup] of Lunch
+         (HasIngredient  [Tomatoes] [Garlic] [Basil] [OliveOil] [Bread])
+         (IngredientQuantity  40.0 20.0 20.0 10.0 10.0)
+         (CookingMethod  "Boiling")
+         (Name  "TomatoSoup")
+    )
+
+([SpanishOmeletteLunch] of Lunch
+         (HasIngredient  [Eggs] [Potato] [RedOnions] [OliveOil] [Garlic])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Frying")
+         (Name  "SpanishOmeletteLunch")
+    )
+
+([PastaAlfredo] of Lunch
+         (HasIngredient  [Pasta] [Butter] [Garlic] [Milk] [ParmesanCheese])
+         (IngredientQuantity  35.0 20.0 20.0 10.0 15.0)
+         (CookingMethod  "Boiling")
+         (Name  "PastaAlfredo")
+    )
+
+([SpinachSalad] of Lunch
+         (HasIngredient  [Spinach] [OliveOil] [Garlic] [Tomatoes] [FetaCheese])
+         (IngredientQuantity  35.0 25.0 15.0 15.0 10.0)
+         (CookingMethod  "Mixing")
+         (Name  "SpinachSalad")
+)
+([EggplantParmesan] of Lunch
+         (HasIngredient  [Eggplant] [TomatoSauce] [ParmesanCheese] [Basil] [OliveOil])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Baking")
+         (Name  "EggplantParmesan")
+    )
+
+([RicePilaf] of Lunch
+         (HasIngredient  [Rice] [OliveOil] [RedOnions] [Garlic] [Carrots])
+         (IngredientQuantity  40.0 20.0 20.0 10.0 10.0)
+         (CookingMethod  "Boiling")
+         (Name  "RicePilaf")
+    )
+
+([LambKebab] of Lunch
+         (HasIngredient  [Lamb] [OliveOil] [Garlic] [RedOnions] [Pepper])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Grilling")
+         (Name  "LambKebab")
+    )
+
+([FishGrill] of Lunch
+         (HasIngredient  [WhiteFish] [OliveOil] [LemonJuice] [Garlic] [Dill])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Grilling")
+         (Name  "FishGrill")
+    )
+
+([ChickenRice] of Lunch
+         (HasIngredient  [Chicken] [Rice] [OliveOil] [Garlic] [Pepper])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Boiling")
+         (Name  "ChickenRice")
+    )
+
+([BeefTacos] of Lunch
+         (HasIngredient  [Beef] [Lettuce] [Tomatoes] [OliveOil] [PitaBread])
+         (IngredientQuantity  35.0 20.0 20.0 10.0 15.0)
+         (CookingMethod  "Grilling")
+         (Name  "BeefTacos")
+    )
+
+([ZucchiniPasta] of Lunch
+         (HasIngredient  [Pasta] [Zucchini] [Garlic] [OliveOil] [ParmesanCheese])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Boiling")
+         (Name  "ZucchiniPasta")
+    )
+
+([LentilSoup] of Lunch
+         (HasIngredient  [Lentils] [Carrots] [RedOnions] [OliveOil] [Garlic])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Boiling")
+         (Name  "LentilSoup")
+    )
+
+([Paella] of Lunch
+         (HasIngredient  [PaellaRice] [Chicken] [RedOnions] [BellPeppers] [OliveOil])
+         (IngredientQuantity  35.0 30.0 20.0 10.0 5.0)
+         (CookingMethod  "Boiling")
+         (Name  "Paella")
+    )
+
+([GreekYogurtWithFruits] of Lunch
+         (HasIngredient  [GreekYogurt] [Honey] [Apple] [Banana] [Blueberries])
+         (IngredientQuantity  40.0 20.0 15.0 15.0 10.0)
+         (CookingMethod  "Mixing")
+         (Name  "GreekYogurtWithFruits")
     )
