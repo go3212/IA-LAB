@@ -6,24 +6,6 @@
 
 (defmodule MAIN (export ?ALL))
 
-(defmodule DATA-INFERENCE
-    (import MAIN ?ALL)
-    (export ?ALL)
-)
-
-(defmodule MENU-GENERATION
-    (import MAIN ?ALL)
-    (import DATA-INFERENCE ?ALL)
-    (export ?ALL)
-)
-
-(defmodule MENU-PRINT
-    (import MAIN ?ALL)
-    (import DATA-INFERENCE ?ALL)
-    (import MENU-GENERATION ?ALL)
-    (export ?ALL)
-)
-
 (deftemplate MAIN::user
     (slot name)
     (slot age (type INTEGER))
@@ -35,12 +17,18 @@
     (multislot diseases)
     (multislot liked-ingredients)
     (multislot disliked-ingredients)
-    (slot bmi (type FLOAT))
-    (slot required-calories (type FLOAT))
-    (slot required-fat (type FLOAT))
-    (slot required-protein (type FLOAT))
-    (slot required-carbohydrates (type FLOAT))
-    (multislot required-nutrients)
+    (slot bmi (type FLOAT) (default -1.0))
+    (slot required-calories (type FLOAT) (default -1.0))
+    (slot required-fat (type FLOAT) (default -1.0))
+    (slot required-protein (type FLOAT) (default -1.0))
+    (slot required-carbohydrates (type FLOAT) (default -1.0))
+    (slot required-calcium (type FLOAT) (default -1.0))
+    (slot required-zinc (type FLOAT) (default -1.0))
+    (slot required-potassium (type FLOAT) (default -1.0))
+    (slot required-magnesium (type FLOAT) (default -1.0))
+    (slot required-sodium (type FLOAT) (default -1.0))
+    (slot required-sugar (type FLOAT) (default -1.0))
+    (slot required-fiber (type FLOAT) (default -1.0))
     (multislot required-vitamins)
 )
 
@@ -82,5 +70,6 @@
 
     (assert (user (age ?age) (gender ?sex) (weight ?weight) (height ?height) (is-vegan ?vegan-status) 
                   (activity-level ?activity-level) (diseases ?diseases) (liked-ingredients ?liked-ingredients) 
-                  (disliked-ingredients ?disliked-ingredients)))
+                  (disliked-ingredients ?disliked-ingredients) (bmi -1.0)))
+    (focus DATA-INFERENCE)
 )

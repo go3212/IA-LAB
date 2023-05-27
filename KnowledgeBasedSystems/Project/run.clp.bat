@@ -4,15 +4,15 @@
 ;;; Ontology
 (load "Classes/ontologia.clp")
 ;;; Functions
+(load "Functions/main.clp")
 (load "Functions/menu-generation.clp")
 (load "Functions/menu-print.clp")
 (load "Functions/data-inference.clp")
-(load "Functions/main.clp")
 ;;; Rules
+(load "main.clp")
+(load "Rules/data-inference.clp")
 (load "Rules/menu-generation.clp")
 (load "Rules/menu-print.clp")
-(load "Rules/data-inference.clp")
-(load "main.clp")
 (reset)
 ;;; Instances
 (load-instances "Instances/minerals.pins")
