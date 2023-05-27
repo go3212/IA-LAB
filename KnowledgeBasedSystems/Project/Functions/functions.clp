@@ -1,38 +1,75 @@
-(deffunction promptForAge()
-    (printout t "Please enter your age: " crlf)
+(deffunction promptForAge() 
+    (printout t "Enter your age: " crlf)
     (bind ?age (read))
-    (assert (Age ?age))
+    (if (integerp ?age)
+        then
+            return ?age
+        else
+            (printout t "Invalid input. Please enter a number for your age." crlf)
+            (return (promptForAge))
+    )
 )
 
-(deffunction promptForSex()
-    (printout t "Please enter your sex (Male or Female): " crlf)
+(deffunction promptForSex() 
+    (printout t "Enter your sex (male or female): " crlf)
     (bind ?sex (read))
-    (assert (Sex ?sex))
+    (if (member$ ?sex (create$ male female))
+        then
+            return ?sex
+        else
+            (printout t "Invalid input. Please enter 'male' or 'female'." crlf)
+            (return (promptForSex))
+    )
+)
+
+(deffunction promptForWeight() 
+    (printout t "Enter your weight (in kg): " crlf)
+    (bind ?weight (read))
+    (if (floatp ?weight)
+        then
+            return ?weight
+        else
+            (printout t "Invalid input. Please enter a number for your weight." crlf)
+            (return (promptForWeight))
+    )
+)
+
+(deffunction promptForHeight() 
+    (printout t "Enter your height (in cm): " crlf)
+    (bind ?height (read))
+    (if (floatp ?height)
+        then
+            return ?height
+        else
+            (printout t "Invalid input. Please enter a number for your height." crlf)
+            (return (promptForHeight))
+    )
+)
+
+(deffunction promptForVeganStatus() 
+    (printout t "Are you a vegan? (yes or no): " crlf)
+    (bind ?vegan-status (read))
+    (if (member$ ?vegan-status (create$ yes no))
+        then
+            return ?vegan-status
+        else
+            (printout t "Invalid input. Please enter 'yes' or 'no'." crlf)
+            (return (promptForVeganStatus))
+    )
 )
 
 (deffunction promptForPhysicalActivityLevel()
-    (printout t "Please enter your physical activity level (sedentary, low, medium, high): " crlf)
-    (bind ?activityLevel (read))
-    (assert (PhysicalActivityLevel ?activityLevel))
+    (printout t "Enter your physical activity level (sedentary, light, moderate, active): " crlf)
+    (bind ?activity-level (read))
+    (if (member$ ?activity-level (create$ sedentary light moderate active))
+        then
+            return ?activity-level
+        else
+            (printout t "Invalid input. Please enter 'sedentary', 'light', 'moderate' or 'active'." crlf)
+            (return (promptForPhysicalActivityLevel))
+    )
 )
 
-(deffunction promptForWeight()
-    (printout t "Please enter your weight (in kg): " crlf)
-    (bind ?weight (read))
-    (assert (Weight ?weight))
-)
-
-(deffunction promptForHeight()
-    (printout t "Please enter your height (in cm): " crlf)
-    (bind ?height (read))
-    (assert (Height ?height))
-)
-
-(deffunction promptForVeganStatus()
-    (printout t "Are you a vegan? (yes or no): " crlf)
-    (bind ?veganStatus (read))
-    (assert (VeganStatus ?veganStatus))
-)
 
 (deffunction listIngredients()
     (printout t "Available ingredients: " crlf)
@@ -51,38 +88,17 @@
 (deffunction promptForDiseases()
     (listDiseases)
     (printout t "Please enter any of the diseases you have (separated by comma): " crlf)
-    (bind ?diseaseList (readline))
-    (bind ?diseaseList (explode$ ?diseaseList))
-    (loop-for-count (?i 1 (length$ ?diseaseList))
-        (bind ?diseaseName (nth$ ?i ?diseaseList))
-        (bind ?disease (find-instance ((?x Disease)) (eq ?x:Name ?diseaseName) TRUE))
-        (if ?disease then
-            (assert (HasDisease (disease ?diseaseName)))
-        )
-    )
+    (return (explode$ (readline)))
 )
+
 (deffunction promptForPositivePreferences()
     (listIngredients)
     (printout t "Please enter the ingredients you like (separated by comma): " crlf)
-    (bind ?likeList (readline))
-    (bind ?likeList (explode$ ?likeList))
-    (loop-for-count (?i 1 (length$ ?likeList))
-        (do-for-all-instances ((?ingredient Ingredient) (eq (send ?ingredient get-Name) (nth$ ?i ?likeList)))
-            (assert (PositivePreference (ingredient (send ?ingredient get-Name))))
-        )
-    )
+    (return (explode$ (readline)))
 )
 
 (deffunction promptForNegativePreferences()
     (listIngredients)
     (printout t "Please enter the ingredients you dislike (separated by comma): " crlf)
-    (bind ?dislikeList (readline))
-    (bind ?dislikeList (explode$ ?dislikeList))
-    (loop-for-count (?i 1 (length$ ?dislikeList))
-        (do-for-all-instances ((?ingredient Ingredient) (eq (send ?ingredient get-Name) (nth$ ?i ?dislikeList)))
-            (assert (NegativePreference (ingredient (send ?ingredient get-Name))))
-        )
-    )
+    (return (explode$ (readline)))
 )
-
-

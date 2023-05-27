@@ -1,17 +1,3 @@
-; ------------------------------------------------------------
-; * MAIN
-;   En este fichero se definen los módulos del programa
-;   y los deftamplates del módulo MAIN
-;------------------------------------------------------------
-
-(defmodule MAIN)
-(defmodule DATOS-USUARIO)
-(defmodule INFERENCIA-DATOS)
-(defmodule GENERACION-MENUS)
-(defmodule IMPRESION-SOLUCION)
-
-(defmodule MAIN)
-
 (deftemplate MAIN::user
     (slot name)
     (slot age (type INTEGER))
@@ -32,27 +18,59 @@
     (multislot required-vitamins)
 )
 
-(deftemplate MAIN::meal
-    (multislot courses (type INSTANCE) (default (create$ (make-instance of Course) (make-instance of Course))))
-    (slot dessert (type INSTANCE) (default (make-instance of Dessert)))
+(defrule MAIN::gather-user-data
+    =>
+    (bind ?age (promptForAge))
+    (bind ?sex (promptForSex))
+    (bind ?weight (promptForWeight))
+    (bind ?height (promptForHeight))
+    (bind ?vegan-status (promptForVeganStatus))
+    (bind ?activity-level (promptForPhysicalActivityLevel))
+    (bind ?diseases (promptForDiseases))
+    (bind ?liked-ingredients (promptForPositivePreferences))
+    (bind ?disliked-ingredients (promptForNegativePreferences))
+
+    (assert (user (age ?age) (gender ?sex) (weight ?weight) (height ?height) (is-vegan ?vegan-status) 
+                  (activity-level ?activity-level) (diseases ?diseases) (liked-ingredients ?liked-ingredients) 
+                  (disliked-ingredients ?disliked-ingredients)))
 )
 
-(deftemplate MAIN::breakfast
-    (slot course (type INSTANCE) (default (make-instance of Breakfast)))
+(defrule MAIN::validateDiseases
+    ?f <- (validateDiseases $?diseases)
+    =>
+    (bind ?validDiseases (create$))
+    (foreach ?disease ?diseases do
+        (if (any-instancep ((?d Disease)) (eq ?d (send ?d get-Name))) then
+            (bind ?validDiseases (insert$ ?validDiseases (length$ ?validDiseases) ?disease))
+        else
+            (printout t "Invalid disease: " ?disease crlf)
+        )
+    )
+    (if (= (length$ ?validDiseases) (length$ ?diseases)) then
+        (retract ?f)
+        (return ?validDiseases)
+    else
+        (retract ?f)
+        (assert (validateDiseases (promptForDiseases)))
+    )
 )
 
-(deftemplate MAIN::dinner
-    (multislot courses (type INSTANCE) (default (create$ (make-instance of Dinner) (make-instance of Dinner))))
-    (slot dessert (type INSTANCE) (default (make-instance of Dessert)))
+(defrule MAIN::validateIngredients
+    ?f <- (validateIngredients $?ingredients)
+    =>
+    (bind ?validIngredients (create$))
+    (foreach ?ingredient ?ingredients do
+        (if (any-instancep ((?i Ingredient)) (eq ?i (send ?i get-Name))) then
+            (bind ?validIngredients (insert$ ?validIngredients (length$ ?validIngredients) ?ingredient))
+        else
+            (printout t "Invalid ingredient: " ?ingredient crlf)
+        )
+    )
+    (if (= (length$ ?validIngredients) (length$ ?ingredients)) then
+        (retract ?f)
+        (return ?validIngredients)
+    else
+        (retract ?f)
+        (assert (validateIngredients (promptForPositivePreferences)))
+    )
 )
-
-(deftemplate MAIN::daily-menu
-    (slot breakfast (type INSTANCE) (default (make-instance of breakfast)))
-    (slot meal (type INSTANCE) (default (make-instance of meal)))
-    (slot dinner (type INSTANCE) (default (make-instance of dinner)))
-)
-
-(deftemplate MAIN::weekly-menu
-    (multislot daily-menus (type INSTANCE) (default (create$ (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu) (make-instance of daily-menu))))
-)
-
