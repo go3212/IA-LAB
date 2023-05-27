@@ -21,6 +21,7 @@
     (slot required-calories (type FLOAT) (default -1.0))
     (slot required-fat (type FLOAT) (default -1.0))
     (slot required-protein (type FLOAT) (default -1.0))
+    (slot required-iron (type FLOAT) (default -1.0))
     (slot required-carbohydrates (type FLOAT) (default -1.0))
     (slot required-calcium (type FLOAT) (default -1.0))
     (slot required-zinc (type FLOAT) (default -1.0))
