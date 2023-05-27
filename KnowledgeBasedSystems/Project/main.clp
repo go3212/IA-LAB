@@ -4,10 +4,25 @@
 ;   y los deftamplates del módulo MAIN
 ;------------------------------------------------------------
 
-(defmodule MAIN)
-(defmodule DATA-INFERENCE)
-(defmodule MENU-GENERATION)
-(defmodule MENU-PRINT)
+(defmodule MAIN (export ?ALL))
+
+(defmodule DATA-INFERENCE
+    (import MAIN ?ALL)
+    (export ?ALL)
+)
+
+(defmodule MENU-GENERATION
+    (import MAIN ?ALL)
+    (import DATA-INFERENCE ?ALL)
+    (export ?ALL)
+)
+
+(defmodule MENU-PRINT
+    (import MAIN ?ALL)
+    (import DATA-INFERENCE ?ALL)
+    (import MENU-GENERATION ?ALL)
+    (export ?ALL)
+)
 
 (deftemplate MAIN::user
     (slot name)
