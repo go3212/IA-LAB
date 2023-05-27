@@ -1,11 +1,11 @@
 * Qué queremos pedir?
-· Edad
-· Sexo
-· Nivel de actividad fisica (sedentario, bajo, medio, alto)
-· Peso
-· Altura
-· Eres vegano?
-· Enfermedades...
+· Edad (Numerico)
+· Sexo  (String: Male | Female)
+· Nivel de actividad fisica (sedentario, bajo, medio, alto) (String)
+· Peso (Numerico)
+· Altura (Numerico cm)
+· Eres vegano? (Bool)
+· Enfermedades... (String)
     · Hipertension
     · Enfermedad isquémica del corazón.
     · Diabetes
@@ -17,8 +17,8 @@
     · Artrítis
     · Anemia
     · Hiperuricemia
-· Preferencias positivas (listado de ingredientes que gusten)
-· Preferencias negativas (listado de ingredientes que gusten)
+· Preferencias positivas (listado de ingredientes que gusten) (Ingredientes...)
+· Preferencias negativas (listado de ingredientes que gusten) (Ingredientes...)
 
 //
 La lista de ingredientes es...
