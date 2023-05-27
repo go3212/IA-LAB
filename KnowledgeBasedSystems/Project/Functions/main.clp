@@ -1,3 +1,4 @@
+
 (deffunction promptForAge() 
     (printout t "Enter your age: " crlf)
     (bind ?age (read))
@@ -69,7 +70,6 @@
             (return (promptForPhysicalActivityLevel))
     )
 )
-
 
 (deffunction listIngredients()
     (printout t "Available ingredients: " crlf)
