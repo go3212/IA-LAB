@@ -18,6 +18,30 @@
     (multislot required-vitamins)
 )
 
+(deftemplate MAIN::meal
+  (multislot courses (type INSTANCE))
+  (slot dessert (type INSTANCE))
+)
+
+(deftemplate MAIN::breakfast
+  (slot course (type INSTANCE))
+)
+
+(deftemplate MAIN::dinner
+  (multislot courses (type INSTANCE))
+  (slot dessert (type INSTANCE))
+)
+
+(deftemplate MAIN::daily-menu
+    (slot breakfast (type INSTANCE-NAME))
+    (slot meal (type INSTANCE-NAME))
+    (slot dinner (type INSTANCE-NAME))
+)
+
+(deftemplate MAIN::weekly-menu
+    (multislot daily-menus (type INSTANCE-NAME))
+)
+
 (defrule MAIN::gather-user-data
     =>
     (bind ?age (promptForAge))
@@ -54,6 +78,7 @@
         (assert (validateDiseases (promptForDiseases)))
     )
 )
+
 
 (defrule MAIN::validateIngredients
     ?f <- (validateIngredients $?ingredients)
