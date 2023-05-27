@@ -11,3 +11,65 @@
          (CookingMethod  "No-Cook")
          (Name  "YogurtWithFruits")
     )
+([EggAndTomatoScramble] of Breakfast
+     (HasIngredient [Eggs] [Tomatoes] [OliveOil] [Garlic])
+     (IngredientQuantity 40.0 30.0 20.0 10.0)
+     (CookingMethod "Scramble")
+     (Name "EggAndTomatoScramble")
+)
+
+([FruitSaladBreakfast] of Breakfast
+     (HasIngredient [Apple] [Banana] [Orange] [Strawberries])
+     (IngredientQuantity 25.0 25.0 25.0 25.0)
+     (CookingMethod "Mixing")
+     (Name "FruitSaladBreakfast")
+)
+
+([MediterraneanToast] of Breakfast
+     (HasIngredient [WheatBread] [FetaCheese] [Tomatoes] [Olives])
+     (IngredientQuantity 30.0 20.0 25.0 25.0)
+     (CookingMethod "Toasting")
+     (Name "MediterraneanToast")
+)
+
+([GreekYogurtWithHoneyAndAlmonds] of Breakfast
+     (HasIngredient [GreekYogurt] [Honey] [Almonds] [Blueberries])
+     (IngredientQuantity 40.0 20.0 20.0 20.0)
+     (CookingMethod "Mixing")
+     (Name "GreekYogurtWithHoneyAndAlmonds")
+)
+
+([SpanishToastWithTomato] of Breakfast
+     (HasIngredient [Bread] [Tomatoes] [OliveOil] [Garlic])
+     (IngredientQuantity 30.0 30.0 20.0 20.0)
+     (CookingMethod "Toasting")
+     (Name "SpanishToastWithTomato")
+)
+
+([FetaAndSpinachOmelette] of Breakfast
+     (HasIngredient [Eggs] [FetaCheese] [Spinach] [OliveOil])
+     (IngredientQuantity 30.0 30.0 20.0 20.0)
+     (CookingMethod "Frying")
+     (Name "FetaAndSpinachOmelette")
+)
+
+([BananaAndStrawberrySmoothie] of Breakfast
+     (HasIngredient [Banana] [Strawberries] [Milk] [Honey])
+     (IngredientQuantity 25.0 25.0 40.0 10.0)
+     (CookingMethod "Blending")
+     (Name "BananaAndStrawberrySmoothie")
+)
+
+([BreadWithProsciuttoAndTomato] of Breakfast
+     (HasIngredient [Bread] [Prosciutto] [Tomatoes] [OliveOil])
+     (IngredientQuantity 30.0 30.0 20.0 20.0)
+     (CookingMethod "Assembling")
+     (Name "BreadWithProsciuttoAndTomato")
+)
+
+([GreekYogurtWithFruit] of Breakfast
+     (HasIngredient [GreekYogurt] [Apple] [Blueberries] [Honey])
+     (IngredientQuantity 40.0 20.0 20.0 20.0)
+     (CookingMethod "Mixing")
+     (Name "GreekYogurtWithFruit")
+)
