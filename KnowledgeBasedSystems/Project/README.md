@@ -1,3 +1,26 @@
+* Qué queremos pedir?
+· Edad
+· Sexo
+· Nivel de actividad fisica (sedentario, bajo, medio, alto)
+· Peso
+· Altura
+· Eres vegano?
+· Enfermedades...
+    · Hipertension
+    · Enfermedad isquémica del corazón.
+    · Diabetes
+    · Osteoporosis
+    · Disfagia
+    · Hiperlipemia
+    · Hipertriglicidemia
+    · Enfermad inflamatoria de las articulaciones
+    · Artrítis
+    · Anemia
+    · Hiperuricemia
+· Preferencias positivas (listado de ingredientes que gusten)
+· Preferencias negativas (listado de ingredientes que gusten)
+
+//
 La lista de ingredientes es...
 Rice
 Chicken
