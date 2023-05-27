@@ -1,5 +1,5 @@
 ([SpanishOmelette] of Breakfast
-         (HasIngredient  [Eggs] [Potato] [OliveOil] [Onion])
+         (HasIngredient  [Eggs] [Potato] [OliveOil] [RedOnion])
          (IngredientQuantity  25.0 40.0 25.0 10.0)
          (CookingMethod  "Frying")
          (Name  "SpanishOmelette")

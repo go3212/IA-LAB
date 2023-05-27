@@ -495,17 +495,9 @@
   (Seasonality "Winter-Spring")
 )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+([Honey] of Ingredient
+(Name "Honey")
+(HasNutritionalValue NutritionalValue-Honey)
+(Allergens "none")
+(Seasonality "All-Year")
+)
