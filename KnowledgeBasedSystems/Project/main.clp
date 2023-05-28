@@ -30,27 +30,17 @@
     (slot required-sodium (type FLOAT) (default 2300.0))
     (slot required-sugar (type FLOAT) (default 25.0))
     (slot required-fiber (type FLOAT) (default 28.0))
-    (multislot required-vitamins (type STRING))
-)
-
-(deftemplate MAIN::meal
-  (multislot courses (type INSTANCE))
-  (slot dessert (type INSTANCE))
-)
-
-(deftemplate MAIN::breakfast
-  (slot course (type INSTANCE))
-)
-
-(deftemplate MAIN::dinner
-  (multislot courses (type INSTANCE))
-  (slot dessert (type INSTANCE))
+    (multislot required-vitamins) (type STRING)
 )
 
 (deftemplate MAIN::daily-menu
-    (slot breakfast (type INSTANCE-NAME))
-    (slot meal (type INSTANCE-NAME))
-    (slot dinner (type INSTANCE-NAME))
+    (slot breakfast (type INSTANCE))
+    (slot lunch-first (type INSTANCE))
+    (slot lunch-second (type INSTANCE))
+    (slot lunch-dessert (type INSTANCE))
+    (slot dinner-second (type INSTANCE))
+    (slot dinner-second (type INSTANCE))
+    (slot dinner-dessert (type INSTANCE))
 )
 
 (deftemplate MAIN::weekly-menu
