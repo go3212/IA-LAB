@@ -40,7 +40,6 @@
 
 (defrule DATA-INFERENCE::adjust-for-diabetes
     ?user <- (user (diseases $?diseases&:(member$ [Diabetes] $?diseases)) (required-carbohydrates ?required-carbohydrates) (required-calories ?required-calories) (required-vitamins $?vitamins))
-    (test (<= ?required-carbohydrates (* 0.35 ?required-calories)))
     (test (not (member$ "C" $?vitamins)))
     =>
     (bind ?new-carbs (* 0.35 ?required-calories))
@@ -60,7 +59,6 @@
 
 (defrule DATA-INFERENCE::adjust-for-ischemic-heart-disease
     ?user <- (user (diseases $?diseases&:(member$ [Ischemic-Heart-Disease] $?diseases)) (required-fat ?required-fat) (required-vitamins $?vitamins))
-    (test (<= ?required-fat (* 0.7 ?required-fat)))
     (test (not (member$ "D" $?vitamins)))
     =>
     (bind ?new-fat (* 0.7 ?required-fat))
@@ -70,7 +68,6 @@
 
 (defrule DATA-INFERENCE::adjust-for-osteoporosis
     ?user <- (user (diseases $?diseases&:(member$ [Osteoporosis] $?diseases)) (required-calcium ?required-calcium) (required-vitamins $?vitamins))
-    (test (>= ?required-calcium (* 1.5 ?required-calcium)))
     (test (not (member$ "D" $?vitamins)))
     =>
     (bind ?new-calcium (* 1.5 ?required-calcium))
@@ -80,7 +77,6 @@
 
 (defrule DATA-INFERENCE::adjust-for-dysphagia
     ?user <- (user (diseases $?diseases&:(member$ [Dysphagia] $?diseases)) (required-fiber ?required-fiber) (required-vitamins $?vitamins))
-    (test (>= ?required-fiber (* 1.2 ?required-fiber)))
     (test (not (member$ "C" $?vitamins)))
     =>
     (bind ?new-fiber (* 1.2 ?required-fiber))
@@ -90,7 +86,6 @@
 
 (defrule DATA-INFERENCE::adjust-for-hyperlipidemia
     ?user <- (user (diseases $?diseases&:(member$ [Hyperlipidemia] $?diseases)) (required-fat ?required-fat) (required-vitamins $?vitamins))
-    (test (<= ?required-fat (* 0.6 ?required-fat)))
     (test (not (member$ "E" $?vitamins)))
     =>
     (bind ?new-fat (* 0.6 ?required-fat))
@@ -109,7 +104,6 @@
 
 (defrule DATA-INFERENCE::adjust-for-inflammatory-joint-diseases
     ?user <- (user (diseases $?diseases&:(member$ [Inflammatory-Joint-Diseases] $?diseases)) (required-protein ?required-protein) (required-vitamins $?vitamins))
-    (test (>= ?required-protein (* 1.2 ?required-protein)))
     (test (not (member$ "E" $?vitamins)))
     =>
     (bind ?new-protein (* 1.2 ?required-protein))
@@ -119,7 +113,6 @@
 
 (defrule DATA-INFERENCE::adjust-for-hyperuricemia
     ?user <- (user (diseases $?diseases&:(member$ [Hyperuricemia] $?diseases)) (required-protein ?required-protein) (required-vitamins $?vitamins))
-    (test (<= ?required-protein (* 0.8 ?required-protein)))
     (test (not (member$ "C" $?vitamins)))
     =>
     (bind ?new-protein (* 0.8 ?required-protein))
@@ -129,7 +122,6 @@
 
 (defrule DATA-INFERENCE::adjust-for-anemia
     ?user <- (user (diseases $?diseases&:(member$ [Anemia] $?diseases)) (required-iron ?required-iron) (required-vitamins $?vitamins))
-    (test (>= ?required-iron (* 1.5 ?required-iron)))
     (test (not (member$ "B12" $?vitamins)))
     =>
     (bind ?new-iron (* 1.5 ?required-iron))
@@ -139,7 +131,6 @@
 
 (defrule DATA-INFERENCE::adjust-for-arthritis
     ?user <- (user (diseases $?diseases&:(member$ [Arthritis] $?diseases)) (required-calcium ?required-calcium) (required-vitamins $?vitamins))
-    (test (>= ?required-calcium (* 1.2 ?required-calcium)))
     (test (not (member$ "B12" $?vitamins)))
     =>
     (bind ?new-calcium (* 1.2 ?required-calcium))
@@ -152,4 +143,24 @@
     =>
     ; This rule doesn't modify the user object directly. Instead, it could be used to guide the generation of a meal plan
     ; that takes into account the user's preferences.
+)
+
+(defrule DATA-INFERENCE::done-with-data-inference
+    (declare (salience -10000))
+    (not (user (weight ?weight) (height ?height) (bmi -1.0)))
+    (not (user (gender ?gender) (weight ?weight) (height ?height) (age ?age) (activity-level ?activity-level) (required-calories -1.0)))
+    (not (user (required-calories ?required-calories) (required-fat -1.0) (required-protein -1.0) (required-carbohydrates -1.0)))
+    (not (user (diseases $?diseases&:(member$ [Diabetes] $?diseases)) (required-carbohydrates ?required-carbohydrates) (required-calories ?required-calories) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Hypertension] $?diseases)) (required-sodium ?required-sodium) (required-potassium ?required-potassium) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Ischemic-Heart-Disease] $?diseases)) (required-fat ?required-fat) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Osteoporosis] $?diseases)) (required-calcium ?required-calcium) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Dysphagia] $?diseases)) (required-fiber ?required-fiber) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Hyperlipidemia] $?diseases)) (required-fat ?required-fat) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Hypertriglyceridemia] $?diseases)) (required-carbohydrates ?required-carbohydrates) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Inflammatory-Joint-Diseases] $?diseases)) (required-protein ?required-protein) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Hyperuricemia] $?diseases)) (required-protein ?required-protein) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Anemia] $?diseases)) (required-iron ?required-iron) (required-vitamins $?vitamins)))
+    (not (user (diseases $?diseases&:(member$ [Arthritis] $?diseases)) (required-calcium ?required-calcium) (required-vitamins $?vitamins)))
+    =>
+    (assert (switch-to-MENU-GENERATION))
 )
