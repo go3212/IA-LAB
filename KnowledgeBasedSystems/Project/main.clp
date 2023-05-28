@@ -34,12 +34,13 @@
 )
 
 (deftemplate MAIN::daily-menu
-    (slot breakfast (type INSTANCE))
-    (slot lunch-first (type INSTANCE))
-    (slot lunch-second (type INSTANCE))
-    (slot lunch-dessert (type INSTANCE))
-    (slot dinner-second (type INSTANCE))
-    (slot dinner-dessert (type INSTANCE))
+    (slot day (type STRING))
+    (slot breakfast)
+    (slot lunch-first (type STRING))
+    (slot lunch-second (type STRING))
+    (slot lunch-dessert (type STRING))
+    (slot dinner-second (type STRING))
+    (slot dinner-dessert (type STRING))
 )
 
 (deftemplate MAIN::weekly-menu
