@@ -145,35 +145,42 @@
     ; that takes into account the user's preferences.
 )
 
-(defrule DATA-INFERENCE::assign-course-scores
-   (declare (salience -5000))
-   ?user <- (user (is-vegan ?is-vegan) (liked-ingredients ?liked-ingredients) (disliked-ingredients ?disliked-ingredients))
-   ?course <- (object (is-a Course))
-   =>
-   (bind ?score 0)
-
-    ; Scoring based on vegan preferences
-    (if (eq ?is-vegan (send ?course get-IsVegan))
-        then (bind ?score (+ ?score 10)))
-
-    ; Scoring based on liked ingredients
-    (foreach ?ingredient ?liked-ingredients
-        (if (member$ ?ingredient (send ?course get-HasIngredient))
-            then (bind ?score (+ ?score 5))))
-
-    ; Scoring based on disliked ingredients
-    (foreach ?ingredient ?disliked-ingredients
-        (if (not (member$ ?ingredient (send ?course get-HasIngredient)))
-            then (bind ?score (+ ?score 5))))
-    
-    (send ?course put-Evaluation ?score)
-)
-
 (defrule DATA-INFERENCE::done-with-data-inference
     (declare (salience -10000))
     (not (user (weight ?weight) (height ?height) (bmi -1.0)))
     (not (user (gender ?gender) (weight ?weight) (height ?height) (age ?age) (activity-level ?activity-level) (required-calories -1.0)))
     (not (user (required-calories ?required-calories) (required-fat -1.0) (required-protein -1.0) (required-carbohydrates -1.0)))
+    ?user-fact <- (user (weight ?weight) (height ?height)
+                        (bmi ?bmi&~1.0)
+                        (gender ?gender) (age ?age) (activity-level ?activity-level)
+                        (required-calories ?required-calories&~1.0)
+                        (required-fat ?required-fat&~1.0)
+                        (required-protein ?required-protein&~1.0)
+                        (required-carbohydrates ?required-carbohydrates&~1.0)
+                        (is-vegan ?is-vegan)
+                        (liked-ingredients $?liked-ingredients)
+                        (disliked-ingredients $?disliked-ingredients))
     =>
+    (bind ?courses (find-all-instances ((?course Course)) TRUE))
+    (foreach ?course ?courses
+        (printout t (send ?course get-Name))
+        (bind ?score 0)
+        ; Scoring based on vegan preferences
+        (if (eq ?is-vegan (send ?course get-IsVegan))
+            then (bind ?score (+ ?score 10)))
+
+        ; Scoring based on liked ingredients
+        (foreach ?ingredient ?liked-ingredients
+            (if (member$ ?ingredient (send ?course get-HasIngredient))
+                then (bind ?score (+ ?score 5))))
+
+        ; Scoring based on disliked ingredients
+        (foreach ?ingredient ?disliked-ingredients
+            (if (not (member$ ?ingredient (send ?course get-HasIngredient)))
+                then (bind ?score (+ ?score 5))))
+        (send ?course put-Evaluation ?score)
+    )
+
+    (printout t "MENU-GENERATION")
     (assert (switch-to-MENU-GENERATION))
 )
