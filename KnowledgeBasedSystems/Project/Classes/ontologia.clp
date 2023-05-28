@@ -24,6 +24,9 @@
     (slot Name
         (type SYMBOL)
         (create-accessor read-write))
+    (slot Assigned
+        (type SYMBOL)
+        (create-accessor read-write))
 )
 
 (defclass Breakfast

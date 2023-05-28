@@ -157,17 +157,18 @@
                         (required-fat ?required-fat&~1.0)
                         (required-protein ?required-protein&~1.0)
                         (required-carbohydrates ?required-carbohydrates&~1.0)
+                        (required-iron ?required-iron)
                         (is-vegan ?is-vegan)
                         (liked-ingredients $?liked-ingredients)
+                        (required-vitamins $?required-vitamins)
                         (disliked-ingredients $?disliked-ingredients))
     =>
     (bind ?courses (find-all-instances ((?course Course)) TRUE))
     (foreach ?course ?courses
-        (printout t (send ?course get-Name))
         (bind ?score 0)
         ; Scoring based on vegan preferences
         (if (eq ?is-vegan (send ?course get-IsVegan))
-            then (bind ?score (+ ?score 10)))
+            then (bind ?score (+ ?score 20)))
 
         ; Scoring based on liked ingredients
         (foreach ?ingredient ?liked-ingredients
@@ -178,7 +179,14 @@
         (foreach ?ingredient ?disliked-ingredients
             (if (not (member$ ?ingredient (send ?course get-HasIngredient)))
                 then (bind ?score (+ ?score 5))))
+
+        ; Vitaminas 
+        ;(foreach ?vitamin ?required-vitamins
+        ;    (if (member$ ?vitamin (getCourseVitamins ?course))
+        ;        then (bind ?score (+ ?score 5))))
+
         (send ?course put-Evaluation ?score)
+        (send ?course put-Assigned false)
     )
 
     (printout t "MENU-GENERATION")
