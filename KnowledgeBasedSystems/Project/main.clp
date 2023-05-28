@@ -63,3 +63,9 @@
                   (disliked-ingredients ?disliked-ingredients) (bmi -1.0)))
     (focus DATA-INFERENCE)
 )
+
+(defrule switch-too-MENU-GENERATION
+  (switch-to-MENU-GENERATION)
+  =>
+  (focus MENU-GENERATION)
+)

@@ -147,14 +147,24 @@
 
 (defrule DATA-INFERENCE::assign-course-scores
    (declare (salience -5000))
-   ?user <- (user (is-vegan ?is-vegan))
+   ?user <- (user (is-vegan ?is-vegan) (liked-ingredients ?liked-ingredients) (disliked-ingredients ?disliked-ingredients))
    ?course <- (object (is-a Course))
    =>
-    (bind ?score 0)
+   (bind ?score 0)
 
     ; Scoring based on vegan preferences
     (if (eq ?is-vegan (send ?course get-IsVegan))
         then (bind ?score (+ ?score 10)))
+
+    ; Scoring based on liked ingredients
+    (foreach ?ingredient ?liked-ingredients
+        (if (member$ ?ingredient (send ?course get-HasIngredient))
+            then (bind ?score (+ ?score 5))))
+
+    ; Scoring based on disliked ingredients
+    (foreach ?ingredient ?disliked-ingredients
+        (if (not (member$ ?ingredient (send ?course get-HasIngredient)))
+            then (bind ?score (+ ?score 5))))
     
     (send ?course put-Evaluation ?score)
 )
