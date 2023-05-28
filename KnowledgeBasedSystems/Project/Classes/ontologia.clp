@@ -11,9 +11,10 @@
     (multislot HasIngredient
         (type INSTANCE)
         (create-accessor read-write))
-    (multislot IsVegan
+    (slot IsVegan
         (type SYMBOL)
         (create-accessor read-write))
+    (slot Evaluation (type FLOAT) (create-accessor read-write))
     (slot CookingMethod
         (type STRING)
         (create-accessor read-write))

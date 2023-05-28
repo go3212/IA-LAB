@@ -3,7 +3,7 @@
 (IngredientQuantity 16.6 16.6 16.6 16.6 16.6 16.6)
 (CookingMethod "No-Cook")
 (Name "GreekSaladDinner")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([GrilledChickenWithBroccoli] of Dinner
@@ -11,7 +11,7 @@
 (IngredientQuantity 40.0 40.0 15.0 5.0)
 (CookingMethod "Grilling")
 (Name "GrilledChickenWithBroccoli")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([SpanishRatatouille] of Dinner
@@ -19,7 +19,7 @@
 (IngredientQuantity 60.0 20.0 10.0 10.0)
 (CookingMethod "Sauteeing")
 (Name "SpanishRatatouille")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([ChickenPita] of Dinner
@@ -27,7 +27,7 @@
 (IngredientQuantity 30.0 40.0 10.0 10.0 10.0)
 (CookingMethod "Grilling")
 (Name "ChickenPita")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([TomatoBasilPasta] of Dinner
@@ -35,7 +35,7 @@
 (IngredientQuantity 40.0 40.0 5.0 10.0 5.0)
 (CookingMethod "Boiling")
 (Name "TomatoBasilPasta")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([BeefAndVegetableStirFry] of Dinner
@@ -43,7 +43,7 @@
 (IngredientQuantity 25.0 20.0 20.0 20.0 10.0 5.0)
 (CookingMethod "StirFrying")
 (Name "BeefAndVegetableStirFry")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([GrilledFishAndVegetables] of Dinner
@@ -51,7 +51,7 @@
 (IngredientQuantity 40.0 20.0 20.0 15.0 5.0)
 (CookingMethod "Grilling")
 (Name "GrilledFishAndVegetables")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([TunaSaladDinner] of Dinner
@@ -59,7 +59,7 @@
 (IngredientQuantity 30.0 20.0 20.0 20.0 7.5 2.5)
 (CookingMethod "NoCook")
 (Name "TunaSaladDinner")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([LambWithRosemaryAndGarlic] of Dinner
@@ -67,7 +67,7 @@
 (IngredientQuantity 70.0 15.0 10.0 5.0)
 (CookingMethod "Roasting")
 (Name "LambWithRosemaryAndGarlic")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([MediterraneanStuffedBellPeppers] of Dinner
@@ -75,7 +75,7 @@
 (IngredientQuantity 30.0 30.0 20.0 10.0 5.0 5.0)
 (CookingMethod "Baking")
 (Name "MediterraneanStuffedBellPeppers")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([ChickenAndVegetableCouscous] of Dinner
@@ -83,7 +83,7 @@
 (IngredientQuantity 30.0 30.0 15.0 15.0 5.0 5.0)
 (CookingMethod "Boiling")
 (Name "ChickenAndVegetableCouscous")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([MediterraneanLentilSoup] of Dinner
@@ -91,7 +91,7 @@
 (IngredientQuantity 30.0 20.0 15.0 10.0 5.0 5.0 2.5 2.5 2.5)
 (CookingMethod "Simmering")
 (Name "MediterraneanLentilSoup")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([GrilledSalmonWithAsparagus] of Dinner
@@ -99,7 +99,7 @@
 (IngredientQuantity 40.0 30.0 5.0 10.0 2.5)
 (CookingMethod "Grilling")
 (Name "GrilledSalmonWithAsparagus")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([StuffedEggplantWithQuinoa] of Dinner
@@ -107,7 +107,7 @@
 (IngredientQuantity 40.0 30.0 20.0 10.0 5.0 5.0 2.5 2.5)
 (CookingMethod "Baking")
 (Name "StuffedEggplantWithQuinoa")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([MozzarellaStuffedChickenBreast] of Dinner
@@ -115,12 +115,12 @@
 (IngredientQuantity 40.0 20.0 20.0 5.0 10.0 5.0)
 (CookingMethod "Baking")
 (Name "MozzarellaStuffedChickenBreast")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([MediterraneanShrimpWithTomatoes] of Dinner
 (HasIngredient [Prawns] [Tomatoes] [Garlic] [OliveOil] [Oregano] [LemonJuice])
-(IsVegan "no")
+(IsVegan no)
 (IngredientQuantity 40.0 30.0 5.0 10.0 2.5 2.5)
 (CookingMethod "Sauteeing")
 (Name "MediterraneanShrimpWithTomatoes")
@@ -128,7 +128,7 @@
 
 ([BeefKebabsWithTzatzikiSauce] of Dinner
 (HasIngredient [Beef] [GreekYogurt] [Cucumber] [Garlic] [LemonJuice] [OliveOil] [Oregano])
-(IsVegan "no")
+(IsVegan no)
 (IngredientQuantity 40.0 20.0 10.0 2.5 2.5 5.0 2.5)
 (CookingMethod "Grilling")
 (Name "BeefKebabsWithTzatzikiSauce")
@@ -136,7 +136,7 @@
 
 ([MediterraneanBakedFish] of Dinner
 (HasIngredient [WhiteFish] [Tomatoes] [Onions] [Garlic] [OliveOil] [LemonJuice] [Oregano])
-(IsVegan "yes")
+(IsVegan yes)
 (IngredientQuantity 40.0 20.0 10.0 5.0 5.0 2.5 2.5)
 (CookingMethod "Baking")
 (Name "MediterraneanBakedFish")
@@ -144,7 +144,7 @@
 
 ([GreekSaladWithGrilledChicken] of Dinner
 (HasIngredient [Chicken] [Lettuce] [Tomatoes] [Cucumber] [RedOnions] [KalamataOlives] [FetaCheese] [Oregano] [OliveOil] [RedWineVinegar])
-(IsVegan "no")
+(IsVegan no)
 (IngredientQuantity 40.0 30.0 20.0 10.0 5.0 5.0 20.0 2.5 5.0 2.5)
 (CookingMethod "Grilling")
 (Name "GreekSaladWithGrilledChicken")

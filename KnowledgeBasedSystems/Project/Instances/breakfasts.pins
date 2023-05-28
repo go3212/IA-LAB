@@ -3,7 +3,7 @@
 (IngredientQuantity 25.0 40.0 25.0 10.0)
 (CookingMethod "Frying")
 (Name "SpanishOmelette")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([YogurtWithFruits] of Breakfast
@@ -11,14 +11,14 @@
 (IngredientQuantity 70.0 10.0 10.0 10.0)
 (CookingMethod "No-Cook")
 (Name "YogurtWithFruits")
-(IsVegan "yes")
+(IsVegan yes)
 )
 ([EggAndTomatoScramble] of Breakfast
 (HasIngredient [Eggs] [Tomatoes] [OliveOil] [Garlic])
 (IngredientQuantity 40.0 30.0 20.0 10.0)
 (CookingMethod "Scramble")
 (Name "EggAndTomatoScramble")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([FruitSaladBreakfast] of Breakfast
@@ -26,7 +26,7 @@
 (IngredientQuantity 25.0 25.0 25.0 25.0)
 (CookingMethod "Mixing")
 (Name "FruitSaladBreakfast")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([MediterraneanToast] of Breakfast
@@ -34,7 +34,7 @@
 (IngredientQuantity 30.0 20.0 25.0 25.0)
 (CookingMethod "Toasting")
 (Name "MediterraneanToast")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([GreekYogurtWithHoneyAndAlmonds] of Breakfast
@@ -42,7 +42,7 @@
 (IngredientQuantity 40.0 20.0 20.0 20.0)
 (CookingMethod "Mixing")
 (Name "GreekYogurtWithHoneyAndAlmonds")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([SpanishToastWithTomato] of Breakfast
@@ -50,7 +50,7 @@
 (IngredientQuantity 30.0 30.0 20.0 20.0)
 (CookingMethod "Toasting")
 (Name "SpanishToastWithTomato")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([FetaAndSpinachOmelette] of Breakfast
@@ -58,7 +58,7 @@
 (IngredientQuantity 30.0 30.0 20.0 20.0)
 (CookingMethod "Frying")
 (Name "FetaAndSpinachOmelette")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([BananaAndStrawberrySmoothie] of Breakfast
@@ -66,7 +66,7 @@
 (IngredientQuantity 25.0 25.0 40.0 10.0)
 (CookingMethod "Blending")
 (Name "BananaAndStrawberrySmoothie")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([BreadWithProsciuttoAndTomato] of Breakfast
@@ -74,7 +74,7 @@
 (IngredientQuantity 30.0 30.0 20.0 20.0)
 (CookingMethod "Assembling")
 (Name "BreadWithProsciuttoAndTomato")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([GreekYogurtWithFruit] of Breakfast
@@ -82,5 +82,5 @@
 (IngredientQuantity 40.0 20.0 20.0 20.0)
 (CookingMethod "Mixing")
 (Name "GreekYogurtWithFruit")
-(IsVegan "no")
+(IsVegan no)
 )

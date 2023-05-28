@@ -145,22 +145,25 @@
     ; that takes into account the user's preferences.
 )
 
+(defrule DATA-INFERENCE::assign-course-scores
+   (declare (salience -5000))
+   ?user <- (user (is-vegan ?is-vegan))
+   ?course <- (object (is-a Course))
+   =>
+    (bind ?score 0)
+
+    ; Scoring based on vegan preferences
+    (if (eq ?is-vegan (send ?course get-IsVegan))
+        then (bind ?score (+ ?score 10)))
+    
+    (send ?course put-Evaluation ?score)
+)
+
 (defrule DATA-INFERENCE::done-with-data-inference
     (declare (salience -10000))
     (not (user (weight ?weight) (height ?height) (bmi -1.0)))
     (not (user (gender ?gender) (weight ?weight) (height ?height) (age ?age) (activity-level ?activity-level) (required-calories -1.0)))
     (not (user (required-calories ?required-calories) (required-fat -1.0) (required-protein -1.0) (required-carbohydrates -1.0)))
-    (not (user (diseases $?diseases&:(member$ [Diabetes] $?diseases)) (required-carbohydrates ?required-carbohydrates) (required-calories ?required-calories) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Hypertension] $?diseases)) (required-sodium ?required-sodium) (required-potassium ?required-potassium) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Ischemic-Heart-Disease] $?diseases)) (required-fat ?required-fat) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Osteoporosis] $?diseases)) (required-calcium ?required-calcium) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Dysphagia] $?diseases)) (required-fiber ?required-fiber) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Hyperlipidemia] $?diseases)) (required-fat ?required-fat) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Hypertriglyceridemia] $?diseases)) (required-carbohydrates ?required-carbohydrates) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Inflammatory-Joint-Diseases] $?diseases)) (required-protein ?required-protein) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Hyperuricemia] $?diseases)) (required-protein ?required-protein) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Anemia] $?diseases)) (required-iron ?required-iron) (required-vitamins $?vitamins)))
-    (not (user (diseases $?diseases&:(member$ [Arthritis] $?diseases)) (required-calcium ?required-calcium) (required-vitamins $?vitamins)))
     =>
     (assert (switch-to-MENU-GENERATION))
 )

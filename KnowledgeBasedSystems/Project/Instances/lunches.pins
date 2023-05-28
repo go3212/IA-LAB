@@ -3,7 +3,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Boiling")
 (Name "PastaPomodoro")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([ChickenSalad] of Lunch
@@ -11,7 +11,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Grilling")
 (Name "ChickenSalad")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([BeefStew] of Lunch
@@ -19,7 +19,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Boiling")
 (Name "BeefStew")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([TunaSalad] of Lunch
@@ -27,7 +27,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Mixing")
 (Name "TunaSalad")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([GreekSalad] of Lunch
@@ -35,7 +35,7 @@
 (IngredientQuantity 30.0 30.0 20.0 10.0 10.0)
 (CookingMethod "Mixing")
 (Name "GreekSalad")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([ChickenRatatouille] of Lunch
@@ -43,7 +43,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Baking")
 (Name "ChickenRatatouille")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([TomatoSoup] of Lunch
@@ -51,7 +51,7 @@
 (IngredientQuantity 40.0 20.0 20.0 10.0 10.0)
 (CookingMethod "Boiling")
 (Name "TomatoSoup")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([SpanishOmeletteLunch] of Lunch
@@ -59,7 +59,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Frying")
 (Name "SpanishOmeletteLunch")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([PastaAlfredo] of Lunch
@@ -67,7 +67,7 @@
 (IngredientQuantity 35.0 20.0 20.0 10.0 15.0)
 (CookingMethod "Boiling")
 (Name "PastaAlfredo")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([SpinachSalad] of Lunch
@@ -75,14 +75,14 @@
 (IngredientQuantity 35.0 25.0 15.0 15.0 10.0)
 (CookingMethod "Mixing")
 (Name "SpinachSalad")
-(IsVegan "yes")
+(IsVegan yes)
 )
 ([EggplantParmesan] of Lunch
 (HasIngredient [Eggplant] [TomatoSauce] [ParmesanCheese] [Basil] [OliveOil])
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Baking")
 (Name "EggplantParmesan")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([RicePilaf] of Lunch
@@ -90,7 +90,7 @@
 (IngredientQuantity 40.0 20.0 20.0 10.0 10.0)
 (CookingMethod "Boiling")
 (Name "RicePilaf")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([LambKebab] of Lunch
@@ -98,7 +98,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Grilling")
 (Name "LambKebab")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([FishGrill] of Lunch
@@ -106,7 +106,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Grilling")
 (Name "FishGrill")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([ChickenRice] of Lunch
@@ -114,7 +114,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Boiling")
 (Name "ChickenRice")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([BeefTacos] of Lunch
@@ -122,7 +122,7 @@
 (IngredientQuantity 35.0 20.0 20.0 10.0 15.0)
 (CookingMethod "Grilling")
 (Name "BeefTacos")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([ZucchiniPasta] of Lunch
@@ -130,7 +130,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Boiling")
 (Name "ZucchiniPasta")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([LentilSoup] of Lunch
@@ -138,7 +138,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Boiling")
 (Name "LentilSoup")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([Paella] of Lunch
@@ -146,7 +146,7 @@
 (IngredientQuantity 35.0 30.0 20.0 10.0 5.0)
 (CookingMethod "Boiling")
 (Name "Paella")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([GreekYogurtWithFruits] of Lunch
@@ -154,5 +154,5 @@
 (IngredientQuantity 40.0 20.0 15.0 15.0 10.0)
 (CookingMethod "Mixing")
 (Name "GreekYogurtWithFruits")
-(IsVegan "yes")
+(IsVegan yes)
 )

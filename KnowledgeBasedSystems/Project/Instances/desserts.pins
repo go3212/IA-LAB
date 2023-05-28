@@ -3,7 +3,7 @@
 (IngredientQuantity 25.0 25.0 25.0 25.0)
 (CookingMethod "No-Cook")
 (Name "FruitSalad")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([GreekYogurtWithHoneyAndFruit] of Dessert
@@ -11,7 +11,7 @@
 (IngredientQuantity 50.0 7.5 12.5 12.5)
 (CookingMethod "No-Cook")
 (Name "GreekYogurtWithHoneyAndFruit")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([WatermelonFruitSalad] of Dessert
@@ -19,7 +19,7 @@
 (IngredientQuantity 50.0 12.5 12.5 2.0)
 (CookingMethod "No-Cook")
 (Name "WatermelonFruitSalad")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([BananaAndOrangeSalad] of Dessert
@@ -27,7 +27,7 @@
 (IngredientQuantity 25.0 25.0 7.5 2.5)
 (CookingMethod "No-Cook")
 (Name "BananaAndOrangeSalad")
-(IsVegan "yes")
+(IsVegan yes)
 )
 
 ([SimpleAppleDessert] of Dessert
@@ -35,7 +35,7 @@
 (IngredientQuantity 50.0 7.5 5.0 7.5)
 (CookingMethod "Bake")
 (Name "SimpleAppleDessert")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([StrawberryAndBananaSmoothie] of Dessert
@@ -43,7 +43,7 @@
 (IngredientQuantity 37.5 25.0 37.5 2.5)
 (CookingMethod "Blend")
 (Name "StrawberryAndBananaSmoothie")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([GreekYogurtParfait] of Dessert
@@ -51,7 +51,7 @@
 (IngredientQuantity 50.0 5.0 7.5 12.5)
 (CookingMethod "No-Cook")
 (Name "GreekYogurtParfait")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([BlueberryAndStrawberrySmoothie] of Dessert
@@ -59,7 +59,7 @@
 (IngredientQuantity 37.5 37.5 25.0 2.5)
 (CookingMethod "Blend")
 (Name "BlueberryAndStrawberrySmoothie")
-(IsVegan "no")
+(IsVegan no)
 )
 
 ([AlmondCookies] of Dessert
@@ -67,5 +67,5 @@
 (IngredientQuantity 30.0 30.0 25.0 15.0)
 (CookingMethod "Baking")
 (Name "AlmondCookies")
-(IsVegan "no")
+(IsVegan no)
 )
