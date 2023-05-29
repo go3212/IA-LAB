@@ -138,13 +138,6 @@
     (modify ?user (required-calcium ?new-calcium) (required-vitamins $?vitamins "D"))
 )
 
-(defrule DATA-INFERENCE::consider-dietary-preferences
-    ?user <- (user (liked-ingredients $?liked) (disliked-ingredients $?disliked))
-    =>
-    ; This rule doesn't modify the user object directly. Instead, it could be used to guide the generation of a meal plan
-    ; that takes into account the user's preferences.
-)
-
 (defrule DATA-INFERENCE::done-with-data-inference
     (declare (salience -10000))
     (not (user (weight ?weight) (height ?height) (bmi -1.0)))
@@ -168,7 +161,7 @@
         (bind ?score 0)
         ; Scoring based on vegan preferences
         (if (eq ?is-vegan (send ?course get-IsVegan))
-            then (bind ?score (+ ?score 20)))
+            then (bind ?score (+ ?score 80)))
 
         ; Scoring based on liked ingredients
         (foreach ?ingredient ?liked-ingredients
@@ -184,6 +177,29 @@
         (foreach ?vitamin ?required-vitamins
             (if (member$ ?vitamin (getCourseVitamins ?course))
                 then (bind ?score (+ ?score 5))))
+        
+        ; Calorie scoring based on BMI
+        (bind ?courseCalories (getCourseCalories ?course))
+        (if (> ?bmi 25) ; BMI above 25 is considered overweight
+            then
+            (if (< ?courseCalories (/ ?required-calories 3)) 
+                then (bind ?score (+ ?score 10))
+                else (bind ?score (- ?score 10)))
+        (if (< ?bmi 18.5) ; BMI below 18.5 is considered underweight
+            then 
+            (if (> ?courseCalories (/ ?required-calories 3)) 
+                then (bind ?score (+ ?score 10))
+                else (bind ?score (- ?score 10)))))
+
+        ; Fat scoring
+        (bind ?courseFat (getCourseFat ?course))
+        (if (<= ?courseFat (/ ?required-fat 3))
+            then (bind ?score (+ ?score 10)))
+
+        ; Iron scoring
+        (bind ?courseIron (getCourseIron ?course))
+        (if (<= ?courseIron (/ ?required-iron 3)) ; Assuming 3 meals per day
+            then (bind ?score (+ ?score 10)))
 
         (send ?course put-Evaluation ?score)
         (send ?course put-Assigned false)

@@ -28,13 +28,13 @@
                 (dinner-dessert-quantity ?dDQ))
     =>
     (printout t "Day: " ?day crlf
-              "Breakfast: " ?breakfast " Quantity: " ?bQ crlf
-              "Lunch First Course: " ?lF " Quantity: " ?lFQ crlf
-              "Lunch Second Course: " ?lS " Quantity: " ?lSQ crlf
-              "Lunch Dessert: " ?lD " Quantity: " ?lDQ crlf
-              "Dinner First Course: " ?dF " Quantity: " ?dFQ crlf
-              "Dinner Second Course: " ?dS " Quantity: " ?dSQ crlf
-              "Dinner Dessert: " ?dD " Quantity: " ?dDQ crlf crlf)
+              "Breakfast: " ?breakfast crlf
+              "Lunch First Course: " ?lF crlf
+              "Lunch Second Course: " ?lS crlf
+              "Lunch Dessert: " ?lD crlf
+              "Dinner First Course: " ?dF crlf
+              "Dinner Second Course: " ?dS crlf
+              "Dinner Dessert: " ?dD crlf crlf)
 )
 
 (defrule MENU-PRINT::print-user-info
