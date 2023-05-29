@@ -65,7 +65,6 @@
                 (required-vitamins $?requiredVitamins))
     =>
     (printout t crlf "USER INFORMATION:" crlf
-              "Name: " ?name crlf
               "Age: " ?age crlf
               "Gender: " ?gender crlf
               "Weight: " ?weight crlf
