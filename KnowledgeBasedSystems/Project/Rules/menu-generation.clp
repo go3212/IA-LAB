@@ -175,6 +175,24 @@
     )
 )
 
+(defrule MENU-GENERATION::adjust-breakfast-quantity
+    ?f <- (daily-menu (day ?day) (breakfast ?breakfast) (breakfast-quantity nil))
+    ?u <- (user (required-calories ?reqCal))
+    ?b <- (object (is-a Breakfast) (Name ?breakfast) (HasIngredient $?ing) (IngredientQuantity $?quantities))
+    =>
+    (printout t "Hola" crlf)
+    (bind ?totalCalories 0)
+    (loop-for-count (?i (length$ ?ing)) do
+        (bind ?ingInstance (nth$ ?i ?ing))
+        (bind ?ingQuantity (nth$ ?i ?quantities))
+        (bind ?calPer100g (send ?ingInstance get-HasNutritionalValue get-Calories))
+        (bind ?totalCalories (+ ?totalCalories (* ?ingQuantity ?calPer100g 0.01))) 
+    )
+    (bind ?adjustedQuantity (/ ?reqCal ?totalCalories))
+    (modify ?f (breakfast-quantity ?adjustedQuantity))
+    (printout t "Asignado cantidad de desayuno al menú del " ?day crlf)
+)
+
 
 
 
