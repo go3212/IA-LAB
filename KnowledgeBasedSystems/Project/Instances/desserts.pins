@@ -63,8 +63,8 @@
 )
 
 ([AlmondCookies] of Dessert
-(HasIngredient [Almonds] [Butter] [Eggs] [Sugar])
-(IngredientQuantity 30.0 30.0 25.0 15.0)
+(HasIngredient [Almonds] [Butter] [Eggs])
+(IngredientQuantity 35.0 35.0 30.0 15.0)
 (CookingMethod "Baking")
 (Name "AlmondCookies")
 (IsVegan no)

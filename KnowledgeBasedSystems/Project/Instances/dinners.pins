@@ -1,6 +1,6 @@
 ([GreekSaladDinner] of Dinner
-(HasIngredient [Tomatoes] [Cucumbers] [RedOnions] [FetaCheese] [Olives] [OliveOil])
-(IngredientQuantity 16.6 16.6 16.6 16.6 16.6 16.6)
+(HasIngredient [Tomatoes] [RedOnions] [FetaCheese] [Olives] [OliveOil])
+(IngredientQuantity 20.0 20.0 20.0 20.0 20.0)
 (CookingMethod "No-Cook")
 (Name "GreekSaladDinner")
 (IsVegan yes)
@@ -55,8 +55,8 @@
 )
 
 ([TunaSaladDinner] of Dinner
-(HasIngredient [Tuna] [Lettuce] [Tomatoes] [Cucumbers] [OliveOil] [LemonJuice])
-(IngredientQuantity 30.0 20.0 20.0 20.0 7.5 2.5)
+(HasIngredient [Tuna] [Lettuce] [Tomatoes] [OliveOil] [LemonJuice])
+(IngredientQuantity 30.0 30.0 30.0 7.5 2.5)
 (CookingMethod "NoCook")
 (Name "TunaSaladDinner")
 (IsVegan no)
@@ -71,7 +71,7 @@
 )
 
 ([MediterraneanStuffedBellPeppers] of Dinner
-(HasIngredient [BellPeppers] [Rice] [Tomatoes] [Onions] [OliveOil] [Garlic])
+(HasIngredient [BellPeppers] [Rice] [Tomatoes] [RedOnions] [OliveOil] [Garlic])
 (IngredientQuantity 30.0 30.0 20.0 10.0 5.0 5.0)
 (CookingMethod "Baking")
 (Name "MediterraneanStuffedBellPeppers")
@@ -87,23 +87,23 @@
 )
 
 ([MediterraneanLentilSoup] of Dinner
-(HasIngredient [Lentils] [Tomatoes] [Carrots] [Onions] [Garlic] [OliveOil] [LemonJuice] [Cumin] [Parsley])
-(IngredientQuantity 30.0 20.0 15.0 10.0 5.0 5.0 2.5 2.5 2.5)
+(HasIngredient [Lentils] [Tomatoes] [Carrots] [RedOnions] [Garlic] [OliveOil] [LemonJuice] [Parsley])
+(IngredientQuantity 30.0 20.0 15.0 10.0 5.0 5.0 2.5 5.0)
 (CookingMethod "Simmering")
 (Name "MediterraneanLentilSoup")
 (IsVegan yes)
 )
 
-([GrilledSalmonWithAsparagus] of Dinner
-(HasIngredient [Salmon] [Asparagus] [LemonJuice] [OliveOil] [Dill])
-(IngredientQuantity 40.0 30.0 5.0 10.0 2.5)
+([GrilledSalmon] of Dinner
+(HasIngredient [Salmon] [LemonJuice] [OliveOil] [Dill])
+(IngredientQuantity 70.0 5.0 10.0 2.5)
 (CookingMethod "Grilling")
 (Name "GrilledSalmonWithAsparagus")
 (IsVegan no)
 )
 
 ([StuffedEggplantWithQuinoa] of Dinner
-(HasIngredient [Eggplant] [Quinoa] [Tomatoes] [Onions] [Garlic] [OliveOil] [Basil] [ParmesanCheese])
+(HasIngredient [Eggplant] [Quinoa] [Tomatoes] [RedOnions] [Garlic] [OliveOil] [Basil] [ParmesanCheese])
 (IngredientQuantity 40.0 30.0 20.0 10.0 5.0 5.0 2.5 2.5)
 (CookingMethod "Baking")
 (Name "StuffedEggplantWithQuinoa")
@@ -127,15 +127,15 @@
 )
 
 ([BeefKebabsWithTzatzikiSauce] of Dinner
-(HasIngredient [Beef] [GreekYogurt] [Cucumber] [Garlic] [LemonJuice] [OliveOil] [Oregano])
+(HasIngredient [Beef] [GreekYogurt] [Garlic] [LemonJuice] [OliveOil] [Oregano])
 (IsVegan no)
-(IngredientQuantity 40.0 20.0 10.0 2.5 2.5 5.0 2.5)
+(IngredientQuantity 40.0 30.0 2.5 2.5 5.0 2.5)
 (CookingMethod "Grilling")
 (Name "BeefKebabsWithTzatzikiSauce")
 )
 
 ([MediterraneanBakedFish] of Dinner
-(HasIngredient [WhiteFish] [Tomatoes] [Onions] [Garlic] [OliveOil] [LemonJuice] [Oregano])
+(HasIngredient [WhiteFish] [Tomatoes] [RedOnions] [Garlic] [OliveOil] [LemonJuice] [Oregano])
 (IsVegan yes)
 (IngredientQuantity 40.0 20.0 10.0 5.0 5.0 2.5 2.5)
 (CookingMethod "Baking")
@@ -143,9 +143,9 @@
 )
 
 ([GreekSaladWithGrilledChicken] of Dinner
-(HasIngredient [Chicken] [Lettuce] [Tomatoes] [Cucumber] [RedOnions] [KalamataOlives] [FetaCheese] [Oregano] [OliveOil] [RedWineVinegar])
+(HasIngredient [Chicken] [Lettuce] [Tomatoes] [RedOnions] [FetaCheese] [Oregano] [OliveOil] [RedWineVinegar])
 (IsVegan no)
-(IngredientQuantity 40.0 30.0 20.0 10.0 5.0 5.0 20.0 2.5 5.0 2.5)
+(IngredientQuantity 40.0 30.0 30.0 5.0 25.0 2.5 5.0 2.5)
 (CookingMethod "Grilling")
 (Name "GreekSaladWithGrilledChicken")
 )

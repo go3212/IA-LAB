@@ -181,9 +181,9 @@
                 then (bind ?score (+ ?score 5))))
 
         ; Vitaminas 
-        ;(foreach ?vitamin ?required-vitamins
-        ;    (if (member$ ?vitamin (getCourseVitamins ?course))
-        ;        then (bind ?score (+ ?score 5))))
+        (foreach ?vitamin ?required-vitamins
+            (if (member$ ?vitamin (getCourseVitamins ?course))
+                then (bind ?score (+ ?score 5))))
 
         (send ?course put-Evaluation ?score)
         (send ?course put-Assigned false)
