@@ -69,3 +69,83 @@
 (Name "AlmondCookies")
 (IsVegan no)
 )
+
+([BerryFruitSalad] of Dessert
+(HasIngredient [Blueberries] [Strawberries] [Banana] [Apple])
+(IngredientQuantity 25.0 25.0 25.0 25.0)
+(CookingMethod "No-Cook")
+(Name "BerryFruitSalad")
+(IsVegan yes)
+)
+
+([AlmondBananaSalad] of Dessert
+(HasIngredient [Almonds] [Banana] [Honey] [OrangeJuice])
+(IngredientQuantity 25.0 25.0 25.0 25.0)
+(CookingMethod "No-Cook")
+(Name "AlmondBananaSalad")
+(IsVegan no)
+)
+
+([BasilMintFruitSalad] of Dessert
+(HasIngredient [Blueberries] [Strawberries] [Basil] [Mint])
+(IngredientQuantity 33.3 33.3 16.7 16.7)
+(CookingMethod "No-Cook")
+(Name "BasilMintFruitSalad")
+(IsVegan yes)
+)
+
+([AppleAndAlmondSmoothie] of Dessert
+(HasIngredient [Apple] [Almonds] [Milk] [Honey])
+(IngredientQuantity 37.5 25.0 37.5 2.5)
+(CookingMethod "Blend")
+(Name "AppleAndAlmondSmoothie")
+(IsVegan no)
+)
+
+([LemonMintSmoothie] of Dessert
+(HasIngredient [LemonJuice] [Mint] [Milk] [Honey])
+(IngredientQuantity 37.5 25.0 37.5 2.5)
+(CookingMethod "Blend")
+(Name "LemonMintSmoothie")
+(IsVegan no)
+)
+
+([GreekYogurtFruitParfait] of Dessert
+(HasIngredient [GreekYogurt] [Honey] [Blueberries] [Banana])
+(IngredientQuantity 50.0 5.0 22.5 22.5)
+(CookingMethod "No-Cook")
+(Name "GreekYogurtFruitParfait")
+(IsVegan no)
+)
+
+([BlueberryAppleSmoothie] of Dessert
+(HasIngredient [Blueberries] [Apple] [Milk] [Honey])
+(IngredientQuantity 37.5 37.5 25.0 2.5)
+(CookingMethod "Blend")
+(Name "BlueberryAppleSmoothie")
+(IsVegan no)
+)
+
+([FruitMedley] of Dessert
+(HasIngredient [Apple] [Banana] [Orange] [Strawberries])
+(IngredientQuantity 25.0 25.0 25.0 25.0)
+(CookingMethod "No-Cook")
+(Name "FruitMedley")
+(IsVegan yes)
+)
+
+([OrangeBananaSmoothie] of Dessert
+(HasIngredient [OrangeJuice] [Banana] [Milk] [Honey])
+(IngredientQuantity 37.5 25.0 37.5 2.5)
+(CookingMethod "Blend")
+(Name "OrangeBananaSmoothie")
+(IsVegan no)
+)
+
+([AlmondButterFruitSalad] of Dessert
+(HasIngredient [Almonds] [Butter] [Blueberries] [Strawberries])
+(IngredientQuantity 25.0 25.0 25.0 25.0)
+(CookingMethod "No-Cook")
+(Name "AlmondButterFruitSalad")
+(IsVegan no)
+)

@@ -39,6 +39,7 @@
     (slot lunch-first)
     (slot lunch-second)
     (slot lunch-dessert)
+    (slot dinner-first)
     (slot dinner-second)
     (slot dinner-dessert)
 )
