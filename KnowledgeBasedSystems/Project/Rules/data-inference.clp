@@ -189,6 +189,6 @@
         (send ?course put-Assigned false)
     )
 
-    (printout t "MENU-GENERATION")
+    ;(printout t "MENU-GENERATION")
     (assert (switch-to-MENU-GENERATION))
 )

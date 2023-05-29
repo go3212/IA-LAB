@@ -39,7 +39,7 @@
     (if (neq ?max-breakfast nil) then
         (modify ?f (breakfast ?max-breakfast))
         (send ?max-breakfast put-Assigned true)
-        (printout t "Asignado desayuno " (send ?max-breakfast get-Name) " al menú del " ?day crlf)
+        ; (printout t "Asignado desayuno " (send ?max-breakfast get-Name) " al menú del " ?day crlf)
     )
 )
 
@@ -61,7 +61,7 @@
     (if (neq ?max-lunch-first nil) then
         (modify ?f (lunch-first ?max-lunch-first))
         (send ?max-lunch-first put-Assigned true)
-        (printout t "Asignado primer plato de la comida " (send ?max-lunch-first get-Name) " al menú del " ?day crlf)
+        ; (printout t "Asignado primer plato de la comida " (send ?max-lunch-first get-Name) " al menú del " ?day crlf)
     )
 )
 
@@ -83,7 +83,7 @@
     (if (neq ?max-lunch-second nil) then
         (modify ?f (lunch-second ?max-lunch-second))
         (send ?max-lunch-second put-Assigned true)
-        (printout t "Asignado segundo plato de la comida " (send ?max-lunch-second get-Name) " al menú del " ?day crlf)
+        ; (printout t "Asignado segundo plato de la comida " (send ?max-lunch-second get-Name) " al menú del " ?day crlf)
     )
 )
 
@@ -105,7 +105,7 @@
     (if (neq ?max-lunch-dessert nil) then
         (modify ?f (lunch-dessert ?max-lunch-dessert))
         (send ?max-lunch-dessert put-Assigned true)
-        (printout t "Asignado postre de la comida " (send ?max-lunch-dessert get-Name) " al menú del " ?day crlf)
+        ; (printout t "Asignado postre de la comida " (send ?max-lunch-dessert get-Name) " al menú del " ?day crlf)
     )
 )
 
@@ -127,7 +127,7 @@
     (if (neq ?max-dinner-first nil) then
         (modify ?f (dinner-first ?max-dinner-first))
         (send ?max-dinner-first put-Assigned true)
-        (printout t "Asignado primer plato de la cena " (send ?max-dinner-first get-Name) " al menú del " ?day crlf)
+        ; (printout t "Asignado primer plato de la cena " (send ?max-dinner-first get-Name) " al menú del " ?day crlf)
     )
 )
 
@@ -149,7 +149,7 @@
     (if (neq ?max-dinner-second nil) then
         (modify ?f (dinner-second ?max-dinner-second))
         (send ?max-dinner-second put-Assigned true)
-        (printout t "Asignado segundo plato de la cena " (send ?max-dinner-second get-Name) " al menú del " ?day crlf)
+        ; (printout t "Asignado segundo plato de la cena " (send ?max-dinner-second get-Name) " al menú del " ?day crlf)
     )
 )
 
@@ -171,7 +171,7 @@
     (if (neq ?max-dinner-dessert nil) then
         (modify ?f (dinner-dessert ?max-dinner-dessert))
         (send ?max-dinner-dessert put-Assigned true)
-        (printout t "Asignado postre de la cena " (send ?max-dinner-dessert get-Name) " al menú del " ?day crlf)
+        ; (printout t "Asignado postre de la cena " (send ?max-dinner-dessert get-Name) " al menú del " ?day crlf)
     )
 )
 
@@ -190,7 +190,27 @@
     )
     (bind ?adjustedQuantity (/ ?reqCal ?totalCalories))
     (modify ?f (breakfast-quantity ?adjustedQuantity))
-    (printout t "Asignado cantidad de desayuno al menú del " ?day crlf)
+    ; (printout t "Asignado cantidad de desayuno al menú del " ?day crlf)
+)
+
+(defrule MENU-GENERATION::switch-to-menu-print
+    (not (daily-menu  
+            (breakfast nil)
+            ; (breakfast-quantity ?bQ&~nil)
+            (lunch-first nil)
+            ; (lunch-first-quantity ?lFQ&~nil)
+            (lunch-second nil)
+            ; (lunch-second-quantity ?lSQ&~nil)
+            (lunch-dessert nil)
+            ; (lunch-dessert-quantity ?lDQ&~nil)
+            (dinner-first nil)
+            ; (dinner-first-quantity ?dFQ&~nil)
+            (dinner-second nil)
+            ; (dinner-second-quantity ?dSQ&~nil)
+            (dinner-dessert nil)))
+            ; (dinner-dessert-quantity ?dDQ&~nil)))
+    =>
+    (focus MENU-PRINT)
 )
 
 
