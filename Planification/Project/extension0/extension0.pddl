@@ -17,12 +17,15 @@
         :effect (and
             (task-assigned ?t)
             (increase (hours ?t) 0)))
-    (:action assign-task-hard
+    (:action assign-task
         :parameters (?p - programmer ?t - task)
         :precondition (and 
             (not (task-assigned ?t))
-            (= (+ (skill ?p) 1) (difficulty ?t)))
+            (>= (skill ?p) (- (difficulty ?t) 1)))
         :effect (and
             (task-assigned ?t)
-            (increase (hours ?t) 2)))
+            (when (>= (skill ?p) (difficulty ?t))
+                (increase (hours ?t) 0))
+            (when (= (+ (skill ?p) 1) (difficulty ?t))
+                (increase (hours ?t) 2))))
 )
