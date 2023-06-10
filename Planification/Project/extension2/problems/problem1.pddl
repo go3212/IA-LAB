@@ -11,7 +11,7 @@
         (= (skill programmer2) 3)
         (= (quality programmer2) 1)
 
-        (= (skill programmer3) 4)
+        (= (skill programmer3) 1)
         (= (quality programmer3) 2)
 
         (= (skill programmer4) 3)
