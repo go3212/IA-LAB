@@ -9,7 +9,7 @@
         (= (quality programmer1) 1)
 
         (= (skill programmer2) 3)
-        (= (quality programmer1) 1)
+        (= (quality programmer2) 1)
 
         ; Tasks
         (= (difficulty task1) 1)
@@ -20,14 +20,16 @@
 
         (= (difficulty task3) 3)
         (= (hours task3) 6)
+
+        (= (total-time) 0)
     )
     (:goal
         (and
             (forall (?t - task) 
                 (and
                     (task-assigned ?t)
-                    (reviewed ?t)
-            ))
+                    (reviewed ?t)))
         )
     )
+    (:metric minimize (total-time))
 )
