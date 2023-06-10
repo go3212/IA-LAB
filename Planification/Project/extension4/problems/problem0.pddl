@@ -45,5 +45,5 @@
         )
     )
     
-    (:metric minimize (+ (total-time) (* (working) 1000.0)))
+    (:metric minimize (+ (total-hours) (* (working) 1000.0)))
 )
