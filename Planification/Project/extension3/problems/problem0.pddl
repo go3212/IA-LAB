@@ -33,7 +33,7 @@
         (= (difficulty task3) 3)
         (= (hours task3) 6)
 
-        (= (total-time) 0)
+        (= (total-hours) 0)
     )
     (:goal
         (forall (?t - task) 

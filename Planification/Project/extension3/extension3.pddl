@@ -9,7 +9,8 @@
         (quality ?p - programmer)
         (difficulty ?t - task)
         (task-count ?p - programmer)
-        (hours ?t - task))
+        (hours ?t - task)
+        (total-hours))
     (:predicates
         (assigned ?p - programmer ?t - task ?r - role)
         (task-assigned ?t - task)
@@ -23,10 +24,10 @@
         :effect (and
             (task-assigned ?t)
             (assigned ?p ?t coder)
-            (increase (hours ?t) (quality ?p))
+            (increase (total-hours) (quality ?p))
             (increase (task-count ?p) 1)
             (when (= (+ (skill ?p) 1) (difficulty ?t))
-                (increase (hours ?t) 2))))
+                (increase (total-hours) 2))))
     (:action review-task
         :parameters (?p1 - programmer ?p2 - programmer ?t - task)
         :precondition (and 
@@ -38,7 +39,7 @@
             (>= (skill ?p2) (difficulty ?t)))
         :effect (and
             (assigned ?p2 ?t reviewer)
-            (increase (total-time) (hours ?t))
+            ; (increase (total-time) (hours ?t))
             (increase (task-count ?p2) 1)
             (reviewed ?t)))
 )
