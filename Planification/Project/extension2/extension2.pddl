@@ -35,6 +35,6 @@
             (>= (skill ?p2) (difficulty ?t)))
         :effect (and
             (assigned ?p2 ?t reviewer)
-            (increase (total-hours) (hours ?t))
+            ;(increase (total-hours) (hours ?t))
             (reviewed ?t)))
 )
