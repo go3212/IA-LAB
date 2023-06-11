@@ -13,13 +13,8 @@
 
         ; Tasks
         (= (difficulty task1) 1)
-        (= (hours task1) 4)
-
         (= (difficulty task2) 2)
-        (= (hours task2) 5)
-
         (= (difficulty task3) 3)
-        (= (hours task3) 6)
     )
     (:goal
         (and
