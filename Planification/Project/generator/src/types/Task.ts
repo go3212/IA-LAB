@@ -22,7 +22,6 @@ class Task
             case ExtensionType.EXT_4:
             case ExtensionType.EXT_3:
             case ExtensionType.EXT_2:
-                result += `(= (hours ${this.m_Id}) ${this.m_Hours})`;
             case ExtensionType.EXT_1:
             case ExtensionType.EXT_0:
                 result += `(= (difficulty ${this.m_Id}) ${this.m_Difficulty})`;

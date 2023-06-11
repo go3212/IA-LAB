@@ -34,6 +34,8 @@ function askQuestion(query: string)
     let domainName = "software-project";
     let problemBuilder = new ProblemBuilder(problemName, domainName, problemType);
     console.log(problemBuilder.GenerateProblem(problemProgrammers, problemTasks));
+
+    process.exit();
 })();
 
 
