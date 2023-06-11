@@ -59,6 +59,8 @@ class ProblemBuilder
                 (:goal 
                     ${this.GenerateGoalForExtension(this.m_Extension)}
                 )
+                ${this.m_Extension == ExtensionType.EXT_2 ? `(:metric minimize (total-hours))` : ''}
+                ${this.m_Extension == ExtensionType.EXT_3 ? `(:metric minimize (total-hours))` : ''}
                 ${this.m_Extension == ExtensionType.EXT_4 ? `(:metric minimize (+ (total-hours) (* (working) 1000.0))) ` : ''}
             )
             `
