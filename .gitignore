@@ -11,3 +11,5 @@
 
 # Output directory
 **/out
+
+node_modules
