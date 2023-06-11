@@ -6,7 +6,6 @@
         (skill ?p - programmer)
         (difficulty ?t - task))
     (:predicates
-        (assigned ?p - programmer ?t - task)
         (task-assigned ?t - task))
     (:action assign-task
         :parameters (?p - programmer ?t - task)

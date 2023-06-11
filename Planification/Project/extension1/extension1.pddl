@@ -6,7 +6,7 @@
         coder reviewer - role)
     (:functions
         (skill ?p - programmer)
-        (quality ?p - programmer)
+        ;(quality ?p - programmer)
         (difficulty ?t - task))
     (:predicates
         (assigned ?p - programmer ?t - task ?r - role)

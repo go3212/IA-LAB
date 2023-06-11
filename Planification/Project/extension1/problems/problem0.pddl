@@ -6,10 +6,8 @@
     (:init
         ; Programmers
         (= (skill programmer1) 2)
-        (= (quality programmer1) 1)
 
         (= (skill programmer2) 3)
-        (= (quality programmer1) 1)
 
         ; Tasks
         (= (difficulty task1) 1)
