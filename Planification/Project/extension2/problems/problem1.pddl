@@ -22,34 +22,24 @@
 
         ; Tasks
         (= (difficulty task1) 1)
-        (= (hours task1) 4)
 
         (= (difficulty task2) 2)
-        (= (hours task2) 5)
 
         (= (difficulty task3) 3)
-        (= (hours task3) 6)
 
         (= (difficulty task4) 1)
-        (= (hours task4) 4)
 
         (= (difficulty task5) 2)
-        (= (hours task5) 5)
 
         (= (difficulty task6) 3)
-        (= (hours task6) 6)
 
         (= (difficulty task7) 1)
-        (= (hours task7) 4)
 
         (= (difficulty task8) 2)
-        (= (hours task8) 5)
 
         (= (difficulty task9) 3)
-        (= (hours task9) 6)
 
         (= (difficulty task10) 1)
-        (= (hours task10) 4)
 
         (= (total-hours) 0)
     )

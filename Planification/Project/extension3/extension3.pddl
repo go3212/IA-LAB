@@ -9,7 +9,6 @@
         (quality ?p - programmer)
         (difficulty ?t - task)
         (task-count ?p - programmer)
-        (hours ?t - task)
         (total-hours))
     (:predicates
         (assigned ?p - programmer ?t - task ?r - role)
@@ -39,7 +38,6 @@
             (>= (skill ?p2) (difficulty ?t)))
         :effect (and
             (assigned ?p2 ?t reviewer)
-            ; (increase (total-time) (hours ?t))
             (increase (task-count ?p2) 1)
             (reviewed ?t)))
 )

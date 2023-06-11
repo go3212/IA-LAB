@@ -9,9 +9,8 @@
         (= (difficulty task1) 1)
         (= (difficulty task2) 2)
         (= (difficulty task3) 3)
-        (= (hours task1) 4)
-        (= (hours task2) 5)
-        (= (hours task3) 6))
+    )
+    
     (:goal
         (forall (?t - task) 
             (task-assigned ?t))
