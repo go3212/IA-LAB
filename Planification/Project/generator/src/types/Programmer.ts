@@ -25,8 +25,8 @@ class Programmer
             case ExtensionType.EXT_3:
                 result += `(= (task-count ${this.m_Id}) ${this.m_TaskCount})`;
             case ExtensionType.EXT_2:
-            case ExtensionType.EXT_1:
                 result += `(= (quality ${this.m_Id}) ${this.m_Quality})`;
+            case ExtensionType.EXT_1:
             case ExtensionType.EXT_0:
                 result += `(= (skill ${this.m_Id}) ${this.m_Skill})`;
                 break;
