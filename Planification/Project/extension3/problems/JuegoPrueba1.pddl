@@ -2,7 +2,7 @@
     (:domain software-project)
     (:objects
         programmer1 programmer2 programmer3 programmer4 programmer5 programmer6 - programmer
-        task1 task2 task3 task4 task5 task6 task7 - task)
+        task1 task2 task3 task4 task5 task6 - task)
     (:init
         ; Programmers
         (= (skill programmer1) 3)
@@ -38,7 +38,6 @@
         (= (difficulty task6) 1)
 
         (= (total-hours) 0)
-        (= (working) 0)
     )
     (:goal
         (forall (?t - task) 
