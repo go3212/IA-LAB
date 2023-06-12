@@ -29,11 +29,10 @@
             (>= (+ (skill ?p) 1) (difficulty ?t)))
         :effect (and
             (task-assigned ?t)
-            (programmer-assigned ?p)
             (assigned ?p ?t coder)
             (increase (total-hours) (quality ?p))
             (increase (task-count ?p) 1)
-            (increase (working) 1)
+            (when (not (programmer-assigned ?p)) (and (programmer-assigned ?p) (increase (working) 1)))
             (when (= (+ (skill ?p) 1) (difficulty ?t))
                 (increase (total-hours) 2))
                 )

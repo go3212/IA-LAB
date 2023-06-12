@@ -61,6 +61,7 @@
         (= (difficulty task7) 1)
 
         (= (total-hours) 0)
+        (= (working) 0)
     )
     (:goal
         (forall (?t - task) 
@@ -69,5 +70,5 @@
                 (reviewed ?t))
         )
     )
-    (:metric minimize (total-hours))
+    (:metric maximize (working))
 )
