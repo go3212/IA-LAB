@@ -1,0 +1,17 @@
+(define (problem Problem2010)
+                (:domain software-project)
+                (:objects
+                    programmer0 programmer1 programmer2 programmer3 programmer4 programmer5 programmer6 programmer7 programmer8 programmer9 programmer10 programmer11 programmer12 programmer13 programmer14 programmer15 programmer16 programmer17 programmer18 programmer19 - programmer
+                    task0 task1 task2 task3 task4 task5 task6 task7 task8 task9 task10 task11 task12 task13 task14 task15 task16 task17 task18 task19 - task
+                )
+                (:init
+                    (= (task-count programmer0) 0)(= (quality programmer0) 1)(= (skill programmer0) 1)(= (task-count programmer1) 0)(= (quality programmer1) 2)(= (skill programmer1) 1)(= (task-count programmer2) 0)(= (quality programmer2) 1)(= (skill programmer2) 2)(= (task-count programmer3) 0)(= (quality programmer3) 1)(= (skill programmer3) 1)(= (task-count programmer4) 0)(= (quality programmer4) 1)(= (skill programmer4) 3)(= (task-count programmer5) 0)(= (quality programmer5) 2)(= (skill programmer5) 2)(= (task-count programmer6) 0)(= (quality programmer6) 2)(= (skill programmer6) 3)(= (task-count programmer7) 0)(= (quality programmer7) 2)(= (skill programmer7) 2)(= (task-count programmer8) 0)(= (quality programmer8) 2)(= (skill programmer8) 1)(= (task-count programmer9) 0)(= (quality programmer9) 1)(= (skill programmer9) 2)(= (task-count programmer10) 0)(= (quality programmer10) 2)(= (skill programmer10) 1)(= (task-count programmer11) 0)(= (quality programmer11) 1)(= (skill programmer11) 1)(= (task-count programmer12) 0)(= (quality programmer12) 1)(= (skill programmer12) 1)(= (task-count programmer13) 0)(= (quality programmer13) 2)(= (skill programmer13) 2)(= (task-count programmer14) 0)(= (quality programmer14) 1)(= (skill programmer14) 3)(= (task-count programmer15) 0)(= (quality programmer15) 2)(= (skill programmer15) 2)(= (task-count programmer16) 0)(= (quality programmer16) 1)(= (skill programmer16) 3)(= (task-count programmer17) 0)(= (quality programmer17) 2)(= (skill programmer17) 2)(= (task-count programmer18) 0)(= (quality programmer18) 1)(= (skill programmer18) 2)(= (task-count programmer19) 0)(= (quality programmer19) 1)(= (skill programmer19) 2) 
+                    (= (difficulty task0) 3)(= (hours task0) 1)(= (difficulty task1) 2)(= (hours task1) 3)(= (difficulty task2) 1)(= (hours task2) 19)(= (difficulty task3) 1)(= (hours task3) 2)(= (difficulty task4) 1)(= (hours task4) 16)(= (difficulty task5) 1)(= (hours task5) 15)(= (difficulty task6) 3)(= (hours task6) 9)(= (difficulty task7) 2)(= (hours task7) 23)(= (difficulty task8) 2)(= (hours task8) 4)(= (difficulty task9) 3)(= (hours task9) 10)(= (difficulty task10) 2)(= (hours task10) 15)(= (difficulty task11) 2)(= (hours task11) 20)(= (difficulty task12) 1)(= (hours task12) 8)(= (difficulty task13) 2)(= (hours task13) 14)(= (difficulty task14) 3)(= (hours task14) 22)(= (difficulty task15) 3)(= (hours task15) 7)(= (difficulty task16) 1)(= (hours task16) 6)(= (difficulty task17) 2)(= (hours task17) 21)(= (difficulty task18) 3)(= (hours task18) 3)(= (difficulty task19) 3)(= (hours task19) 12) 
+                    (= (total-hours) 0)
+                    (= (working) 0)
+                )
+                (:goal 
+                    (forall (?t - task) (and (task-assigned ?t) (reviewed ?t)))
+                )
+                (:metric minimize (+ (total-hours) (* (working) 1000.0))) 
+            )
