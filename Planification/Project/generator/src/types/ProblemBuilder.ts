@@ -54,14 +54,14 @@ class ProblemBuilder
                     ${_programmers.map(p => p.GetInit(this.m_Extension)).join('')} 
                     ${_tasks.map(p => p.GetInit(this.m_Extension)).join('')} 
                     ${this.m_Extension >= ExtensionType.EXT_2 ? `(= (total-hours) 0)` : ''}
-                    ${this.m_Extension == ExtensionType.EXT_4 ? `(= (working) 0)` : ''}
+                    ${this.m_Extension >= ExtensionType.EXT_3 ? `(= (working) 0)` : ''}
                 )
                 (:goal 
                     ${this.GenerateGoalForExtension(this.m_Extension)}
                 )
                 ${this.m_Extension == ExtensionType.EXT_2 ? `(:metric minimize (total-hours))` : ''}
-                ${this.m_Extension == ExtensionType.EXT_3 ? `(:metric minimize (total-hours))` : ''}
-                ${this.m_Extension == ExtensionType.EXT_4 ? `(:metric minimize (+ (total-hours) (* (working) 1000.0))) ` : ''}
+                ${this.m_Extension == ExtensionType.EXT_3 ? `(:metric maximize (working))` : ''}
+                ${this.m_Extension == ExtensionType.EXT_4 ? `(:metric minimize (+ (total-hours) (* (working) 2.0))) ` : ''}
             )
             `
         );
