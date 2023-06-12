@@ -55,5 +55,5 @@
                 (reviewed ?t))
         )
     )
-    (:metric maximize (working))
+    (:metric minimize (total-hours))
 )

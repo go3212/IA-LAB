@@ -6,7 +6,7 @@
     (:init
         ; Programmers
         (= (skill programmer1) 3)
-        (= (quality programmer1) 2)
+        (= (quality programmer1) 1)
 
         (= (skill programmer2) 2)
         (= (quality programmer2) 1)
