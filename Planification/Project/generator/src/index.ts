@@ -1,5 +1,6 @@
 import ProblemBuilder from "./types/ProblemBuilder";
-import readline from 'readline';
+import * as readline from 'readline';
+import * as fs from 'fs';
 
 export enum ExtensionType
 {
@@ -33,7 +34,15 @@ function askQuestion(query: string)
 
     let domainName = "software-project";
     let problemBuilder = new ProblemBuilder(problemName, domainName, problemType);
-    console.log(problemBuilder.GenerateProblem(problemProgrammers, problemTasks));
+
+    const content = problemBuilder.GenerateProblem(problemProgrammers, problemTasks);
+    const fileName = problemName + '_ext' + problemType + '-' + problemProgrammers + '-' + problemTasks + '.pddl';
+
+    const filePath = '../extension' + problemType + '/problems/' + fileName;
+
+    fs.writeFileSync(filePath, content);
+
+    console.log('File generated');
 
     process.exit();
 })();
